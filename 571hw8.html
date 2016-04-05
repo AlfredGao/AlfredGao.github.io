@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+	<title>CSCI571HW8</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <meta property="og:title"              content="" />
+    <meta property="og:description"        content="" />
+    <meta property="og:image"              content="" />
+    <meta property="og:site_name"          content="" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="bootstrap-toggle-master/css/bootstrap-toggle.min.css">
+    
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap-toggle-master/js/bootstrap-toggle.min.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="js/script.js"></script>
+    <style>
+    	body{
+    		background-color: #346482;
+            padding-top:20px;
+    	}
+
+    	div#api_row{
+            font-weight: bold;
+    	}
+
+        label#first_label{
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        div#text_box{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        div#button{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        div#line{
+            border-bottom-style: solid;
+            border-bottom-color: white;
+            border-bottom-width: thin;
+            margin-bottom: 20px;
+        }
+
+     	div#formtitle{
+      	text-align: center;
+        font-weight: bold;
+        padding-top: 10px;
+        }
+
+        div#api{
+            padding-top: 15px;
+        }
+
+        span#star{
+        	color:red;
+        }
+
+        p#error{
+            color:red;
+            display: none;
+        }
+
+        img#api_logo{
+        	width:120px;
+        	height:20px;
+        }
+
+        div#fav_row{
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: center;
+        }
+
+        div#automatic{
+            padding-top: 5px;
+            padding-right: 10px;
+        }
+
+        div#fav_list{
+            font-weight: bold;
+            padding-top: 5px;
+            padding-left: 5px;
+        }
+        div#fav_list_head{
+            background: -moz-linear-gradient(white, rgb(220, 220, 220));
+            background: linear-gradient(white, rgb(220, 220, 220));
+        }
+        div#current_stock{
+            margin-top: 10px;
+            margin-left:15px;
+            margin-right:15px;
+        }
+        div#stock_detail_title{
+            font-weight: bold;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+       
+        button#fav_icon{
+            height: 40px;
+        }
+        button#fb_icon{
+            padding:0;
+            margin-right: 5px;
+        }
+        img#fb_img{
+            height:38px;
+            width: 38px;
+        }
+        div#detail_head{
+            background: -moz-linear-gradient(white, rgb(220, 220, 220));
+            background: linear-gradient(white, rgb(220, 220, 220));
+        }
+        div#detail_header{
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        button#next_button{
+            background: -moz-linear-gradient(white, rgb(220, 220, 220));
+            background: linear-gradient(white, rgb(220, 220, 220));
+        }
+        button#prev_button{
+            margin-left: 15px;
+            background: -moz-linear-gradient(white, rgb(220, 220, 220));
+            background: linear-gradient(white, rgb(220, 220, 220));
+        }
+        td#sd_td{
+            font-weight: bold;
+        }
+
+        button#remove_but{
+
+        }
+
+        a#fav_name{
+            color: #346482;
+        }
+
+        a#fav_name:hover{
+            text-decoration: none;
+        }
+
+        div#his_charts{
+            width: 100%;
+            height: 400px;
+        }
+        div#news_feed{
+            margin-top: 30px;
+        }
+        a#new_link{
+            color: #346482;
+        }
+        div#new_pub{
+            font-weight: bold;
+        }
+        div#new_date{
+            font-weight: bold;
+        }
+        div#news_pannel{
+            background: -moz-linear-gradient(white, rgb(220, 220, 220));
+            background: linear-gradient(white, rgb(220, 220, 220));
+        }
+    </style>
+</head>
+
+<body>
+<script>
+window.fbAsyncInit = function() {
+    FB.init({
+            appId      : '1078284668898942',
+            xfbml      : true,
+            version    : 'v2.5'
+        });
+  };
+
+  
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div class="container">
+    <div class="well" id="search_well">	
+	   <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="formtitle">
+                    <p>Stock Search Market</p>
+                </div>
+        </div>
+        <form class="form-horizontal" role="form" id="form_main" method="get">
+	       <div class = "form-component">
+		      <label for="com_name" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 control-label" id="first_label">
+                        Enter the stock name or symbol<span style="color:red"> *</span>
+              </label>
+		      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="text_box">
+                    <input class="form-control" type="text" id="search_form" placeholder="Apple Inc or AAPL" value="" oninvalid="alert('Please fill out this field!')" required>
+		      </div>
+		      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="button">
+			     <button type="submit" class="btn btn-primary"  id="submit_but"><span class="glyphicon glyphicon-search"></span> Get Quote</button>
+			     <button type="button" class="btn btn-default" id="clear_but"><span class="glyphicon glyphicon-refresh"></span> Clear</button>
+		      </div>
+	       </div>
+        </form>
+	   <div id = "api_row" class = "row">
+              <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                    <p id="error">Select a valid entry</p>
+              </div>
+		      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 control-label" id="api">
+		            <p>Powered By: <a href="http://dev.markitondemand.com/MODApis/"><img id="api_logo" src="http://cs-server.usc.edu:45678/hw/hw8/images/mod-logo.png"></a></p>
+		      </div>
+	   </div>
+    </div>
+
+    <div id="line">
+    </div>
+
+    <div class="well" id="well2">
+            <div class="carousel slide" id="stock_carousel">
+                <ol class="carousel-indicators" style="display:none">
+                    <li class="item1 active"></li>
+                    <li class="item2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div id="favourite_list" class="panel panel-default">
+                            <div id="fav_list_head" class="panel-heading">
+                                <div id="fav_row" class="row">
+                                    <div class="pull-left" id="fav_list">Favorite List</div>
+                                    <div class="pull-right">
+                                        <button type="button" data-tooltip="tooltip" data-placement="left" title="go to stock detail!"class="btn btn-default disabled" id="next_button">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                        </button>
+                                    </div>
+                                    <div class="pull-right" id="refresh">
+                                        <button type="button" data-tooltip="tooltip" data-placement="left" title = "refresh price&change"class="btn btn-primary" id="refresh_button">
+                                            <span class="glyphicon glyphicon-refresh"></span>
+                                        </button>
+                                    </div>
+                                    <div class="pull-right checkbox-inline">
+                                        <a data-tooltip="tooltip" data-placement="left" title = "automatic fresh" ><input type="checkbox" data-toggle="toggle" id="automatic_button"></a>
+                                    </div>
+                                    <div class="pull-right hidden-xs" id="automatic">Automatic Refresh:</div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-striped" id="fav_table">
+                                    <tr>
+                                        <th>Symbol</th><th>Company</th><th>Stock Price</th><th>Change (Change Percent)</th><th>Market Cap</th><th></th>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="panel panel-default" id="stock_detail">
+                            <div class="panel-heading" id="detail_head">
+                                <div class="row" id="detail_row">
+                                    <div class="pull-left">
+                                        <button type="button" class="btn btn-default" id="prev_button">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                        </button>
+                                    </div>
+                                    <div id="stock_detail_title">Stock Details</div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                    <div class="container-fluid">
+                                        <ul class="nav nav-pills" id="nav_list">
+                                            <li class="active"><a href="#current_stock" data-toggle="tab"><span class="glyphicon glyphicon-dashboard"></span> Current Stock</a></li>
+                                            <li><a href="#his_charts" data-toggle="tab"><span class="glyphicon glyphicon-stats"></span> Historical Charts</a></li>
+                                            <li><a href="#news_feed" data-toggle="tab"><span class="glyphicon glyphicon-link"></span> News Feeds</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="current_stock">
+                                                <div class="row" id="details_info">
+                                                    <div class="pull-left" id="detail_header"></div>
+                                                    <div class="pull-right" id="fav_button"></div>
+                                                    <div class="pull-right" id="fb_button"></div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="details_table">
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="details_charts">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="his_charts">2
+                                            </div>
+                                            <div class="tab-pane" id="news_feed">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
