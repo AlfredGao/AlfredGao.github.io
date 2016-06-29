@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uber Xi'An Demo</title>
+	<meta charset= "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body{
+			background-color: #09091a;
+			margin: 0;
+			padding: 0;
+		}
+		td#main_1{
+			background-color: #09091a;
+			margin: 0;
+			padding: 0;
+		}
+		td#logo{
+			text-align: center;
+			vertical-align: top;
+			font-size: 0;
+			padding: 50px 0;
+		}
+		td#map_text{
+			background-color: #151525
+		}
+		td#map_text_blank{
+			padding: 0;
+			margin: 0;
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+		td#map_text_title{
+			padding: 20px 15px;
+			margin: 0;
+		}
+		td#map_text_name{
+			margin: 0;
+			padding:20px 15px;
+			font-family: 'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 30px;
+			color: #1fbad6;
+			line-height: 36px;
+			text-transform: uppercase;
+		}
+		td#map_container{
+			padding: 29px 0 15px;
+			padding-top: 30px;
+			margin: 0;
+			text-align: center;
+			height: 300px;
+			width: 400px;
+		}
+		td#map_anotation{
+			padding:10px 15px 0;
+			margin:0;
+			font-family:'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 10px;
+			color: #c0c0c8;
+			line-height: 15px;
+		}
+		td#map_text_data{
+			padding: 8px 15px 0;
+			margin: 0;
+			font-family: 'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 24px;
+			color: #c0c0c8;
+			line-height: 28px;
+
+		}
+		td#contact_info{
+			font-family: 'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 14px;
+			text-align: center;
+			color: #c0c0c8;
+		}
+		td#blank_anotation_above{
+			font-size: 1px;
+			line-height: 1px;
+		}
+		td#line_anotation{
+			background-color: #3a3a48;
+			font-size:1px;
+			line-height: 1px;
+			height: 3px;
+			width: 600px;
+		}
+		td#other_driver_data{
+			padding: 0 30px;
+			margin: 0;
+			text-align: center;
+			font-family: 'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 22px;
+			color: #c0c0c8;
+		}
+		td#other_driver_img{
+			padding: 29px 0 15px;
+			margin: 0;
+		}
+		td#login_button{
+			-moz-border-radius:4px;
+			-webkit-border-radius:4px;
+			background-color: #1fbad6;
+			width: 225px;
+			height: 46px;
+			text-align: center;
+
+		}
+		td#line_anotation_2{
+			background-color: #3a3a48;
+			font-size: 1px;
+			line-height: 1px;
+			height: 1px;
+			width: 600px
+		}
+		a#login_link{
+			font-size: 16px;
+			font-family: 'ClanPro-News','Helvetica Neue Light', 'Helvetica Regular', Arial, sans-serif;
+			color: #FFFFFF;
+			text-decoration: none;
+			width: 225px;
+			text-align: center;
+			padding: 11px 5px;
+		}
+		img#logo_img{
+			height: 153px;
+			height: 24px;
+			font-family: Helvetica,Arial,sans-serif;
+			color: #000000;
+			font-size: 16px;
+			font-weight: bold;
+
+		}
+		img#other_driver_img_1{
+			width: 332px;
+			border:0;
+		}
+		span#contact_text{
+			font-family: 'ClanPro-Book','Helvetica Neue',Helvetica,Arial,sans-serif;
+			font-size: 14px;
+			padding-bottom: 15px;
+			color: #c0c0c8;
+		}
+		table#main_content{
+			max-width: 700px;
+			border:0;
+		}
+		table#map_text_table{
+			width: 100%;
+			background-color: 151525;
+		}
+
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=D21ZDMPzfSZuk9ynQWjiM6qLUWh4dgvl"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+</head>
+<body>
+	<table id="main_0" border="0" cellpadding="0" cellspacing="0" style="width:100%">
+		<tbody>
+			<tr>
+				<td id="main_1" align="center">
+					<!--主要内容部分-->
+					<table id="main_content" width="100%" cellpadding="0" cellspacing="0" class="container">
+						<tbody>
+							<!--Logo部分-->
+							<tr>
+								<td id="logo">
+									<img id="logo_img" src="https://uber-static.s3.amazonaws.com/emails/2015/09/090115_whitelogo.png">
+								<td>
+							</tr>
+							<!--文字和地图部分-->
+							<tr>
+								<td id="map_text">
+									<table id="map_text_table">
+										<tbody>
+											<tr>
+												<td id="map_text_blank" align="center">
+													<!--文字部分-->
+													<table border="0" cellpadding="0" cellspacing="0">
+														<tbody>
+															<tr>
+																<td id="map_text_title"></td>
+															</tr>
+															<tr>
+																<td id="map_text_name" align="center">尊敬的: 秋秋师傅！</td>
+															</tr>
+															<tr>
+																<td id="map_text_data" align="center">您上次上线地点在: <span style="color:#1fbad6">连霍高速</span>
+																	<br>
+																	<br>
+																	<span style="font-size:20px; line-height:35px">
+																		U妹根据数据预测
+																	<br>
+																		距离您上次上线地点最近的热点接单区域是
+																	<br>
+																		<span style="color:#1fbad6; font-size:20px">未央立交</span>
+																	<br>
+																		该区域的平均接单间隔时间为： <span style="color:#1fbad6; font-size:26px">5</span> 分钟
+																	</span>
+																</td>
+															</tr>
+
+														</tbody>
+													</table>
+													<!--文字部分结束-->
+													<!-- 地图部分 -->
+													<table border="0" cellpadding="0" cellspacing="0" style="padding-top:35px">
+														<tbody>
+															<tr>
+																<td id="map_container" align="center">
+																	<table border="0" cellpadding="0" cellspacing="0" style="width=100%">
+																		<tbody>																		
+																			<tr>
+																				<td>
+																					<script type="text/javascript">
+																						var map = new BMap.Map("map_container")
+																						var point = new BMap.Point(108.953, 34.316);  // 创建点坐标  
+																						map.centerAndZoom(point, 12);
+																						var driver_location = new BMap.Point(109.034, 34.297);
+																						var myIcon = new BMap.Icon("icon_car.png", new BMap.Size(30, 30));
+																						var marker = new BMap.Marker(driver_location, {icon: myIcon})
+																						map.addOverlay(marker)
+
+																						//热点区域热力图
+																						var hotspot = [{"lng":108.95378,"lat":34.287209, "count":60},
+																									   {"lng":108.95493,"lat":34.276709, "count":60},
+																									   {"lng":108.954067,"lat":34.296991, "count":100},
+																									   {"lng":108.953492,"lat":34.288641, "count":100},
+																									   {"lng":108.955505,"lat":34.285061, "count":100},
+																									   {"lng":108.957804,"lat":34.288163, "count":60},
+																									   {"lng":108.949468,"lat":34.288879, "count":60},
+																									   {"lng":108.958092,"lat":34.291981, "count":50},
+																									   {"lng":108.950043,"lat":34.303194, "count":50},
+																									   {"lng":108.964128,"lat":34.284823, "count":90},
+																									   {"lng":108.95608,"lat":34.29723, "count":30},
+																									   {"lng":108.957517,"lat":34.30057, "count":20},
+																									   {"lng":108.956654,"lat":34.304387, "count":8}]	
+
+																						function isSupportCanvas(){
+																							var elem = document.createElement('canvas');
+																							return !!(elem.getContext && elem.getContext('2d'))
+																						}
+
+																						if (!isSupportCanvas()){
+																							alert('您当前使用的浏览器不能支持全部功能')
+																						}
+
+																						heatMapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+																						map.addOverlay(heatMapOverlay)
+																						heatMapOverlay.setDataSet({data: hotspot, max:100});
+
+																					</script>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<!--地图部分结束-->
+													<!--地图下方注释部分-->
+													<table border="0" cellpadding="0" cellspacing="0" style="width=100%">
+														<tbody>
+															<tr>
+																<td style="padding:0 30px;">
+																	<table cellpadding="0" cellspacing="0" width="100%">
+																		<tbody>
+																			<tr>
+																				<td id="map_anotation" align="center">
+																					<i>
+																						* 蓝色地图标示为您上次上线位置
+																					<br>
+																						热力图为距离您上次上线位置最近的热点区域，颜色越深单数密度越大
+																					</i>
+																				</td>
+																			</tr>
+																			<tr>
+																				<td id="blank_anotation_above" height="10px"></td>
+																			</tr>
+																			<tr>
+																				<td id="line_anotation"></td>
+																			</tr>
+																			<tr>
+																				<td id="blank_anotation_above" height="10px"></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<!--地图下方注释部分结束-->
+													<!--同期激活司机数据部分-->
+													<table border="0" cellpadding="0" cellspacing="0" style="width=100%; padding-top:60px">
+														<tbody>
+															<tr>
+																<td id="other_driver_data" align="center">
+																	与您同期激活的车主根据U妹的接单秘籍
+																	<br>
+																	平均接单数
+																</td>	
+															</tr>
+															<tr>
+																<td id="other_driver_img" align="center">
+																	<img src="https://image.et.uber.com/lib/fe93127371650c7f71/m/1/China-TripMilestones_45.png" id="other_driver_img_1">
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<!--同期激活司机部分结束-->
+													<!--上线按钮部分-->
+													<table style="padding-top:40px">
+														<tbody>
+															<tr>
+																<td id="login_button" align="center">
+																	<a id="login_link" href="http://pages.et.uber.com/Redirect.aspx?EQ=YY5gYbFvvS6LTM4Y8vFWt67jeQe2WfreEWabuOgARScLuQifO1bHFThPz77enAUBvDxOkuAcoaTx8ExRtRPpHlkDR1TWPnKEuY5iYmYkqFhvsg23IfBYBkgsoFfgRizLmCrSXp3IP5arj8LQeyONTyM2XQsKcmfz4yuKcGfIx5y-cGyZYPt1gkpJBQWxds8PGx04YeBZ0CPPEGje7ZLoniIsVHd-_WDkUo2BoJ4TCGttmyn-ZumnOK4G9wpWvGeHbFC7qy8bvo9yHo1mxjucGI5eq60iJvi2AasxkDU1">立即上线！
+																	</a>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<!--上线按钮部分结束-->
+													<!--联系信息部分-->
+													<table style="width=100%;padding-top:30px">
+															<tr>
+																<td id="line_anotation_2"></td>
+															</tr>
+															<tr>
+																<td id="blank_anotation_above" height="40px"></td>
+															</tr>
+															<tr>
+																<td id="contact_info">
+																	您在接单过程中遇到任何问题，请通过以下方式联系我们
+																</td>
+															</tr>
+															<tr>
+																<td id="blank_anotation_above" height="10px"></td>
+															</tr>
+															<tr>
+																<td id="contact_detail" style="text-align:center">
+																	<img src="wechat.png"><span id="contact_text"> 可能是什么肉夹馍</span><img src="msg.png" style="padding-left:45px"><span id="contact_text"> woluanxiede@uber.com</span>
+																</td>
+															</tr>
+													</table>
+													<!--联系信息部分结束-->
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
