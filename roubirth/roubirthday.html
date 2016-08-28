@@ -1,0 +1,332 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+		body {
+			background: #ffe;
+		}
+		#content {
+			position: relative;
+		}
+		#gallery {
+			position: absolute;
+			top:50px;
+			right:10px;
+			left: 250px;
+			width: 980px;
+			height: 700px;
+		}
+		.item {
+			padding: 3px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			border: 0;
+			*border: 1px solid #000;
+			border: 1px solid #000\0/;
+			text-align: center;
+			display: inline-block;
+			*display: inline;
+			*zoom: 1;
+			position: absolute;
+		}
+		.item a {
+			display: block;
+		}
+		.item .desc {
+			line-height: 20px;
+			vertical-align: middle;
+		}
+		a img {
+			border: none;
+		}
+		a, a:visited {
+			color: #00BBFF;
+			text-decoration: none;
+			outline: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		#code {
+			position: absolute;
+			top:150px;
+			left: -200px;
+         	float: left;
+			width: 440px;
+			height: 400px;
+			color: #333;
+			font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+			font-size: 14px;
+ 		}
+ 
+ 		#code .string{
+ 			color: #2a36ff;
+ 		}
+ 
+ 		#code .keyword{
+ 			color: #7f0055;
+ 			font-weight:bold;
+ 		}
+ 
+ 		#code .placeholder{
+ 			margin-left:15px;
+		}
+ 
+ 		#code .space{
+ 			margin-left:7px;
+ 		}
+ 
+ 		#code .comments{
+ 			color: #3f7f5f;
+ 		}
+		</style>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/kit.js"></script>
+		<!--[if IE]>
+		<script src="../../src/js/ieFix.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-30210234-1']);
+			_gaq.push(['_trackPageview']); (function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/anim.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/dom.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/math.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/selector.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/array.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/event.js"></script>
+		<!--suger-->
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/suger.js"></script>
+		<link rel="stylesheet" href="http://xueduany.github.io/KitJs/KitJs/css.css" />
+		<link rel="stylesheet" href="demo.css" />
+		<!--widget-->
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/widget/Mask/mask.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/widget/SemitransparentLoading/semitransparentloading.js"></script>
+		<script src="http://xueduany.github.io/KitJs/KitJs/src/js/widget/LightBox/lightbox.js"></script>
+		<script type="text/javascript" src="jquery.js"></script>
+		<link rel="stylesheet" href="http://xueduany.github.io/KitJs/KitJs/src/css/widget/LightBox/lightbox.css" />
+	</head>
+	<body>
+	<div id="content">
+		<div id="code">
+ 				<span class="comments">/**</span><br />
+ 				<span class="space"/><span class="comments">* Roxy!!我先来试试中文可不可以,</span><br />
+ 				<span class="space"/><span class="comments">* 居然可以！</span><br />
+ 				<span class="space"/><span class="comments">* so I write some code to wish you happy birthday.</span><br />
+ 				<span class="space"/><span class="comments">* 我写了一个下午啊啊啊！ 不过你知道的 这个对我来说小意思。</span><br />
+ 				<span class="space"/><span class="comments">* 嘿嘿他们霸占不了我这块地方</span><br />
+ 				<span class="space"/><span class="comments">* 所以我可以尽情发挥一下</span><br />
+ 				<span class="space"/><span class="comments">* 一年不见真是怪想你的！</span><br />
+ 				<span class="space"/><span class="comments">* anyway Happy Birthday！</span><br />
+ 				<span class="space"/><span class="comments">* @Author: Alfred Gao</span><br />
+ 				<span class="space"/><span class="comments">*/</span><br />
+ 				Friends we = <span class="keyword">new</span> Friends(<span class="string">"最爱你的我们"</span>);<br />
+ 				Girl u = <span class="keyword">new</span> Girl(<span class="string">"Roxy"</span>);<br />
+ 				<span class="comments">// Feb 2015, you met Qiu,Jo and Alfred </span><br />
+ 				u.met(we);<br />
+ 				we.length() ++;<br />
+ 				<span class="comments">// Luckily, we worked together.</span><br />
+ 				we.workedTogether();<br />
+ 				<span class="comments">// 然后六月之后你变成了肉老板，去了长沙</span><br />
+ 				u.staff(<span class="keyword">true</span>);<br />
+ 				<span class="comments">// 这一年我们都知道你超级棒！是我们的骄傲！ </span><br />
+ 				we.soProudOf(u);<br />
+ 				<span class="comments">// 我知道你看不懂代码哈哈哈哈，但是你只要知道，这写的是我们永远爱你！ </span><br />
+ 				we.loveU(forever);
+ 				<!-- <span class="comments">// And take care of u and our love.</span><br />
+ 				i.takeCareOf(u);<br />
+ 				<span class="comments">// You say that you won't be so easy to marry me.</span><br />
+ 				<span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
+ 				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+ 				<span class="keyword">while</span> (isHesitate) {<br />
+ 				<span class="placeholder"/>i.waitFor(u);<br />
+ 				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
+ 				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+ 				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+ 				}<br />
+ 				<span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
+ 				i.marry(u);<br />
+ 				i.liveHappilyWith(u);<br /> -->
+ 		</div>
+		<div id="gallery">
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG1.jpeg" target="_blank"><img src="photoRevise/WechatIMG1.jpeg"></a>
+				<div class="desc">
+					1
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG2.jpeg" target="_blank"><img src="photoRevise/WechatIMG2.jpeg"></a>
+				<div class="desc">
+					2
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG6.jpeg" target="_blank"><img src="photoRevise/WechatIMG6.jpeg"></a>
+				<div class="desc">
+					3
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG7.jpeg" target="_blank"><img src="photoRevise/WechatIMG7.jpeg"></a>
+				<div class="desc">
+					4
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG9.jpeg" target="_blank"><img src="photoRevise/WechatIMG9.jpeg"></a>
+				<div class="desc">
+					5
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG10.jpeg" target="_blank"><img src="photoRevise/WechatIMG10.jpeg"></a>
+				<div class="desc">
+					6
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG12.jpeg" target="_blank"><img src="photoRevise/WechatIMG12.jpeg"></a>
+				<div class="desc">
+					7
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG13.jpeg" target="_blank"><img src="photoRevise/WechatIMG13.jpeg"></a>
+				<div class="desc">
+					8
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG22.jpeg" target="_blank"><img src="photoRevise/WechatIMG22.jpeg"></a>
+				<div class="desc">
+					9
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG26.jpeg" target="_blank"><img src="photoRevise/WechatIMG26.jpeg"></a>
+				<div class="desc">
+					10
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="photoOriginal/WechatIMG23.jpeg" target="_blank"><img src="photoRevise/WechatIMG23.jpeg"></a>
+				<div class="desc">
+					11
+				</div>
+			</div>
+		<!-- 	<div class="item">
+				<a class="kitLightBox" href="img/original/whoooosh.jpg" target="_blank"><img src="img/thumbs/whoooosh.jpg"></a>
+				<div class="desc">
+					whoooosh
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/bamboo.jpg" target="_blank"><img src="img/thumbs/bamboo.jpg"></a>
+				<div class="desc">
+					bamboo
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/spice.jpg" target="_blank"><img src="img/thumbs/spice.jpg"></a>
+				<div class="desc">
+					spice
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/industrial-mech.jpg" target="_blank"><img src="img/thumbs/industrial-mech.jpg"></a>
+				<div class="desc">
+					industrial-mech
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/sports-car.jpg" target="_blank"><img src="img/thumbs/sports-car.jpg"></a>
+				<div class="desc">
+					sports-car
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/sports-car.jpg" target="_blank"><img src="img/thumbs/sports-car.jpg"></a>
+				<div class="desc">
+					sports-car
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/sports-car.jpg" target="_blank"><img src="img/thumbs/sports-car.jpg"></a>
+				<div class="desc">
+					sports-car
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/sports-car.jpg" target="_blank"><img src="img/thumbs/sports-car.jpg"></a>
+				<div class="desc">
+					sports-car
+				</div>
+			</div>
+			<div class="item">
+				<a class="kitLightBox" href="img/original/sports-car.jpg" target="_blank"><img src="img/thumbs/sports-car.jpg"></a>
+				<div class="desc">
+					sports-car
+				</div>-->
+		</div>
+	</div> 
+			<script>
+				(function($) {
+					$.fn.typewriter = function() {
+						this.each(function() {
+						var $ele = $(this), str = $ele.html(), progress = 0;
+						$ele.html('');
+						var timer = setInterval(function() {
+						var current = str.substr(progress, 1);
+						if (current == '<') {
+							progress = str.indexOf('>', progress) + 1;
+						} else {
+							progress++;
+						}
+						$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
+						if (progress >= str.length) {
+							clearInterval(timer);
+						}
+						}, 75);
+					});
+					return this;
+					};
+				})(jQuery);
+ 		if (!document.createElement('canvas').getContext) {
+ 			var msg = document.createElement("div");
+ 			msg.id = "errorMsg";
+ 			msg.innerHTML = "Your browser doesn't support HMTML5";
+ 			document.body.appendChild(msg);
+ 			$("code").css("display","none");
+ 			document.execCommand("stop");
+ 		}
+ 		else {
+ 			$("#code").typewriter();
+ 		}
+				$kit.$(function($) {
+					$('.item', $('#gallery')).each(function() {
+						$(this).css({
+							top : $kit.math.rand($('#gallery').innerHeight()) + 'px',
+							left : $kit.math.rand($('#gallery').innerWidth()) + 'px',
+							'-webkit-transform' : 'rotate(' + $kit.math.rand(-40, 40) + 'deg)'
+						});
+					}).pushStack('a.kitLightBox').each(function() {
+						new $kit.ui.LightBox({
+							el : this
+						}).init();
+					});
+				});
+
+			</script>
+	</body>
+</html>
