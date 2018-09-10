@@ -1,0 +1,1391 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>「沃特旅行」用心定制每一次属于您的旅行</title>
+	<meta name="keywords" content="定制旅游,高端旅游,私人定制旅游,定制旅行,鸿鹄逸游,旅游定制,私人订制旅游,无二之旅,美国旅游,澳大利亚旅游,日本旅游,欧洲旅游,迪拜旅游,新西兰旅游" />
+	<meta name="description" content="「省心」一价全包,真正管家服务;「专业」42个国家实地考察;「物有所值」私藏更多独特体验! <任意城市出发> 我们竭尽全力,让旅行简单而美好." />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">佰悦会</div>
+		<ul>
+			<li class="active"><a href="http://www.100.travel">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li  id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconFont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户案例</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav ">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://www.100.travel"><img alt="【佰悦会定制旅游】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="http://m.100.travel/Public/web/images/logo.png" height="40"></a></div>
+	</div>
+	<div id="menu_btn" ><span class="header_more">更多</span></div>
+<script src="js/jquery.lazyload.js"></script>
+
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/swiper.min.css">
+
+
+<style>
+body:before {
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f1f1f1 !important;
+    background-image: url(mrdf.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: 100% 100% !important;
+    -webkit-background-size: 100% 100% !important;
+    -moz-background-size: 100% 100% !important;
+    -o-background-size: 100% 100% !important;
+}
+
+.banner{
+    background: none !important;
+}
+
+.i_feedback{
+    padding-top: 15px;
+    margin-top: 0;
+}
+
+#footer{
+    background:#fff;
+}
+
+video{
+	object-fit:fill;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+	margin:0 3px;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:10px;
+}
+.swiper-pagination-bullet{
+	height:8px;
+	width:8px;
+	background:#aaa;
+	opacity:1;
+}
+.swiper-pagination-bullet-active{
+	background:#fff;
+}
+
+.go_down{
+	position:absolute;
+	width:34px;
+	height:34px;
+	left:50%;
+	bottom:23px;
+	margin-left:-17px;
+    cursor: pointer;
+}
+.go_down img{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.b-info{
+    text-shadow: 2px 2px 5px #333;
+}
+
+.lxmx-wrap{
+    overflow: hidden;
+    background: #fff;
+    padding-bottom: 20px;
+}
+
+.lxmx-wrap ul{
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.lxmx-wrap li{
+    list-style: none;
+    display: block;
+    overflow: hidden;
+}
+
+.lxmx-wrap li h5{
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.lxmx-wrap li .icon{
+    display: inline-block;
+}
+
+.lxmx-wrap li .icon img{
+    height: 40px;
+}
+
+.lxmx-wrap li p{
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.lxmx-wrap .left{
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+    text-align: right;
+}
+
+.lxmx-wrap .left .icon{
+    margin-right: 10px;
+}
+
+.lxmx-wrap .left .ct{
+    text-align: right;
+}
+
+.lxmx-wrap .right{
+    padding-left: 20px;
+    text-align: left;
+}
+
+.lxmx-wrap .right .icon{
+    margin-left: 10px;
+}
+
+.lxmx-wrap .right .ct{
+    text-align: left;
+}
+
+.index_nav{
+    padding: 30px 15px 15px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+}
+
+.index_nav .search{
+    position: relative;
+    top: 0;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.index_nav .search input{
+    width: 100%;
+    padding: 7px 15px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.index_nav .search span{
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #999;
+}
+
+.index_nav ul{
+    display: block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.index_nav li{
+    list-style: none;
+    float: left;
+    width: 33.33333333%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.index_nav li a{
+    display: inline-block;
+    color: #333;
+}
+
+.index_nav li img{
+    max-width: 100%;
+}
+
+.index_nav li p{
+    margin-top: -2px;
+}
+
+.i_product{
+    background: #f1f1f1;
+    margin-top: 0;
+}
+
+.i_product_wp{
+    padding: 0 30px;
+}
+
+.i_product_list{
+    overflow: visible;
+}
+
+.i_product_list .item{
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.i_product_list .item .icon{
+    position: absolute;
+    left: 15px;
+    top: -4px;
+    width: 40px;
+}
+
+.i_product_list .item .icon img{
+    width: 100%;
+}
+
+.i_product_list .item a{
+    display: block;
+    color: #333;
+}
+
+.i_product_list .item .flex{
+    padding: 0 10px;
+    margin: 0;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.i_product_list .item span{
+    display: block;
+    color: #999;
+    text-align: left;
+    overflow: hidden;
+    color: #cfa761;
+    font-weight: 500;
+}
+
+.i_product_list .item span i{
+    float: right;
+    font-style: normal;
+}
+
+.i_product_list .item .img{
+    width: 100%;
+	height: 0;
+    padding-bottom: 54%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.i_product_list .swiper-button-next, .i_product_list .swiper-button-prev{
+    width: 16px;
+    height: 26px;
+    background-size: 12px 20px;
+    background-color: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+
+.more_product {
+    display: block;
+    padding: 3px 0;
+    line-height: 22px;
+    color: #333;
+    border-radius: 20px;
+    border: 1px solid #333;
+    width: 120px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.i_product_list .item-more{
+    display: none;
+}
+
+.i_product_more .item-more{
+    display: block;
+}
+
+.i_product_more .more_product img {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.i_product .title{
+    margin-top: 0;
+}
+
+.hot_list{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.hot_list a{
+    display: inline-block;
+    padding: 5px 15px;
+    background: #f5f5f5;
+    color: #333;
+    margin: 5px;
+}
+
+.hot_list a.current{
+    background: #000;
+    color: #fff;
+}
+
+.hot_list p{
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+.i_hot{
+    background: #f1f1f1;
+}
+
+.i_hot a{
+    color: #333;
+}
+
+.i_hot_nav{
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.i_hot_nav a{
+    text-align: center;
+    padding: 10px 0;
+    color: #ccc;
+    position: relative;
+    font-size: 16px;
+}
+
+.i_hot_nav a.current{
+    color: #333;
+}
+
+.i_hot_nav a.current:after{
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background: #333;
+}
+
+.i_hot_content .content{
+    padding: 10px;
+    background: #fff;
+    overflow: hidden;
+    height: 200px;
+}
+
+.i_hot_content .content .item{
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+}
+
+.i_hot_content .content .item a{
+    width: 100%;
+    height: 60px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.i_hot_content .content .item a.current{
+    background: #d6ad65;
+    color: #fff;
+}
+
+.i_hot_content .content .item a span{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+#i_hot_theme .item a{
+    height: 40px;
+}
+
+#i_hot_season{
+    padding-top: 40px;
+}
+
+#i_hot_season .item a{
+    font-size: 18px;
+}
+
+#i_hot_season .item p{
+    margin-top: 10px;
+}
+
+#i_hot_mudidi{
+    padding-top: 20px;
+}
+
+.more_btn {
+    display: block;
+    padding: 3px 0;
+    line-height: 22px;
+    color: #333;
+    border-radius: 20px;
+    border: 1px solid #333;
+    width: 120px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.i_magazine{
+    padding-top: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.i_magazine ul{
+    display: block;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.i_magazine li{
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+    overflow: hidden;
+}
+
+.i_magazine li .ft{
+    width: 120px;
+}
+
+.i_magazine li .ft .img{
+    width: 100%;
+	height: 0;
+    padding-bottom: 75%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.i_magazine li .bd h5{
+    color: #1a1a1a;
+    font-size: 14px;
+    margin-top: 0;
+    line-height: 22px;
+    overflow: hidden;
+}
+
+.i_magazine li .bd p{
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 0;
+}
+
+.i_about2{
+    background: #f1f1f1;
+}
+
+.i_about2 .content{
+    background: #fff;
+    padding: 15px;
+}
+
+.i_about2 .content p{
+    margin-top: 10px;
+    line-height: 1.8;
+}
+
+.search-fixed{
+    position: absolute !important;
+    top: 70px;
+    left: 15px;
+    z-index: 9999;
+}
+
+.text_t{
+    text-align: left;
+}
+
+.text_b{
+    text-align: right;
+}
+
+.i_product .text_t{
+    padding-left: 30px;
+}
+
+.i_product .text_b{
+    padding-right: 30px;
+    margin-bottom: 10px;
+    line-height: 14px;
+}
+
+.i_about2 .content p{
+    margin: 0;
+}
+
+.i_about2 .content .text_t{
+    margin-top: 10px;
+}
+
+.i_about2 .content .text_b{
+    line-height: 14px;
+}
+
+.i_product>p{
+    color: #666;
+}
+
+.i_magazine li .bd{
+    position: relative;
+}
+
+.i_magazine li .bd p{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.top_nav .logo img{
+    display: none;
+}
+
+.service_list{
+    overflow: hidden;
+    padding: 0;
+}
+
+.service_list .item{
+    padding: 10px 6px;
+    float: left;
+    width: 33.33333333%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.service_list .item a{
+    display: block;
+    color: #666;
+    background: #fff;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.service_list .item .top{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.service_list .item p{
+    margin: 0;
+}
+
+.zxlist{
+    background: #f1f1f1;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.zxlist .more_btn{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.zxlist .block{
+    margin-top: 20px;
+}
+
+.zxlist .block .title{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.zxlist .block .item{
+    overflow: hidden;
+    background: #fff;
+}
+
+.zxlist .block .item .pic{
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.zxlist .block .item .content{
+    padding: 10px;
+}
+
+.zxlist .block .item .content .ct{
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.zxlist .block .item .flex{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.zxlist .block .item .ft{
+    margin: 0;
+    color: #cda55e;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;">
+			<div class="content">
+        <img src="index_logo.png" alt="定制旅游,私人定制旅游" />
+        <div class="b-info">
+            <p>这里也是要放文案的，上面的是图片不是文字，所以我不好更改</p>
+            <!-- <p>42国实地考察</p>
+            <p>团队来自全球</p>
+            <p>用最虔诚的心做好一件事</p> -->
+        </div>
+    </div>
+	<div class="go_down"><img src="go_down.png"></div>
+</div>
+
+<div style="background:#f1f1f1;overflow:hidden;padding:0 15px;" id="go_down_target">
+    <div class="title" style="margin-top:15px;">
+        <img class="img-responsive" src="plan-title-service.png">
+    </div>
+    <div class="service_list">
+        <div class="item">
+            <a href="/service#zhuanshu" class="shadow">
+                <div class="top">
+                    <img src="lxmx1.png" width="26">
+                </div>
+                <p>私家小团<br>定制行程</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/service#yuding" class="shadow">
+                <div class="top">
+                    <img src="lxmx5.png" width="26">
+                </div>
+                <p>一价全包<br>省时省心</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/service#chedao" class="shadow">
+                <div class="top">
+                    <img src="lxmx3.png" width="26">
+                </div>
+                <p>顶级资源<br>品质保障</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/service#zhunbei" class="shadow">
+                <div class="top">
+                    <img src="lxmx4.png" width="26">
+                </div>
+                <p>贴心服务<br>18项细节准备</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/service#huying" class="shadow">
+                <div class="top">
+                    <img src="lxmx2.png" width="26">
+                </div>
+                <p>双管家<br>全球随呼随应</p>
+            </a>
+        </div>
+        <div class="item">
+            <a href="/service#hetong" class="shadow">
+                <div class="top">
+                    <img src="lxmx6.png" width="26">
+                </div>
+                <p>费用透明<br>不高于市场价</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container index_nav">
+    <!-- <div class="search">
+        <form name="searchForm" id="searchForm" method="POST" action="/place" style="display:inline;">
+        <input type="text" name="keyword" id="keyword" placeholder="搜索目的地">
+        <span class="iconfont icon-search search_btn"></span>
+        </form>
+        <div class="hot_list">
+            <p>热门推荐:</p>
+            <a href="javascript:;">新西兰</a><a href="javascript:;">日本</a><a href="javascript:;">新加坡</a><a href="javascript:;">英国</a><a href="javascript:;">泰国</a><a href="javascript:;">瑞士</a><a href="javascript:;">迪拜</a><a href="javascript:;">台湾</a><a href="javascript:;">西班牙</a><a href="javascript:;">希腊</a><a href="javascript:;">意大利</a><a href="javascript:;">马尔代夫</a><a href="javascript:;">法国</a><a href="javascript:;">澳大利亚</a><a href="javascript:;">俄罗斯</a><a href="javascript:;">美国</a><a href="javascript:;">南非</a>        </div>
+    </div> -->
+    <ul>
+        <li>
+            <a href="javascript:;" onclick="$('#zixunModal').modal()">
+                <img class="lazy" data-original="index_nav1.png">
+                <p>定制</p>
+            </a>
+        </li>
+        <li>
+            <a href="/place">
+                <img class="lazy" data-original="index_nav2.png">
+                <p>甄选行程</p>
+            </a>
+        </li>
+        <li>
+            <a href="/trip">
+                <img class="lazy" data-original="index_nav3.png">
+                <p>深度体验</p>
+            </a>
+        </li>
+        <li>
+            <a href="/case">
+                <img class="lazy" data-original="index_nav4.png">
+                <p>客户案例</p>
+            </a>
+        </li>
+        <li>
+            <a href="/article">
+                <img class="lazy" data-original="index_nav5.png">
+                <p>旅行灵感</p>
+            </a>
+        </li>
+        <li>
+            <a href="/about">
+                <img class="lazy" data-original="index_nav6.png">
+                <p>关于我们</p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container i_product">
+	<div class="title" style="width:100%;padding:15px 0;"><img src="i_r_title2.png" alt="定制旅游,私人定制旅游" class="img-responsive"></div>
+    <p>每一个产品都是我们精心的作品，每一种设计都是我们细心的思考</p>
+    <div class="i_product_wp">
+        <div class="swiper-container i_product_list">
+            <div class="swiper-wrapper">
+                <div class='swiper-slide item'>
+                    <div class="icon"><img src="index_icon2.png"></div>                    <a href="/t159">
+                        <div class="img swiper-lazy" data-background="upload/travel/AF001/r_wap.jpg"></div>
+                    </a>
+                    <div class="flex">
+                        <div class="bd">博茨瓦纳 直升机360°巡游非洲</div>
+                        <div class="ft">44800元起</div>
+                    </div>
+                </div><div class='swiper-slide item'>
+                    <div class="icon"><img src="index_icon2.png"></div>                    <a href="/t158">
+                        <div class="img swiper-lazy" data-background="upload/travel/SP916/r_wap.jpg"></div>
+                    </a>
+                    <div class="flex">
+                        <div class="bd">墨西哥 亡灵节游行探秘玛雅文化</div>
+                        <div class="ft">32500元起</div>
+                    </div>
+                </div><div class='swiper-slide item'>
+                    <div class="icon"><img src="index_icon2.png"></div>                    <a href="/t124">
+                        <div class="img swiper-lazy" data-background="upload/travel/JP838/r_wap.jpg"></div>
+                    </a>
+                    <div class="flex">
+                        <div class="bd">日本 奢华虹夕诺雅山景房赏秋景</div>
+                        <div class="ft">15600元起</div>
+                    </div>
+                </div><div class='swiper-slide item'>
+                    <div class="icon"><img src="index_icon2.png"></div>                    <a href="/t126">
+                        <div class="img swiper-lazy" data-background="upload/travel/EU839/r_wap.jpg"></div>
+                    </a>
+                    <div class="flex">
+                        <div class="bd">西班牙 乘热气球俯瞰巴塞罗那</div>
+                        <div class="ft">26300元起</div>
+                    </div>
+                </div><div class='swiper-slide item'>
+                    <div class="icon"><img src="index_icon2.png"></div>                    <a href="/t55">
+                        <div class="img swiper-lazy" data-background="upload/travel/EU712/r_wap.jpg"></div>
+                    </a>
+                    <div class="flex">
+                        <div class="bd">俄罗斯 和战斗民族一起开坦克</div>
+                        <div class="ft">16000元起</div>
+                    </div>
+                </div>            </div>
+            <div class="swiper-button-next swiper-button-white product-next"></div>
+            <div class="swiper-button-prev swiper-button-white product-prev"></div>
+        </div>
+    </div>
+</div>
+
+<div class="zxlist">
+    <div class="block">
+        <div class="title">国庆出行 National Day Travel</div>
+        <div class="swiper-container swiper-zx1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide item" onclick="location.href='/t45'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071232226749.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">捷克奥地利 品味多瑙河畔金色夜景</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t124'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071232582318.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">日本箱根 住虹夕诺雅享富士山景致</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t119'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071234323969.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">摩洛哥 乘热气球俯瞰阿特拉斯山脉</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t18'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071233226555.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">美国 赏蓝岭公园路上的如画秋景</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t129'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071233470209.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">泰国 虔诚与浪漫的金色国度</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t35'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071231284302.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">澳洲新西兰 不同的南半球新大陆</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t151'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071234559755.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">越南 造访左手大海右手沙漠的美奈</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t37'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808071231356599.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">荷法瑞意 饕餮一场欧洲人文盛宴</div>
+                    </div>
+                </div>            </div>
+        </div>
+    </div><div class="block">
+        <div class="title">夏日周边度假 Summer Vacation</div>
+        <div class="swiper-container swiper-zx2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide item" onclick="location.href='/t150'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201807231849289945.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">泰国沽岛 别致树屋餐厅赏落日余晖</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t141'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201807231851106487.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">云南 松赞山居寻访香格里拉</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t153'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201807231852563540.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">菲律宾 入住安曼私人岛屿</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t149'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201807231901163044.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">老挝 安缦酒店感受惬意的琅勃拉邦</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t12'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808061541509825.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">斯里兰卡 走近世界锡兰红茶茶园 </div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t11'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808061532187282.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">日本北海道 漫步在富良野薰衣草田</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t136'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808061542101573.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">越南富国岛 与星辰大海为伴钓墨鱼</div>
+                    </div>
+                </div><div class="swiper-slide item" onclick="location.href='/t121'">
+                    <div class="pic" style="background-image:url(upload/pictures/2018.08.07/201808061539101902.jpeg)"></div>
+                    <div class="content">
+                        <div class="ct">斐济 迎接地球第一缕阳光 </div>
+                    </div>
+                </div>            </div>
+        </div>
+    </div>    <a href="/place" class="more_btn">查看更多 ></a>
+</div>
+<div class="i_hot">
+    <div class="title" style="width:100%;padding:15px 0;"><img alt="定制旅游,私人定制旅游" src="hot_title.png" class="img-responsive"></div>
+    <div class="i_hot_nav flex">
+        <a href="javascript:;" data-obj="#i_hot_mudidi" class="bd current">目的地</a>
+        <a href="javascript:;" data-obj="#i_hot_theme" class="bd">主题</a>
+        <a href="javascript:;" data-obj="#i_hot_season" class="bd">出行季节</a>
+    </div>
+    <div class="i_hot_content">
+        <div class="content" id="i_hot_mudidi">
+            <div class="item"><a href="/place-europe"><span>欧洲</span></a></div>
+            <div class="item"><a href="/place-america"><span>美洲</span></a></div>
+            <div class="item"><a href="/place-northasia"><span>日韩<br>港澳台</span></a></div>
+            <div class="item"><a href="/place-australia"><span>澳洲</span></a></div>
+            <div class="item"><a href="/place-newzealand"><span>新西兰</span></a></div>
+            <div class="item"><a href="/place-southasia"><span>海岛<br>东南亚</span></a></div>
+            <div class="item"><a href="/place-africa"><span>中东<br>非洲</span></a></div>
+            <div class="item"><a href="/place-china"><span>中国</span></a></div>
+        </div>
+        <div class="content hidden" id="i_hot_theme">
+            <div class="item"><a href="/place-theme-unique"><span>独家</span></a></div><div class="item"><a href="/place-theme-c"><span>文化</span></a></div><div class="item"><a href="/place-theme-child"><span>亲子</span></a></div><div class="item"><a href="/place-theme-shopping"><span>购物</span></a></div><div class="item"><a href="/place-theme-f"><span>节日</span></a></div><div class="item"><a href="/place-theme-drive"><span>自驾</span></a></div><div class="item"><a href="/place-theme-nature"><span>自然</span></a></div><div class="item"><a href="/place-theme-honeymoon"><span>蜜月</span></a></div><div class="item"><a href="/place-theme-island"><span>海岛</span></a></div><div class="item"><a href="/place-theme-sport"><span>体育</span></a></div>        </div>
+        <div class="content hidden" id="i_hot_season">
+            <div class="item"><a href="/place-spring"><span>春</span></a><p>Spring</p></div>
+            <div class="item"><a href="/place-summer"><span>夏</span></a><p>Summer</p></div>
+            <div class="item"><a href="/place-autumn"><span>秋</span></a><p>Autumn</p></div>
+            <div class="item"><a href="/place-winter"><span>冬</span></a><p>Winter</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="i_feedback">
+	<div class="title" style="width:100%;padding:0 0 15px;margin:0;"><a href="/case"><img alt="定制旅游,私人定制旅游" src="khal_title.png" class="img-responsive"></a></div>
+	<div class="khal-wp" style="padding:0 15px;">
+        <a href="/case" class="shadow" style="display:inline-block;"><img alt="定制旅游,私人定制旅游" data-original="khal_bg.jpg" class="img-responsive lazy"></a>
+    </div>
+</div>
+
+<div class="i_magazine">
+    <div class="title" style="width:100%;padding:15px 0;;"><a href="/article"><img alt="定制旅游,私人定制旅游" src="magazine_title.png" class="img-responsive"></a></div>
+    <ul>
+        <li class="flex" data-url="/a76">
+            <div class="bd">
+                <h5>墨西哥全境巡游，亡灵节游行+玛雅文明+坎昆海滩…解锁不一样的异域风情</h5>
+                <p>墨西哥人为什么喜欢亡灵节？因为爱</p>
+            </div>
+            <div class="ft">
+                <div class="img lazy" data-original="Uploads/magazine/2018-09-03/201809031740095836.jpg"></div>
+            </div>
+        </li><li class="flex" data-url="/a75">
+            <div class="bd">
+                <h5>当法国传奇酒庄庄主是什么体验？</h5>
+                <p>住进传奇葡萄酒宫殿，探索酒瓶幕后的点滴…</p>
+            </div>
+            <div class="ft">
+                <div class="img lazy" data-original="Uploads/magazine/2018-08-28/201808281726400476.jpg"></div>
+            </div>
+        </li><li class="flex" data-url="/a74">
+            <div class="bd">
+                <h5>甜如蜂蜜的10种浪漫体验，惊艳了你和Ta的相爱时光</h5>
+                <p>寻一种浪漫，深入打进ta的内心…</p>
+            </div>
+            <div class="ft">
+                <div class="img lazy" data-original="Uploads/magazine/2018-08-20/201808201128473785.jpg"></div>
+            </div>
+        </li>    </ul>
+    <a href="/article" class="more_btn">查看更多 ></a>
+</div>
+
+<div class="i_about2">
+    <div class="title" style="width:100%;padding:15px 0;;"><a href="/about"><img alt="定制旅游,私人定制旅游" src="about_title.png" class="img-responsive"></a></div>
+    <div class="content">
+        <!-- >  About section <--> 
+        <img alt="定制旅游,私人定制旅游" data-original="" class="img-responsive lazy">
+        <div class="text_t"><img src="douhao1.png" width="15"></div>
+        <p>此处有文案</p>
+        <div class="text_b"><img src="douhao2.png" width="15"></div>
+        <a href="/about" class="more_btn">了解更多 ></a>
+    </div>
+</div>
+
+<div class="container i_contact" style="margin:0;background-color:#c4d6d6;">
+	<div class="title" style="width:100%;padding:0 5px 10px;"><img alt="定制旅游,私人定制旅游" src="contact_title2.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Index/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<script src="http://m.100.travel//Public/home/swiper/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+    $(".lazy").lazyload({effect: "fadeIn"});
+    
+	var bannerH = $(window).height();
+	$('.banner').height(bannerH);
+	$('body').height(bannerH);
+    
+    $('.search').attr('style', 'width:'+ $('.search').width() +'px');
+    
+    $(document).scroll(function(){
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        if(scrollTop > 100)
+        {
+            $('.top_nav .logo img').show();
+        }
+        else
+        {
+            $('.top_nav .logo img').hide();
+        }
+    });
+    
+    $('.go_down').click(function(){
+        $("html,body").animate({scrollTop:$('#go_down_target').offset().top - 56 + "px"}, 500);
+    });
+    
+    $('.more_product').click(function(){
+        $('.i_product_list').toggleClass('i_product_more');
+    });
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_notice').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地及备注');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+	
+	$('.go_down').click(function(){
+		$('html,body').animate({  
+			scrollTop: $("#i_about").offset().top  
+		}, 500);
+	});
+    
+    $('#keyword').blur(function(){
+        setTimeout(function(){
+            $('.hot_list').hide();
+            $('.search').css({'top':0});
+            $('body').css({'overflow':'auto'});
+            $('.search').removeClass('search-fixed');
+        },100);
+    });
+    
+    $('#keyword').focus(function(){
+        $('body').css({'overflow':'hidden'});
+        setTimeout(function(){
+            var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop || 0;
+            $('.search').css({'top':scrollTop + 60});
+            $('.search').addClass('search-fixed');
+            $('.hot_list').slideDown(100);
+        },500);
+    });
+    
+    $('.hot_list a').click(function(){
+        event.stopImmediatePropagation();
+        $('#keyword').val($(this).text());
+        $('#searchForm').submit();
+    });
+    
+    $('.search_btn').click(function(){
+        var keyword = $.trim($('#keyword').val());
+		if(keyword)
+		{
+			$('#searchForm').submit();
+		}
+    });
+    
+    $('.i_hot_nav a').click(function(){
+        $('.i_hot_nav a').removeClass('current');
+        $(this).addClass('current');
+        
+        var obj = $(this).data('obj');
+        $('.i_hot_content .content').addClass('hidden');
+        $(obj).removeClass('hidden');
+    });
+    
+    $('.i_magazine li').click(function(){
+		var url = $(this).data('url');
+		if(url)
+		{
+			location.href = url;
+		}
+	});
+    
+    $('.i_hot_content .content .item a').on('touchstart',function(){
+        $(this).parent().parent().find('.item a').removeClass('current');
+        $(this).addClass('current');
+    });
+    
+    $('.hot_list a').click(function(){
+        $('.hot_list a').removeClass('current');
+        $(this).addClass('current');
+    });
+    
+    var myProduct = new Swiper ('.i_product_list', {
+		loop: true,
+		autoplay: 5000,
+		autoplayDisableOnInteraction: false,
+        nextButton: '.product-next',
+        prevButton: '.product-prev',
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true,
+	});
+    
+    var myZxSwiper1 = new Swiper ('.swiper-zx1', {
+        freeMode: true,
+        slidesPerView: 2.3,
+        spaceBetween: 15,
+        /*
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true,
+        lazyLoadingInPrevNextAmount: 1,
+        */
+	});var myZxSwiper2 = new Swiper ('.swiper-zx2', {
+        freeMode: true,
+        slidesPerView: 2.3,
+        spaceBetween: 15,
+        /*
+        lazyLoading: true,
+        lazyLoadingInPrevNext: true,
+        lazyLoadingInPrevNextAmount: 1,
+        */
+	});});
+</script>
+
+	<div id="footer" class="bgwhite">
+		<!-- <p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p> -->
+	</div>
+	<div id="footer_float">
+		<a href="tel:000000000000"><img src="footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+	
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?8d4c46ca2b65fbd4b75f01b1ab090b88";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98093956-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+</html>
