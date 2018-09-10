@@ -60,7 +60,8 @@
             $(that).text('正在提交...');
             
             $.ajax({
-                url:"/index.php/Index/ajax_consult.html",
+                //TODO
+                url:"",
                 type:"post",
                 dataType:'json',
                 async:true,
@@ -1329,9 +1330,10 @@ $(function(){
 		<a href="tel:000000000000"><img src="footer_float_btn.png" class="img-responsive"></a>
 	</div>	  
 	<script>
+        // TODO
 	$(function(){
         $('#footer_float').click(function(){
-            $.ajax({url:"/index.php/Index/phone_click.html"});
+            $.ajax({url:""});
         });
     
 		$('#menu_btn').click(function(){
