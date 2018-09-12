@@ -13,12 +13,9 @@
 	<link rel="stylesheet" href="css/iconFont.css">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="applicable-device" content="mobile">
+    
+    
 
-	  <!--[if lt IE 9]>
-	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-	  <![endif]-->
-	
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/home.js"></script>
@@ -27,7 +24,8 @@
 	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
             <div class="modal-content">
-                <div class="modal-header" style="border:0;">
+                <div class="qrcode" style="width:100%;padding:0 5px 25px;"><img alt="二维码" src="qrcode.jpg" style="margin: 0 auto;"></div>
+                <!-- <div class="modal-header" style="border:0;">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -42,11 +40,11 @@
                             <a href="javascript:;" class="dz_submit">请顾问联系我</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-    <script>
+    <!-- <script>
     var is_dz_submit = false;
     $(function(){
         $('.dz_submit').click(function(){
@@ -90,7 +88,7 @@
             });
         });
     });
-    </script>
+    </script> -->
     
 	<div id="menu_wp"></div>
 	<div id="menulist">
@@ -1143,15 +1141,16 @@ video{
 </div> -->
 
 <div class="container i_contact" style="margin:0;background-color:#c4d6d6;">
-	<div class="title" style="width:100%;padding:0 5px 10px;"><img alt="定制旅游,私人定制旅游" src="contact_title2.png" class="img-responsive"></div>
-	<div class="content">
+    <div class="title" style="width:100%;padding:0 5px 10px;"><img alt="定制旅游,私人定制旅游" src="contact_title2.png" class="img-responsive"></div>
+    <div class="qrcode" style="width:100%;padding:0 5px 25px;"><img alt="二维码" src="qrcode.jpg" style="margin: 0 auto;"></div>
+	<!-- <div class="content">
 		<form id="msgForm" method="POST" action="/Index/consult">
 		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
 		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
 		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
 		</form>
 		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
-	</div>
+	</div> -->
 </div>
 
 <script src="js/swiper.jquery.min.js"></script>
