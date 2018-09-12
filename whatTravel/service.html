@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>【关于我们】私人定制旅行机构_沃特旅游简介-定制旅游</title>
+    <meta name="keywords" content="关于沃特旅游,私人定制旅行机构,沃特旅游简介" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconFont.css">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="applicable-device" content="mobile">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/echarts.common.min.js"></script>
+</head>
+<body>
+<style>
+.c_block{
+    margin-bottom: 20px;
+}
+
+.c_block .title{
+    height: 30px;
+    line-height: 30px;
+    border-left: 10px solid #333;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.c_block .title span{
+    font-size: 16px;
+    margin-right: 10px;
+    float: left;
+}
+
+.c_block .title img{
+    float: left;
+    height: 22px;
+    margin-top: 4px;
+}
+
+.c_block .content{
+    margin-top: 10px;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.c_block .content ul{
+    overflow: hidden;
+}
+
+.c_block .content li{
+    list-style: none;
+    margin-bottom: 5px;
+    line-height: 20px;
+    padding-left: 15px;
+}
+
+.c_block .content ul img{
+    display: block;
+    width: 50%;
+    margin: 10px auto 0;
+}
+
+.desc_pic{
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.desc_pic span{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+.desc_pic span img{
+    width: 100%;
+}
+
+.desc_map{
+    margin-top: 16px;
+}
+
+.desc_map img{
+    width: 100%;
+}
+
+.current{
+    color: #d6ad65;
+    font-weight: 600;
+}
+
+.current .title{
+    border-color: #d6ad65;
+}
+</style>
+
+<!-- <div class="plan-item">
+    <div class="title" style="padding:0 10px;margin:20px 0;">
+        <img class="img-responsive" src="/Public/home/images/plan-title-service.png">
+    </div>
+</div> -->
+
+<div class="c_block" id="zhuanshu">
+    <div class="title"><span>私家小团 定制行程</span></div>
+    <div class="content">
+        <div class="desc">我们坚持独立成团的定制旅行，专业团队根据您旅行目的、旅行预算、同行人员策划有主题、有深度、独一无二的旅行方案；</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic1.png">
+        </div>
+    </div>
+</div>
+
+<div class="c_block" id="yuding">
+    <div class="title"><span>一价全包 省时省心</span></div>
+    <div class="content">
+        <div class="desc">化繁为简，旅行需要的签证、机票、酒店、用车、导游、WIFI、餐厅、演出、保险等全部一站定好；</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic2.png">
+        </div>
+    </div>
+</div>
+
+<div class="c_block" id="chedao">
+    <div class="title"><span>顶级资源 品质保障</span></div>
+    <div class="content">
+        <div class="desc">只与当地最佳地接合作，注重深度体验，绝无推购物环节；优中选优的专属境外中文车导，座位比例1:1.5；</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic3.png">
+        </div>
+    </div>
+</div>
+
+<div class="c_block" id="zhunbei">
+    <div class="title"><span>贴心服务 18项细节准备</span></div>
+    <div class="content">
+        <div class="desc">出团前开微信准备会议；安排国内接送服务；制定事无巨细的出行手册；旅行结束后制定旅行纪念相册；您需要做的准备就是出发；</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic4.png">
+        </div>
+    </div>
+</div>
+
+<div class="c_block" id="huying">
+    <div class="title"><span>双管家 7*24随呼随应</span></div>
+    <div class="content">
+        <div class="desc">配备专属旅行管家两位，手机7*24小时畅通，及时处理行程调整及突发事件，随呼随应，旅行更安心；</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic5.png">
+        </div>
+    </div>
+</div>
+
+<div class="c_block" id="hetong">
+    <div class="title"><span>价格透明 保证不高于市场价</span></div>
+    <div class="content">
+        <div class="desc">我们采取分项报价，可任意甄选您，最喜爱，性价比最好的旅行体验。所有价格保证不高于市场价。</div>
+        <div class="desc_map">
+            <img src="pictures/service-pic6.png">
+        </div>
+    </div>
+</div>
+
+<div>
+	<img src="pictures/bottom.jpg" width="100%">
+</div> 
+
+<script>
+$(function(){
+	var url = window.location.href;
+    
+    function getarg(url){
+        arg=url.split("#");
+        return arg[1];
+    }
+    
+    if(getarg(url)==='zhuanshu'){
+        $('#zhuanshu').addClass('current');
+    }
+    else if(getarg(url)==='yuding'){
+        $('#yuding').addClass('current');
+    }
+    else if(getarg(url)==='chedao'){
+        $('#chedao').addClass('current');
+    }
+    else if(getarg(url)==='zhunbei'){
+        $('#zhunbei').addClass('current');
+    }
+    else if(getarg(url)==='huying'){
+        $('#huying').addClass('current');
+    }
+    else if(getarg(url)==='hetong'){
+        $('#hetong').addClass('current');
+    }
+    
+    $('html,body').animate({scrollTop:$('#'+getarg(url)).offset().top}, 500);
+});
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8d4c46ca2b65fbd4b75f01b1ab090b88";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-98093956-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
