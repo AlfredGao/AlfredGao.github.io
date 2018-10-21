@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>日本 百年作坊品春鹿清酒_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " />
+	<meta name="description" content="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 :金秋的日本，乘坐复古嵯峨野观光小火车，游曳在岚山漫山红叶中；观赏日本国粹私人艺伎表演；品日本顶级料理，难当的味觉饕餮盛宴..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+    <div class="top_nav navstyle2">
+        <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+        <div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+    </div>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../upload/travel/AE750/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../upload/travel/AE750/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../upload/travel/AE750/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../upload/travel/AE750/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../upload/travel/AE750/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[日本 百年作坊品春鹿清酒]</h3>
+                <p>乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 </p>
+                <p>17800元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AE750/Id1.jpg" alt="乘坐复古嵯峨野观光小火车"></div>
+            <div class="content">
+                <div class="title"><span>1</span>乘坐复古嵯峨野观光小火车</div>
+                <p>嵯峨野游览小火车，它沿着保津川溪谷缓慢而优雅的行驶，小火车沿线春天是满山遍野的樱花，夏天则是鲜嫩欲滴的新绿，秋天则是一片红叶，冬天则是银白世界，搭乘小火车可以享受京都的四季风情。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AE750/Id2.jpg" alt="赏日本国粹私人艺伎表演"></div>
+            <div class="content">
+                <div class="title"><span>2</span>赏日本国粹私人艺伎表演</div>
+                <p>18世纪中叶，艺伎职业渐渐被女性完全取代，这一传统也一直沿袭至今，特别为您安排私人艺伎表演，让您静静领略这日本国粹。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AE750/Id3.jpg" alt="品道顿崛ZUBORAYA日式河豚料理"></div>
+            <div class="content">
+                <div class="title"><span>3</span>品道顿崛ZUBORAYA日式河豚料理</div>
+                <p>提到大阪的河豚料理店，首推づぼらや（zuboraya），店铺外挂有大只的河豚灯笼，非常注目。这间已经创业超过90年的店铺，有多款自家原创的河豚料理。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AE750/Id4.jpg" alt="百年作坊品春鹿清酒"></div>
+            <div class="content">
+                <div class="title"><span>4</span>百年作坊品春鹿清酒</div>
+                <p>在奈良百年作坊，捎一包鲣节进酒馆来壶本地酿的春鹿清酒。春鹿由来是春日大社之神使用过鹿名，明治17年创业，不愧是名气响当当的老牌酒藏。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前上海天津，上海等地都有直飞大阪的航班，飞行时间约3小时，非常方便。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>St. Regis Osaka（大阪瑞吉酒店） 5星<br />
+酒五星级的St. Regis酒店于2010年开业，坐落在大阪御堂筋（Osaka’s Midosuji）区的中心，位于本町地铁站（Honmachi Subway Station）7号出口之上，以其管家服务而著称，提供典雅宽敞的舒适客房，其典雅的欧式餐厅享有美丽的城市景色。客人可以欣赏华丽的城市景观，躺在300针床单上放松。<br />
+酒店评分：9.4分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/AE750/2.jpg" alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 ">
+	<img src="../upload/travel/AE750/3.jpg" alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 ">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-大阪</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281453180289.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281453189221.jpg);"></div></div>                </div>                <p>搭乘航班前往大阪机场，抵达后入住酒店休息。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:St. Regis Osaka 5星 </p>
+				</div>			</li><li>
+				<h5>D2 大阪</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281453497275.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281453499744.jpg);"></div></div>                </div>                <p>早餐后，前往【大阪城公园】，【天守阁】。之后前往【心斋桥】，这里的西侧部分称为美国村。傍晚前往【道顿崛】美食街，最有名的大螃蟹招牌更是道顿崛美食街的标志，至此晚餐品尝【日式河豚料理】或【螃蟹料理】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：河豚料理或螃蟹料理</div>				<div class="room">
+					<p>住宿:St. Regis Osaka 5星 </p>
+				</div>			</li><li>
+				<h5>D3 大阪-京都</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281454594682.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281454591555.jpg);"></div></div>                </div>                <p>早餐后，乘车前往京都（行车约1小时2分钟）。参观【伏见稻荷大社】，【二条城】，之后前【银阁寺】。游玩【祗园艺伎街】，【石版小路】与两边的【花街茶屋】，短短二百米的步行街显得特别醉人。在此您可欣赏日本的国粹【艺妓表演】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Kyoto Century Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D4 京都</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281456006872.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281456009696.jpg);"></div></div>                </div>                <p>早餐后游览岚山，这里以春天的樱花和秋天的枫叶而闻名，是著名的观光胜地。154米的【渡月桥】架设在保津川上，成为岚山的象征。在岚山可体验【人力三轮车（自费）】。之后前往【天龙寺】、【常寂光寺、【二尊院】参观，体验搭乘【嵯峨野观光小火车 】，欣赏两侧无限风光抵达【金阁寺】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：怀石料理</div>				<div class="room">
+					<p>住宿:Kyoto Century Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D5 京都-奈良-大阪</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281456466680.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281456461408.jpg);"></div></div>                </div>                <p>早餐后前往奈良（行车约1小时5分钟）。参观【东大寺】，【奈良公园】位于奈良市街的东边。在这里可以亲近公园里漫步的鹿，路过街角的【百年作坊】，捎一包鲣节进酒馆来壶本地酿的春鹿清酒。之后后前往大阪（行车约30分钟）。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐： 敬请自理</div>				<div class="room">
+					<p>住宿:St. Regis Osaka 5星 </p>
+				</div>			</li><li>
+				<h5>D6 大阪-神户-大阪</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281458267205.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281458260617.jpg);"></div></div>                </div>                <p>早餐后驱车前往神户，参观【北野异人馆】，【三宫元町地区】，【南京町】的餐厅与日用百货店櫛比鱗次热闹不已，是神户市里热情洋溢的中国城，午餐品尝【神户牛肉】。之后游览神户【美利坚公园】，【神户港塔】。乘车返回大阪（行车约49分钟）。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：牛肉料理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:St. Regis Osaka 5星 </p>
+				</div>			</li><li>
+				<h5>D7 大阪-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281459336451.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281459338080.jpg);"></div></div>                </div>                <p>早餐后前往【梅田阪急百货】，【大阪高岛屋】，【大丸心斋桥百货】等进行血拼购物。下午前往机场搭乘班机飞回上海，结束愉快的旅程，返回温馨的家！<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " class="img-responsive" src="../upload/travel/AE750/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>24500元/人起</span>
+		</li><li>
+			<h5> 二人出行 商务舱+精选五星酒店</h5>
+			<span>31200元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>17800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>26700元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返机票含税及燃油附加费；</p><p>签证费用；&nbsp;</p><p>全程行程所列境外星级酒店住宿含早餐&nbsp;</p><p>特色餐食含大阪河豚料理或螃蟹料理，神户牛肉料理，京都怀石料理；&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用；&nbsp;</p><p>旅行社责任险；</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；</p><p>出行期间提供24小时旅游秘书服务，让您安心出行；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="乘坐复古嵯峨野观光小火车+私人艺伎表演+品道顿崛日式河豚料理 " src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t99'">
+		<dt><img alt="千年古寺领悟传统茶道与禅修+白滨古老温泉泡汤+身着和服漫步京都赏樱名所+入住千年高野山惠光院" src="../upload/travel/JP708/0.jpg"></dt>
+		<dd>千年古寺领悟传统茶道与禅修+白滨古老温泉泡汤+身着和服漫步京都赏樱名所+入住千年高野山惠光院</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t130'">
+		<dt><img alt="环拥于南飞驒群山中享日本天皇钟爱的下吕温泉+感知童话般的世界遗产白川乡+大阪环球影城畅游" src="../upload/travel/JP842/0.jpg"></dt>
+		<dd>环拥于南飞驒群山中享日本天皇钟爱的下吕温泉+感知童话般的世界遗产白川乡+大阪环球影城畅游</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t13'">
+		<dt><img alt="在祗园赏私人艺伎表演+奈良亲自喂食萌鹿+品味京都传统茶道" src="../upload/travel/AE734/0.jpg"></dt>
+		<dd>在祗园赏私人艺伎表演+奈良亲自喂食萌鹿+品味京都传统茶道</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t124'">
+		<dt><img alt="米其林三星龙吟餐厅品纯正怀石料理+造访三大古都之一镰仓+游走于京桥古董街感受古老慢时光" src="../upload/travel/JP838/0.jpg"></dt>
+		<dd>米其林三星龙吟餐厅品纯正怀石料理+造访三大古都之一镰仓+游走于京桥古董街感受古老慢时光</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div> -->
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

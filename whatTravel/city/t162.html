@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>日本九州私汤之旅 尽享百年原生风吕_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" />
+	<meta name="description" content="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口:春日赏樱，夏日纳凉，秋日猎枫，冬日戏雪，在一时一物间，跟随四季流转，品味东瀛之美。" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+
+    <div class="top_nav navstyle2">
+        <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+        <div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+    </div>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../upload/travel/JP919/1_7.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[日本九州私汤之旅 尽享百年原生风吕]</h3>
+                <p>鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口</p>
+                <p>13600元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/JP919/Id1.jpg" alt="入住汤布院温泉旅馆 尽享百年私汤"></div>
+            <div class="content">
+                <div class="title"><span>1</span>入住汤布院温泉旅馆 尽享百年私汤</div>
+                <p>汤布院小镇是日本NO.1的著名温泉小镇，紧邻高约1584公尺的由布山岳，与别府市也只有一山之隔，温泉四处分布。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/JP919/Id2.jpg" alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺"></div>
+            <div class="content">
+                <div class="title"><span>2</span>鹿儿岛老牌烧酒坊观摩传统酿造技艺</div>
+                <p>薩摩酒造明治藏在鹿儿岛市一家老字牌烧酒作坊，知名度最高的的便是“さつま白波”（satsuma白波）。在这里您可以参观整个烧酒的生产过程。如果您是爱酒人士，那就一定要品尝一下啦。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/JP919/Id3.jpg" alt="指宿白水馆体验独特天然砂蒸温泉"></div>
+            <div class="content">
+                <div class="title"><span>3</span>指宿白水馆体验独特天然砂蒸温泉</div>
+                <p>指宿的天然砂蒸温泉是世界罕见的珍贵温泉，早在三百多年前，人们便发现了其神奇的疗养价值。你可以听着海岸边的潮汐声，随着身体慢慢被沙子覆盖，感受着温泉的热量。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/JP919/Id4.jpg" alt="阿苏火山见证世界第一火山口"></div>
+            <div class="content">
+                <div class="title"><span>4</span>阿苏火山见证世界第一火山口</div>
+                <p>这是九州熊本县著名的活火山，直径超过25公里，有着当今世界上最大的破火山口。火山口的中央耸立着阿苏五岳，其中中岳至今仍有频繁的火山活动，景致十分壮观。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前国内上海直飞福冈是最方便的，班次多，距离短，飞行时间约2小时；北京也有航班直飞福冈，但中途需经停青岛；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Yufuin Souan Kosumosu（汤布院草庵秋樱日式旅馆）5*<br />
+Yufuin Souan Kosumosu日式旅馆位于由布（Yufu）的汤布院温泉（Yufuin Onsen），提供共用休息室。日式旅馆距离汤布院摩托车博物馆（Yufuin Motorcycle Museum）有80米，距离Kinrinko Lake湖有3分钟的步行路程，距离九州汽车历史馆（Yufuin Retro Motor Museum）有1分钟的步行路程。该地区的景点包括200米外的Yufuin Showakan和位于300米外的金鳞湖美术馆（Yufuin Chagall Museum）。<br />
+酒店网评；9.5<br />
+</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/JP919/2.jpg" alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口">
+	<img src="../upload/travel/JP919/3.jpg" alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 上海-福冈-汤布院</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271444460731.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271444520744.jpeg);"></div></div>                </div>                <p>福冈距离汤布院约1.5小时车程<br />
+搭乘航班抵达【福冈】之后驱车前往【汤布院】入住温泉旅店，享受泡汤之乐。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地温泉日式旅馆 </p>
+				</div>			</li><li>
+				<h5>D2 汤布院</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271445324478.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271445534030.jpeg);"></div></div>                </div>                <p>睡到自然醒驱车前往【别府】，来到【别府地狱温泉】，其中海地狱、鬼石坊主地狱、山地狱、灶地狱、鬼山地狱等，您可以品尝特色的温泉蛋。之后漫步【汤布院小镇】，这里拥有充满文艺气息的小街沿路通往【金鳞湖】，这里宛如一幅水彩油画般朦胧诗意，让人忍不住想在这里品尝一杯咖啡，享受悠闲时光。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地日式温泉旅馆 </p>
+				</div>			</li><li>
+				<h5>D3 汤布院-宫崎-鹿儿岛</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271446172344.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271446506892.jpeg);"></div></div>                </div>                <p>汤布院距离宫崎约3小时车程<br />
+宫崎距离鹿儿岛约2小时车程<br />
+早餐后驱车前往鹿儿岛，途径【宫崎】。在【宫崎 】的天然小岛【青岛】可以看到著名的【鬼之洗衣板】。之后来到鹿儿岛最南端【火神公园】欣赏太平洋的浩瀚。之后来到【枕崎鲜鱼市场】这里因盛产鲣鱼而出名，您可以在当地市场品尝着独特的鲜美。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:指宿白水馆 </p>
+				</div>			</li><li>
+				<h5>D4 鹿儿岛-熊本</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271447158935.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271447387752.jpeg);"></div></div>                </div>                <p>早餐后来到【薩摩酒造 明治蔵】，在这里您可以参观整个烧酒的生产过程。之后驱车前往熊本，前往【阿苏火山】以及附近的【大观峰】和【菊池溪谷】，阿苏火山是九州熊本县著名的活火山，直径超过25公里，有着当今世界上最大的破火山口。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 熊本-云仙-长崎</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271448149406.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271448350090.jpeg);"></div></div>                </div>                <p>熊本距离云仙约2小时车程<br />
+云仙距离长崎约1小时车程<br />
+早餐后驱车前往【云仙】抵达后游览【云仙地狱】之后来到【仁田岭展望台】从仁田山巅望所和妙见岳望所等处可观赏到新山雄壮的山姿。下午驱车前往长崎前往可以俯瞰整个长崎港美景的【哥拉巴园】之后前往【长崎中华街】。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 长崎-福冈</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271449022108.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271449208821.jpeg);"></div></div>                </div>                <p>长崎距离福冈约2小时车程<br />
+早餐之后前往【祐德稻荷神社】神社中侍奉的是民间衣食住的守护神，每年300万名的信众前来参拜。之后来到【御船山乐园】御船山乐园一年四季都能够欣赏到不同的美景，因此前来造访的游客络绎不绝。稍晚一些驱车前往福冈。来到【福冈夜市】寻找街头美味。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 福冈-上海</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271449293095.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-27/201809271449333201.jpeg);"></div></div>                </div>                <p>早餐之后收拾行李，搭乘航班返回国内。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" class="img-responsive" src="../upload/travel/JP919/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>22000元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>31800元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>13600元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>25800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返机票含税及燃油附加费；</p><p>签证费用；&nbsp;</p><p>全程行程所列境外星级酒店住宿含早餐&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用；&nbsp;</p><p>旅行社责任险；</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；</p><p>出行期间提供24小时旅游秘书服务，让您安心出行；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="鹿儿岛老牌烧酒坊观摩传统酿造技艺+指宿白水馆体验独特天然砂蒸温泉+阿苏火山见证世界第一火山口" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>		  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

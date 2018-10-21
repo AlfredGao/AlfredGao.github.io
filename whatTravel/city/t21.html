@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>美国夏威夷 见证熔浆流入大海的壮观画面_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" />
+	<meta name="description" content="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇:花香四溢的新鲜空气让您活力四射，温暖平静的海水使您恢复精力，夏威夷令人叹为观止的自然美景，具有特色的风土人情让您和世界各..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+    </head>
+    <body>
+        <div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+                <div class="modal-content">
+                    <div class="modal-header" style="border:0;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="i_contact">
+                            <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                            <div class="content">
+                                <form id="topDzForm" method="POST" action="/Index/consult">
+                                <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                                <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                                <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                                </form>
+                                <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+    <div class="top_nav navstyle2">
+        <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+        <div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+    </div>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" src="../upload/travel/US744/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" src="../upload/travel/US744/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" src="../upload/travel/US744/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[美国夏威夷 见证熔浆流入大海的壮观画面]</h3>
+                <p>探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇</p>
+                <p>34900元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US744/Id1.jpg" alt="奇特黑沙滩感叹上帝造物的神奇"></div>
+            <div class="content">
+                <div class="title"><span>1</span>奇特黑沙滩感叹上帝造物的神奇</div>
+                <p>光脚踩在黑沙滩上，完全没有扎脚的感觉，细腻，柔软的触觉能让人很快放松下来，开始欣赏和享受这片奇特的沙滩，心里惊叹造物的神奇。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US744/Id2.jpg" alt="直面活火山 见证熔浆流入大海的壮观画面"></div>
+            <div class="content">
+                <div class="title"><span>2</span>直面活火山 见证熔浆流入大海的壮观画面</div>
+                <p>沿着火山口公路，你可以越来越接近中心点，沿途的火山溶岩地形、坚硬黝黑的岩块，以及片草不生的荒芜景象，加上一望无际的空旷视野，让人赞叹之余，心情似乎也随之沉淀。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US744/Id3.jpg" alt="邂逅看七色彩虹瀑布"></div>
+            <div class="content">
+                <div class="title"><span>3</span>邂逅看七色彩虹瀑布</div>
+                <p>它是夏威夷群岛上最美丽的瀑布之一。除了拥有美丽的彩虹之外，该瀑布还以瀑布后面的一个熔岩洞闻名于世。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US744/Id4.jpg" alt="探访火山豆农场"></div>
+            <div class="content">
+                <div class="title"><span>4</span>探访火山豆农场</div>
+                <p>了解火山豆的成长过程黑人加工制造过程，您可在此购买世界上最多口味的火山豆、雪糕和冰淇淋。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前上海和北京有直飞夏威夷火奴鲁鲁国际机场，飞行时间约9小时。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>The Royal Hawaiian, A Luxury Collection Resort, Waikiki皇家夏威夷豪华威基基精选度假酒店 5星<br />
+The Royal Hawaiian, a Luxury Collection Resort度假酒店位于檀香山（Honolulu）威基基（Waikiki）的中心，提供健身中心、全方位服务的Spa、度假酒店内的面包店、海滩的专属区、海滩活动、2个室外游泳池选项和文化活动。<br />
+酒店评分：8.4分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/US744/2.jpg" alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇">
+	<img src="../upload/travel/US744/3.jpg" alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-檀香山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291014362853.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291014367208.jpg);"></div></div>                </div>                <p>乘坐班机经9个多小时的飞行，抵达夏威夷大岛Kona国际机场。导游接机后入住酒店。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 珍珠港-檀香山市</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291020504495.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291020508692.jpg);"></div></div>                </div>                <p>早餐后前往【珍珠港】参观，可在游客中心照相或观看历史纪录短片，还可遥望亚利桑那纪念馆。之后前往市区游览【夏威夷州政府】【太平洋国立公墓】【唐人街】【伊奥拉尼皇宫】和夏威夷群岛的国王【卡美哈美哈雕像】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 环岛游</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291024070656.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291024077296.jpg);"></div></div>                </div>                <p>早餐后游览【威基基海滩】【钻石头火山口】【卡哈拉高级住宅】【天然海泉喷口】【土著人保护区】，世界著名的【白沙滩滑浪中心】，神秘的大风口【古战埸】。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 火山岛游</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291024547837.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291024544734.jpg);"></div></div>                </div>                <p>早餐后，飞往【火山大岛】，游览火山口下的【黑沙滩】，之后前往【火山国家公园】，随处可见熔岩缝隙中所冒出的热气。然后参观火山博物馆。下午参观【夏威夷火山豆农场】【兰花园】和【彩虹瀑布】。晚上入住希洛市。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 茂宜岛-檀香山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291026278937.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291026271854.jpg);"></div></div>                </div>                <p>早餐后，【乘飞机】前往素有夏威夷奇美岛屿的【茂宜岛】，游览著名的【古战场伊奥山谷】，【热带植物园】，【滨海公路】，【卡帕鲁亚湾别墅区】。最后前往仍保有古典气息的【拉海那镇海港】。之后搭机飞回檀香山。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:VIVE Hotel Waikiki 3星 </p>
+				</div>			</li><li>
+				<h5>D6 檀香山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291027072440.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291027070282.jpg);"></div></div>                </div>                <p>早餐后参观素总统的【夏威夷州立大学】、【普纳荷学校】总统的出生医院【卡皮欧兰妮医疗中心】以及奥巴马最后在夏威夷居住的公寓楼，【中央联合大教堂】稍作停留后，前往【太平洋国家军人公墓】。观孙中山先生举起中国民主革命大旗的【兴中会旧址】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 檀香山-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291027339641.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-29/201712291027339795.png);"></div></div>                </div>                <p>早餐后前往机场，搭乘飞机返回中国。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D8 中国</h5>
+                                <p>结束愉快的旅程回到温馨的家！<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" class="img-responsive" src="../upload/travel/US744/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>46400元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>97600元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>34900元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>86100元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返机票含税及燃油附加费；</p><p>签证费用；</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；</p><p>行程所列景点首道门票；</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用；&nbsp;</p><p>旅行社责任险；</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；</p><p>出行期间提供24小时旅游秘书服务，让您安心出行；<br/></p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="探访火山豆农场+邂逅看七色彩虹瀑布+奇特黑沙滩感叹上帝造物的神奇" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

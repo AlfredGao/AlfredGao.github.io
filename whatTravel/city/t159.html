@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>博茨瓦纳 津巴布韦 直升机+独木舟+越野车360度巡游狂野非洲_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" />
+	<meta name="description" content="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园:没什么能比得上非洲的日落，我觉得博茨瓦纳的日落是我见过最美的，因为这片土地平坦辽阔，太阳不会消失在山丘或大山的背后。我就..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+
+<div class="top_nav navstyle2">
+    <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+    <div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_7.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/1_8.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[博茨瓦纳 津巴布韦 直升机+独木舟+越野车360度巡游狂野非洲]</h3>
+                <p>直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园</p>
+                <p>44800元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li >
+			<p>Spring</p>
+			<span>春</span>
+		</li><li >
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF917/Id1.jpg" alt="越野车与游船水陆Safari游猎乔贝国家公园"></div>
+            <div class="content">
+                <div class="title"><span>1</span>越野车与游船水陆Safari游猎乔贝国家公园</div>
+                <p>特别展开水陆两度safari，搭乘越野车及抓专用游船，搜寻各种野生动物，沿河追寻羚羊、河马、野牛、长颈鹿以及象群踪迹，尽显非洲狩猎寻奇风采。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF917/Id2.jpg" alt="直升机俯瞰维多利亚大瀑布"></div>
+            <div class="content">
+                <div class="title"><span>2</span>直升机俯瞰维多利亚大瀑布</div>
+                <p>乘坐直升飞机从不同角度观赏瀑布气势磅礡的激流以及铺天盖地的水雾，如同在看不断在变化的景色，雷声般的声音以及瞒天水花溅在身上。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF917/Id3.jpg" alt="和当地向导乘着独木舟深入奥卡万戈三角洲"></div>
+            <div class="content">
+                <div class="title"><span>3</span>和当地向导乘着独木舟深入奥卡万戈三角洲</div>
+                <p>乘着独木舟，穿过覆盖在泻湖上的茂盛睡莲和纸莎草密集的水域，来到偏僻人迹罕至的区域，伴随着清晨凉爽的空气，和当地导游泛舟在铺满睡莲的河道中。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF917/Id4.jpg" alt="入住贝尔蒙旗舰游猎酒店老鹰岛"></div>
+            <div class="content">
+                <div class="title"><span>4</span>入住贝尔蒙旗舰游猎酒店老鹰岛</div>
+                <p>鹰岛酒店座落于博茨瓦纳著名的奥卡万戈三角洲河系的一个私人岛屿上，酒店为博茨瓦纳湿地带来永恒的奢华。每间都带流动泳池，布置中处处透着当地自然风光秀色，色调跟格调的完美融合。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>去程从广州，北京，香港等地均需在亚的斯亚贝巴转机飞往瀑布城，飞行时间约15小时，回程由马翁经转机返回国内，飞行时间约15小时；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Belmond Eagle Island Lodge 博茨瓦纳贝尔蒙老鹰岛酒店 5*<br />
+ Belmond Eagle Island Lodge正位于最佳观赏动物位置，面积达16,000平方公里，经过翻新和重建，2015年11月再度开幕，新建多个帐逢住宿、餐用地方和酒吧，以全天然和环保设计，以最低资源减少影响湿地，保持绿洲原貎，</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/AF917/2.jpg" alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园">
+	<img src="../upload/travel/AF917/3.jpg" alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 香港-瀑布城</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291642045592.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291642088436.jpeg);"></div></div>                </div>                <p>搭乘航班经【亚的斯亚贝巴 】转机飞往津巴布韦【瀑布城】。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D2 瀑布城</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291644288628.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291645372781.jpeg);"></div></div>                </div>                <p>于中午抵达【瀑布城】后导游接机，享用午餐，之后送往入住酒店；后前往参观1500多年的【猴子面包树】等。之后【乘船游览赞比西河】晚餐【特别安排Boma烧烤晚餐】，您将充分感受到津巴布韦人的热情与好客。</p>
+                <div class="dinner">早餐:敬请自理 午餐：中式午餐 晚餐：Boma晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 瀑布城   </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291658096245.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291733564453.jpeg);"></div></div>                </div>                <p>早餐后游览维多利亚大瀑布津巴布韦段（约2.5小时）。下午【乘坐直升机观赏世界三大瀑布之一维多利亚瀑布】：乘坐直升飞机从不同角度观赏瀑布气势磅礡的激流以及铺天盖地的水雾，视觉以及触觉的强烈震撼，让人可以多方面地感受到大自然的力量。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：当地餐 晚餐：中式晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 瀑布城-乔贝国家公园     </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291700186106.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291735075389.jpeg);"></div></div>                </div>                <p>瀑布城距离乔贝国家公园约2小时车程<br />
+酒店早餐后， 跨越国境前往【乔贝国家公园Chobe National Park】世界上动物最密集的国家公园之一，以壮观的象群著名，下午我们特别展开【水陆两度safari】，各安排一次【搭乘越野车及搭乘专用游船】，尽显惊艳的非洲狩猎寻奇风采。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：营地午餐 晚餐：营地晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 乔贝国家公园</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291736015043.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291736193709.jpeg);"></div></div>                </div>                <p>全天搜寻各种野生动物及丛林中飞禽，沿河追寻羚羊、野牛、长颈鹿以及象群踪迹。</p>
+                <div class="dinner">早餐:营地早餐 午餐：营地午餐 晚餐：营地晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 乔贝国家公园-奥卡万戈三角洲   </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291737139957.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291737260695.jpeg);"></div></div>                </div>                <p>早餐后 搭乘短程小飞机前往【奥卡万戈三角洲】，奥卡万戈三角洲四周被卡拉哈里沙漠环抱，是非洲面积最大、风景最美的沙漠绿洲，下午体验非洲之旅的第一场【午后徒步游猎】穿过三角洲进行徒步旅行，让自己完整地融入于大自然中。</p>
+                <div class="dinner">早餐:营地早餐 午餐：营地午餐 晚餐：营地晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 奥卡万戈三角洲 </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291713336079.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291738226074.jpeg);"></div></div>                </div>                <p>早餐后乘【传统独木舟】穿过覆盖在泻湖上的茂盛睡莲和纸莎草密集的水域，来到偏僻人迹罕至的区域，和当地导游泛舟在铺满睡莲的河道中。下午【摩托游艇游猎】可以带你去观察到更多的野外区域，你可以看到更多的壮观景色、野生动物和鸟类。</p>
+                <div class="dinner">早餐:营地早餐 午餐：营地午餐 晚餐：营地晚餐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 奥卡万戈三角洲-马翁-约翰内斯堡-香港</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291716495627.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291716541437.jpeg);"></div></div>                </div>                <p>早餐后，搭乘轻型飞机飞往马翁国际机场，经约翰内斯堡转机返回国内，结束愉快的旅行；</p>
+                <div class="dinner">早餐:营地早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 香港</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291716259630.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-29/201808291716309105.jpeg);"></div></div>                </div>                <p>航班抵达香港，结束愉快的旅行；</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" class="img-responsive" src="../upload/travel/AF917/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>57000元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>82000元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>44800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>69800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>往返机票含税及燃油附加费；</p><p>境外段经济舱机票；</p><p>行程所含餐食；</p><p>签证费用；&nbsp;&nbsp;<br style="box-sizing: border-box;"/></p><p>全程4-5星级酒店住宿含早餐；&nbsp;<br style="box-sizing: border-box;"/></p><p>境外全程地面私人专车服务（含油费，停车费，过路费，长途空返费，每天服务10小时）；<br style="box-sizing: border-box;"/></p><p>境外全程专业华语导游服务(含导游及司机住宿，餐补，小费，部分门票）；&nbsp;<br style="box-sizing: border-box;"/></p><p>行程所列景点首道门票；&nbsp;<br style="box-sizing: border-box;"/></p><p>旅行社责任险以及安联境外个人旅游保险 ；&nbsp;<br style="box-sizing: border-box;"/></p><p>线路设计费；</p><p>24小时旅游秘书服务费；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

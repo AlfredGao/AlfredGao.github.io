@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>俄罗斯 和战斗民族一起开坦克_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" />
+	<meta name="description" content="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫:它是彼得大帝一手建造的城市，他曾是饱受战火的列宁格勒，她更是北方的威尼斯。作为俄罗斯第二大城市的圣彼得堡，历经风霜却依旧..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" src="../upload/travel/EU712/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" src="../upload/travel/EU712/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" src="../upload/travel/EU712/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[俄罗斯 和战斗民族一起开坦克]</h3>
+                <p>走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫</p>
+                <p>16000元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li >
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li >
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU712/Id1.jpg" alt="赏俄罗斯国粹-芭蕾舞"></div>
+            <div class="content">
+                <div class="title"><span>1</span>赏俄罗斯国粹-芭蕾舞</div>
+                <p>圣彼得堡是欧洲著名的艺术之都，而在圣彼得堡，最有名的艺术表演非芭蕾莫属。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU712/Id2.jpg" alt="莫斯科图兰朵餐厅享精致晚餐"></div>
+            <div class="content">
+                <div class="title"><span>2</span>莫斯科图兰朵餐厅享精致晚餐</div>
+                <p>餐厅仅内部装修就用了整整6年时间。内设全部是精美的纯手工制品，金箔装饰，珍宝古玩，奢华的水晶吊灯和细腻的手工挂毯，每一样装饰都堪称艺术精品。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU712/Id3.jpg" alt="探访金环古城-谢尔吉耶夫镇"></div>
+            <div class="content">
+                <div class="title"><span>3</span>探访金环古城-谢尔吉耶夫镇</div>
+                <p>这是俄罗斯莫斯科州东北部的一个城市，位于莫斯科东北偏北71公里，金环古城之一。作为一座宗教城市和民间工艺品生产基地而为世人所知，是俄罗斯最负盛名的旅游胜地。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU712/Id4.jpg" alt="造访叶卡捷琳娜宫神奇琥珀宫"></div>
+            <div class="content">
+                <div class="title"><span>4</span>造访叶卡捷琳娜宫神奇琥珀宫</div>
+                <p>宫殿里最为神奇的是琥珀厅（不可拍照），内部通体由琥珀和黄金装饰而成，极端奢华。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>去程：从北京、上海等地出发，均需经过莫斯科中转后到达圣彼得堡；返程：从莫斯科出发直飞北京、上海。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>俄罗斯国家饭店（National Hotel）5星<br />
+酒店位于中心地带，距离红场仅有200米，可欣赏到莫斯科克里姆林宫的美景，提供一个带室内游泳池的spa和包括多种美食的丰盛自助早餐。National Hotel酒店典雅的客房均配有古董家具、高高的天花板和古典风格的装饰，设有平面电视、浴袍和迷你吧。<br />
+酒店评分：8.8分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/EU712/2.jpg" alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫">
+	<img src="../upload/travel/EU712/3.jpg" alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国 - 圣彼得堡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040955556073.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040955550640.jpg);"></div></div>                </div>                <p>搭乘海航前往圣彼得堡市，导游接机送至酒店休息调整。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:Corinthia Hotel St Petersburg 5星 </p>
+				</div>			</li><li>
+				<h5>D2 圣彼得堡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040957202407.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040957206703.jpg);"></div></div>                </div>                <p>早餐后游览，【夏宫花园（约1小时30分钟）】，坐落在芬兰湾南岸的森林中。【夏宫】是圣彼得堡的早期建筑。午餐后参观【斯莫尔尼宫（外观）】，乘船游览【涅瓦河】，欣赏芬兰湾美景。<br />
+下午特别安排【亚历山大剧院】观赏了圣彼得堡芭蕾舞剧院的经典芭蕾舞剧《天鹅湖》<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:Corinthia Hotel St Petersburg 5星 </p>
+				</div>			</li><li>
+				<h5>D3 圣彼得堡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040959113423.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801040959118508.jpg);"></div></div>                </div>                <p>早餐后游览【艾尔米塔什冬宫博物馆即冬宫（约2小时）】。【亚历山大纪念柱】及【冬宫广场】，午餐后参观【彼得堡罗要塞】、【阿芙乐尔巡洋舰（外观）】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:Corinthia Hotel St Petersburg 5星 </p>
+				</div>			</li><li>
+				<h5>D4 圣彼得堡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041000307504.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-07-12/201807121126244322.jpeg);"></div></div>                </div>                <p>早餐后参观【叶卡捷琳娜花园和宫殿（约2小时）】，下午前往战斗名族军营参加酷炫的军营活动，与战斗民族一起开坦克，是难忘的体验；</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:Corinthia Hotel St Petersburg 5星 </p>
+				</div>			</li><li>
+				<h5>D5 圣彼得堡 - 莫斯科</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041002168271.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041002160973.jpg);"></div></div>                </div>                <p>早餐后，前往机场搭乘班机飞往莫斯科。导游机场接机，游览革命胜地【红场】，这里是莫斯科的心脏。【圣瓦西里升天大教堂（外观）】。之后游览【克里姆林宫（约1小时）】；【无名烈士墓】、【亚历山大花园】。下午特别为您预约莫斯科著名【图兰朵餐厅】享用精致晚餐。（需提前预约，餐食自费）<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：图兰朵餐厅</div>				<div class="room">
+					<p>住宿:National Hotel 5星 </p>
+				</div>			</li><li>
+				<h5>D6 莫斯科 - 金环</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041003015306.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041003015520.jpg);"></div></div>                </div>                <p>早餐后前往莫斯科郊外小镇【谢尔盖耶夫镇】，游览举世闻名的【圣三一教堂（约1小时】）。午餐后前往【弗拉基米尔】，游览著名的【金门】，【乌斯别斯基教堂】，【德米特里教堂】，古老的【水塔】，【圣母修道院】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:Vladimirsky Dvorik Mini-Hotel 3星 </p>
+				</div>			</li><li>
+				<h5>D7 金环-莫斯科-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041004106347.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041004100905.jpg);"></div></div>                </div>                <p>早餐后乘车前往【苏斯达里】，【小克林姆林宫（约0.5小时）】，午餐后乘车回莫斯科市里。晚上乘机返回中国。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D8 中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041004237412.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041004235750.png);"></div></div>                </div>                <p>抵达中国，结束愉快的旅程，返回温馨的家！<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" class="img-responsive" src="../upload/travel/EU712/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>34100元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>20500元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>16000元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>24600元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p style="white-space: normal;">国际段往返票含税及燃油附加费；</p><p style="white-space: normal;">签证费；&nbsp;<br/></p><p style="white-space: normal;">全程行程所列境外星级酒店住宿含早餐；&nbsp;<br/></p><p style="white-space: normal;">境外全程地面交通私人专车服务；&nbsp;<br/></p><p style="white-space: normal;">境外全程专业华语导游服务；&nbsp;<br/></p><p style="white-space: normal;">行程所列景点首道门票；<br/></p><p style="white-space: normal;">旅行社责任险以及安联境外个人旅游保险；</p><p style="white-space: normal;">线路设计费，24小时旅游秘书服务费。</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="走进战斗民族军营参与酷炫军事活动＋图兰朵餐厅享精致晚餐+金环古城谢尔吉耶夫镇+造访叶卡捷琳娜宫神奇琥珀宫" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

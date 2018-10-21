@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>墨西哥 加入亡灵节游行盛典 沃特旅行</title>
+	<meta name="keywords" content="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" />
+	<meta name="description" content="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托:“死亡是墨西哥人最钟爱的玩具之一，是他们永恒的爱。”墨西哥亡灵节便是对这段话最好的诠释。也许正因为如此，墨西哥人才养成了..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+	
+	<script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../upload/travel/SP916/1_7.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[墨西哥 加入亡灵节游行盛典 还原《寻梦环游记》温情动画]</h3>
+                <p>探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托</p>
+                <p>32500元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li >
+			<p>Spring</p>
+			<span>春</span>
+		</li><li >
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/SP916/Id1.jpg" alt="加入亡灵节游行盛典 还原《寻梦环游记》温情动画"></div>
+            <div class="content">
+                <div class="title"><span>1</span>加入亡灵节游行盛典 还原《寻梦环游记》温情动画</div>
+                <p>“死亡是墨西哥人最钟爱的玩具之一，是他们永恒的爱。”。这一天，人们会载歌载舞、通宵畅饮。他们画着骷髅装祭奠亡灵，并不会悲哀，他们觉得与死去的亲人一起欢度节日。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/SP916/Id2.jpg" alt="触摸古老玛雅文化探访奇琴伊察金字塔"></div>
+            <div class="content">
+                <div class="title"><span>2</span>触摸古老玛雅文化探访奇琴伊察金字塔</div>
+                <p>它是是现存较为完整的玛雅古城遗址，也是近距离接触玛雅文化的必访之地，在库库尔科金字塔、千柱神庙、天文台等古建筑群中，仿佛还能感受到玛雅城邦全盛时期伯气息。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/SP916/Id3.jpg" alt="专业教练陪同见证神秘坎昆海底雕塑博物馆"></div>
+            <div class="content">
+                <div class="title"><span>3</span>专业教练陪同见证神秘坎昆海底雕塑博物馆</div>
+                <p>浮潜之旅前往的Manchones Reef Area,是雕塑博物馆主要的展区，陈列着著名的Silent Evolution（450件真人大小的雕塑）这片巨大而沉默的雕塑展馆，将为你带来一场震撼的视觉享受。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/SP916/Id4.jpg" alt="暮色中俯瞰寻梦环游记小镇瓜纳华托"></div>
+            <div class="content">
+                <div class="title"><span>4</span>暮色中俯瞰寻梦环游记小镇瓜纳华托</div>
+                <p>暮色降临，人们聚集在皮毕拉山顶看满城灯火慢慢点亮，所有的白日里各自跳跃的色彩逐渐都变成温暖的姜黄色，听着远处人们欢快的歌声，和这座色彩之城道一声晚安。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前北京、上海有直飞墨西哥城的航班，飞行时间约18小时（含经停时间）；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Four Seasons Hotel Mexico City 墨西哥城四季酒店 5*<br />
+这家酒店荣获过AAA五钻奖（AAA Five Diamond Award），坐落在墨西哥市中心的改革大道（Paseo de la Reforma），临近查普尔特佩克公园（Chapultepec Park），设有全方位服务的spa中心、内部餐厅以及带平板电视的现代客房。<br />
+酒店网评：9.2</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/SP916/2.jpg" alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托">
+	<img src="../upload/travel/SP916/3.jpg" alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 北京-墨西哥城</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211614056045.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211614118287.jpeg);"></div></div>                </div>                <p>搭乘航班飞往墨西哥城，抵达后【专属导游】接机前往酒店休息。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 墨西哥城-圣米格尔</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211029015854.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211028165049.jpeg);"></div></div>                </div>                <p>墨西哥城距离圣米格尔约3.5小时车程<br />
+早餐后驱车前往世界最美丽的城镇【圣米格尔】游览【圣米格尔教堂】它同时也是 墨西哥 的艺术之城，街上都可以看到画廊和展览；</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 圣米格尔-瓜纳华托</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211625168318.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211625372123.jpeg);"></div></div>                </div>                <p>圣米格尔距离瓜纳华托约1.5小时车程<br />
+早餐后驱车前往【寻梦环游记】取景地，同时也是《孤独星球Lonely Planet》评出的“2018十大旅行城市”之一的【瓜纳华托】，【木乃伊博物馆】【联合花园】之后在【皮皮拉山】俯瞰黄昏下的瓜纳华托城。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 瓜纳华托-墨西哥城</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211635580808.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211636252453.jpeg);"></div></div>                </div>                <p>瓜纳华托距离墨西哥城约4.5小时车程<br />
+今天睡到自然醒，最后感受彩色的瓜纳华托，之后驱车返回【墨西哥城】来到老城中心广场以及【国家宫殿】，之后来到【Cafe del Tacuba】享墨西哥美食。（菜品现点，费用自理）</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 墨西哥城</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211637141388.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211637363812.jpeg);"></div></div>                </div>                <p>早餐后前往【特奥蒂瓦坎（Teotihuacan）】登上气势恢宏的金字塔，您会感受到这座曾经盛极一时，能与当时 罗马相媲美的古代城邦繁荣辉煌景象。 午餐后返回墨西哥城，参观拉丁美洲最大的【人类学博物馆】之后去往【国家历史博物馆】，下午还可欣赏墨西哥国粹【玛利亚齐表演】。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 墨西哥</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808241851505011.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808241852069462.jpeg);"></div></div>                </div>                <p>今天我们换上服装，画上骷髅妆，参加盛大的【墨西哥亡灵节游行】前往当地集市发现可爱的小骷髅饰品、精美的亡灵剪纸，还有各种亡灵节“特产”。享用地道传统【亡灵包】。<br />
+温馨提示;目前墨西哥宣布2018年亡灵节游行10月27日，如有更改另行通知；</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 墨西哥城-梅里达</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211638327396.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211638015725.jpeg);"></div></div>                </div>                <p>梅里达距离奇琴伊察约1.5小时车程<br />
+早餐后游览传奇女画家弗里达故居【蓝房子】下午搭乘内陆航班前往【梅里达】之前前往酒店休息。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 梅里达-奇琴伊察-坎昆</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211649247411.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211649468142.jpeg);"></div></div>                </div>                <p>早餐后前往【奇琴伊察】，它是是现存较为完整的【玛雅古城遗址】，也是近距离接触玛雅文化的必访之地，在库库尔科金字塔、千柱神庙、天文台等古建筑群中，仿佛还能感受到玛雅城邦全盛时期伯气息。之后乘车前往【坎昆】。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 坎昆</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211650205209.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211650555577.jpeg);"></div></div>                </div>                <p>坎昆距离图卢姆约1.5小时车程<br />
+早餐后前往【图卢姆(Tulum)】，在加勒比海陡崖上的古代文明遗址上可以观赏到蓝色的加勒比海。图卢姆是迄今为止在灌木丛中发现的最晚的一处玛雅文明遗址；之后乘车返回【坎昆】，享受坎昆闻名世界的海滩。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D10 坎昆-墨西哥城-北京</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211651466292.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211651087265.jpeg);"></div></div>                </div>                <p>早上您可睡到自然醒，漫步在加勒比的阳光中，当然我们还可以浮潜去探索神秘的【海底雕塑博物馆】；下午乘机返回墨西哥城转机回国；</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D11 北京</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211436160516.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-08-21/201808211436255043.jpeg);"></div></div>                </div>                <p>航班抵达北京，结束愉快的旅行。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" class="img-responsive" src="../upload/travel/SP916/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>42800元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>61700元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>32500元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>46800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>往返机票含税及燃油附加费；</p><p>境外段经济舱机票；</p><p>签证费用；&nbsp;&nbsp;<br style="box-sizing: border-box;"/></p><p>全程4-5星级酒店住宿含早餐；&nbsp;<br style="box-sizing: border-box;"/></p><p>境外全程地面私人专车服务（含油费，停车费，过路费，长途空返费，每天服务10小时）；<br style="box-sizing: border-box;"/></p><p>境外全程专业华语导游服务(含导游及司机住宿，餐补，小费，部分门票）；&nbsp;<br style="box-sizing: border-box;"/></p><p>行程所列景点首道门票；&nbsp;<br style="box-sizing: border-box;"/></p><p>旅行社责任险以及安联境外个人旅游保险 ；&nbsp;<br style="box-sizing: border-box;"/></p><p>线路设计费；</p><p>24小时旅游秘书服务费；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p><p>温馨提示：目前墨西哥宣布2018年亡灵节游行10月27日，如有更改另行通知；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="探访奇琴伊察金字塔触摸古老玛雅文化+专业教练陪同潜入最美海域见证神秘海底雕塑博物馆+暮色中俯瞰寻梦环游记小镇瓜纳华托" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t34'">
+		<dt><img alt="潜入美丽眼洞湖+品味波希米亚小镇卡梅尔+领略Xochimilco漂浮花园的别样魅力" src="/Uploads/travel/NA722/0.jpg"></dt>
+		<dd>潜入美丽眼洞湖+品味波希米亚小镇卡梅尔+领略Xochimilco漂浮花园的别样魅力</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t82'">
+		<dt><img alt="参观太平洋舰队MidWay军舰+畅游在坎昆的水下世界+好莱坞环球影城撒欢" src="/Uploads/travel/NA601/0.jpg"></dt>
+		<dd>参观太平洋舰队MidWay军舰+畅游在坎昆的水下世界+好莱坞环球影城撒欢</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t39'">
+		<dt><img alt="总统培育基地哈佛帝国+迷失在九曲花街+帝国大厦览纽约夜景+乘着轮渡远观自由女神像" src="/Uploads/travel/NA305/0.jpg"></dt>
+		<dd>总统培育基地哈佛帝国+迷失在九曲花街+帝国大厦览纽约夜景+乘着轮渡远观自由女神像</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t62'">
+		<dt><img alt="搭乘冰原探险号造访哥伦比亚冰原+漫步世外桃源温哥华岛+乘撑着小船飘荡在玛琳湖+布查特花园品英伦下午茶时光" src="/Uploads/travel/NA703/0.jpg"></dt>
+		<dd>搭乘冰原探险号造访哥伦比亚冰原+漫步世外桃源温哥华岛+乘撑着小船飘荡在玛琳湖+布查特花园品英伦下午茶时光</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div> -->
+
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+	
+	<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?8d4c46ca2b65fbd4b75f01b1ab090b88";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98093956-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script> -->
+  </body>
+</html>

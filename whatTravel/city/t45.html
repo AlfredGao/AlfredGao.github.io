@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>捷克 斯洛伐克 奥地利 匈牙利 品味多瑙河畔的金色夜景_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" />
+	<meta name="description" content="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴:神奇魔幻的布拉格黑光剧；音乐之都维也纳特色歌剧欣赏：作为欧洲古典音乐的摇篮和舞蹈音乐的发源地，每夜幕低垂，穿着高雅闲淑的..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../upload/travel/EU103/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../upload/travel/EU103/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../upload/travel/EU103/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../upload/travel/EU103/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../upload/travel/EU103/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[捷克 斯洛伐克 奥地利 匈牙利 品味多瑙河畔的金色夜景]</h3>
+                <p>享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴</p>
+                <p>28300元/人起 <span style="color:#999;display:inline-block;width:auto;">10天9晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li >
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU103/Id1.jpg" alt="老城广场聆听天文钟整点报时"></div>
+            <div class="content">
+                <div class="title"><span>1</span>老城广场聆听天文钟整点报时</div>
+                <p>据说这座钟建成以后，查理一世问设计师，你还能设计出这样的钟吗？设计师自豪的说，可以。查理一世立即下令，杀掉了设计师，以保证这是世界上最美的钟，没有之一。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU103/Id2.jpg" alt="品味卡罗维发利特色治疗温泉"></div>
+            <div class="content">
+                <div class="title"><span>2</span>品味卡罗维发利特色治疗温泉</div>
+                <p>这里的温泉资源十分丰富，属于典型的热矿水类矿业城市。卡罗维发利泉水中含有对人体有益的矿物质达32至35种之多。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU103/Id3.jpg" alt="维也纳金色大厅倾听音乐盛宴"></div>
+            <div class="content">
+                <div class="title"><span>3</span>维也纳金色大厅倾听音乐盛宴</div>
+                <p>在维也纳乃至全世界最著名的音乐厅之一-金色大厅聆听一场音乐会，必定让您不虚此行。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU103/Id4.jpg" alt="布达佩斯多瑙河晚间游船"></div>
+            <div class="content">
+                <div class="title"><span>4</span>布达佩斯多瑙河晚间游船</div>
+                <p>华灯初上，在美食与音乐的陪伴中享受多瑙河畔布达佩斯的绝美夜景。它的华丽宫殿与壮美风光饱受其他来自世界各地上百万游客的赞誉。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前国内无直飞布拉格航班。推荐航班去程从北京出发，经停莫斯科，到达布拉格，飞行时间约12小时，停留时间约1小时；返程从布拉格出发，经停巴黎，到达北京，飞行时间约12小时，停留时间约1小时。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Schloss Fuschl, A Luxury Collection Resort & Spa施洛斯福斯赫豪华水疗度假酒店 5星<br />
+Hotel Schloss Fuschl酒店俯瞰奥地利壮丽的湖泊之一，位于修剪地的草坪和绿意盎然的风景之中。酒店接待过贵族、大主教、电影明星和女王，拥有别致的历史氛围，并且在2006年被Condé Nast Traveler杂志评选为欧洲最好的25个度假村之一。 <br />
+酒店评分：9.4</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/EU103/2.jpg" alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴">
+	<img src="../upload/travel/EU103/3.jpg" alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-布拉格</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031657545952.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-11/201801111015584008.jpg);"></div></div>                </div>                <p>中国出发，转机一次后达到布拉格。晚上到达布拉格后直接到酒店休息调整时差。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 布拉格</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031659053074.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031659053903.jpg);"></div></div>                </div>                <p>上午登上【布拉格古堡】，俯瞰整个市区，随后参观高耸入云的哥德式尖塔【圣维特大教堂】。再穿过炼金术师聚集的【黄金小巷】，来到作家【卡夫卡故居】。下午游览旧城区，沿着【查理大桥】到达【老城广场】欣赏天文钟整点报时。之后参观布拉格出色的新艺术风格建筑新【市政厅】【火药塔】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 布拉格-卡罗维发利-布尔诺</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031700268338.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031700268752.jpg);"></div></div>                </div>                <p>驱车前往捷克境内的温泉小镇【卡罗维发利】。顺着小溪蜿蜒深处漫步，欣赏两旁【巴洛克样式建筑】，拜访【五大温泉回廊】置身矿物的甘泉中，之后前往【布尔诺】，作为摩拉维亚省首府，布尔诺拥有许多珍贵文化遗迹，在【山丘城堡】【教堂】和【博物馆】中都可见证风华历史。夜宿布尔诺。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 布尔诺-布拉提斯拉瓦市-布达佩斯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031702020191.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031702024414.jpg);"></div></div>                </div>                <p>前往斯洛伐克的首都【布拉提斯拉瓦】，这是1993年才从捷克分离孤立的新兴国家。午餐后前往【布达佩斯】观光：【国会大厦】【英雄广场】【链子桥】。之后可选择在布达佩斯著名的观光徒步大道【瓦西大街】，自由选购心爱的刺绣等纪念品。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 布达佩斯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031703110451.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031703112256.jpg);"></div></div>                </div>                <p>早餐后游览驱车前往【渔夫堡】游览改建为【国家美术馆】及【历史博物馆】的【旧皇宫】和色彩绚丽的【玛伽什教堂】，之后可在附近的石街巷中漫步，也可以来到【托斯阿尔巴德大街】坐坐。晚上特别为您安排【布达佩斯多瑙河晚间游船自助晚宴】，在美食与音乐的陪伴中享受多瑙河畔布达佩斯的夜景。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 布达佩斯-维也纳</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031703505781.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031703503549.jpg);"></div></div>                </div>                <p>到达维也纳后前往参观【维也纳市政厅】，再去著名的【霍夫堡宫】，体味哈布斯王朝统治的盛况。之后驱车前往【维也纳】傍晚特别为您安排一场维也纳金色大厅音乐会（需提前预约，以实际预约情况为准）。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 维也纳</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031705084021.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031705088816.jpg);"></div></div>                </div>                <p>茜茜公主的夏宫【美泉宫】，漫步在【法式园林】中，享受时间的流逝；在【海神喷泉】前和【罗马废墟】前品味历史，到御车陈列馆中看看【哈布斯堡帝国】的御用车辆。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 维也纳-萨尔茨堡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031705450474.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031705454409.jpg);"></div></div>                </div>                <p>抵达萨尔茨堡后参观【莫扎特广场】和【莫扎特故居】；之后游览奥地利萨尔茨堡的教堂【萨尔茨堡大教堂】和【水晶宫】；然后到因《音乐之声》而名声大震的【米拉贝尔宫】。当然也不能错过热闹的【粮食胡同】和正宗的【莫扎特巧克力糖球】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 萨尔茨堡-库伦诺夫</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031706345617.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031706343612.jpg);"></div></div>                </div>                <p>全天游览【库伦诺夫（简称CK小镇】）,伏尔塔瓦河呈S型贯穿全镇，所有的街道皆是由小石头及石板块所铺成，满城红色的屋顶。这里整座城被联合国教科文组织列为世界文化遗产。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D10 ck小镇-布拉格-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031706476102.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-03/201801031706475996.png);"></div></div>                </div>                <p>早餐后，搭乘国际航班返回中国。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" class="img-responsive" src="../upload/travel/EU103/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>36900元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>50900元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>28300元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>42300元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返票含税及燃油附加费；&nbsp;</p><p>目的地国家签证费用；</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>全程私人专车地面交通接送服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>导游及司机服务费、小费；&nbsp;</p><p>旅行社责任险；&nbsp;</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;</p><p>出行期间提供24小时旅游秘书服务，让您安心出行</p><p><br/></p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="享卡罗维发利治疗温泉+老城广场聆听天文钟整点报时+维也纳金色大厅聆听音乐盛宴" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+<!-- 
+<div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t148'">
+		<dt><img alt="享屡获殊荣的维京游轮豪华设施+学习制作奥地利传统点心苹果派+布达佩斯观匈牙利马术表演+直升机造访新天鹅堡" src="../upload/travel/EU913/0.jpg"></dt>
+		<dd>享屡获殊荣的维京游轮豪华设施+学习制作奥地利传统点心苹果派+布达佩斯观匈牙利马术表演+直升机造访新天鹅堡</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t16'">
+		<dt><img alt="莫扎特故乡看木偶剧+参观特有人头骨屋+游走于哈尔施塔特+维也纳金色大厅倾听音乐盛宴" src="../upload/travel/EU741/0.jpg"></dt>
+		<dd>莫扎特故乡看木偶剧+参观特有人头骨屋+游走于哈尔施塔特+维也纳金色大厅倾听音乐盛宴</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t51'">
+		<dt><img alt="乘坐复古马车细品罗马古城+亲临世界七大奇景比萨斜塔+最后的晚餐真迹参观" src="../upload/travel/EU604/0.jpg"></dt>
+		<dd>乘坐复古马车细品罗马古城+亲临世界七大奇景比萨斜塔+最后的晚餐真迹参观</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t29'">
+		<dt><img alt="邂逅千年庞贝古城+漫步中世纪小城陶尔米纳+体验左岸海水右岸火山的奇景 " src="../upload/travel/EU729/0.jpg"></dt>
+		<dd>邂逅千年庞贝古城+漫步中世纪小城陶尔米纳+体验左岸海水右岸火山的奇景 </dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div> -->
+
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>摩洛哥 里奇咖啡馆重温电影《北非碟影》经典片段_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" />
+	<meta name="description" content="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅:一片受到了上天眷顾的土地，一个让人牵挂的国度，风尘滚滚的撒哈拉沙漠，三毛前世的淡淡乡愁，电影里走出来的卡萨布兰卡，地中海..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../upload/travel/AF834/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[摩洛哥 里奇咖啡馆重温电影《北非碟影》经典片段]</h3>
+                <p>乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅</p>
+                <p>27200元/人起 <span style="color:#999;display:inline-block;width:auto;">9天7晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li >
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li >
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF834/Id1.jpg" alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉"></div>
+            <div class="content">
+                <div class="title"><span>1</span>乘着热气球在晨曦中俯瞰阿特拉斯山脉</div>
+                <p>清晨伴随着冉冉上升的热气球，整个阿特拉斯山脉奇特的美景逐渐展现在眼前，一眼望去那种震惊与欣喜感，会让你终生难忘。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF834/Id2.jpg" alt="里奇咖啡馆重温电影《北非碟影》经典片段"></div>
+            <div class="content">
+                <div class="title"><span>2</span>里奇咖啡馆重温电影《北非碟影》经典片段</div>
+                <p>一位曾驻摩洛哥使馆的美国商务人员，在卡萨布兰卡当地打造了一间重现电影北非谍影原味的里奇咖啡馆，衬托出摩洛哥怀旧复古，颓废慵懒的气息，卡萨布兰卡绝对不能错过的经典。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF834/Id3.jpg" alt="在马拉喀什跟随大厨学习烹饪当地塔吉锅"></div>
+            <div class="content">
+                <div class="title"><span>3</span>在马拉喀什跟随大厨学习烹饪当地塔吉锅</div>
+                <p>有趣的摩洛哥厨艺课程，与著名美食家一起度过一个难忘的下午。了解摩洛哥饮食之道，学习独具特色的塔吉锅的制作方法，并享用自己亲手烹调的原真味道。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AF834/Id4.jpg" alt="L'Amandier Palais Faraj景观餐厅浪漫晚餐"></div>
+            <div class="content">
+                <div class="title"><span>4</span>L'Amandier Palais Faraj景观餐厅浪漫晚餐</div>
+                <p>L'Amandier Palais Faraj景观餐厅这是，一家浪漫的用餐厅,俯瞰城市美景,窗前明月,甚是美丽；</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前国内飞往摩洛哥各城市无直达；参考航班由广州出发经多哈转机抵达马拉喀什；回程由卡萨布拉卡经转机返回；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Four Seasons Hotel Casablanca 卡萨布兰卡四季酒店 5*<br />
+海滩距离住宿有3分钟步行路程。 Four Seasons Hotel Casablanca酒店位于卡萨布兰卡（Casablanca），毗邻Anfa Place Living Resort度假村。酒店设有spa中心、健身中心、全年开放的室外游泳池和土耳其浴室。客人可以在餐厅用餐，或在酒吧享用饮品。客人可以享用咖啡，同时欣赏窗外大海或花园的美景。客房提供浴袍、免费洗浴用品以及吹风机等舒适设施。<br />
+酒店评分：9分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/AF834/2.jpg" alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅">
+	<img src="../upload/travel/AF834/3.jpg" alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-马拉喀什 </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091652563490.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091652563188.jpg);"></div></div>                </div>                <p>由国内经转机飞往【马拉喀什】，抵达后【专属导游】接机前往酒店休息，之后前往夜市【不眠广场】从日出到深夜，你可看到印度的舞蛇人、出售香料茶叶的阿拉伯人、讲故事的摩洛哥老人，因为有此广场，马拉喀什有了无穷生命力。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 马拉喀什 </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091655273387.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091655272179.jpg);"></div></div>                </div>                <p>今日我们将探索【麦地那旧城】接近马拉喀什的灵魂的地方。之后我们将参加有趣的【摩洛哥厨艺课程】了解摩洛哥饮食之道，学习特色的【塔吉锅】的制作方法，并享用自己亲手烹调的原真味道。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 马拉喀什-拉巴特</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091656034415.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091656031406.jpg);"></div></div>                </div>                <p>马拉喀什距离拉巴特车程约3.5小时<br />
+清晨伴随着冉冉上升的【热气球】，之后前往参观【库图比亚清真寺】，之后前往【伊夫圣洛朗私人花园】著名服装设计师伊夫圣罗兰生前同搭档皮埃尔布尔热在摩洛哥马拉喀什购下了这片私人花园。之后我们驱车前往摩洛哥的首都【拉巴特】。<br />
+ <br />
+	</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 拉巴特-舍夫沙万</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091656582211.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091656585584.jpg);"></div></div>                </div>                <p>拉巴特距离舍夫沙万约3.5小时车程<br />
+早餐后外观游览迄今已有227年历史【拉巴特皇宫】以及北非建筑风格的【麦克苏尔清真寺】（皇宫不可靠近，不可以长时间驻足张望，也不允许拍照），之后游览【乌达亚堡城】【穆哈穆德5世陵寝和哈桑塔】；午餐后驱车前往蓝色小镇【舍夫沙万】沿着著名的【Plaza Uta el-Hammam广场】。<br />
+ <br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 舍夫沙万-菲斯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091705061339.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091705062426.jpg);"></div></div>                </div>                <p>舍夫沙万距离菲斯约3小时车程<br />
+酒店早餐后游览迷人的蓝色小镇【舍夫沙万】，随后驱车前往【菲斯】参观【菲斯古城】在这里人们仿佛回到了一千年前，晚餐特别推荐您前往L'Amandier Palais Faraj景观餐厅这是，一家浪漫的用餐厅,俯瞰城市美景,窗前明月,甚是美丽；</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 菲斯-梅内克斯-卡萨布兰卡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091705439673.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091705437795.jpg);"></div></div>                </div>                <p>菲斯距离梅克内斯约1小时车程<br />
+酒店早餐后，前往摩洛哥伊斯兰古都城、四大皇城之一的【梅克内斯】1996年梅克内斯被列入“世界文化遗产”。梅克尼斯被誉为“摩洛哥的凡尔赛宫”。之后驱车前往【卡萨布兰卡】。<br />
+ <br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 卡萨布兰卡</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091706210693.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091706210637.jpg);"></div></div>                </div>                <p>酒店早餐后参观世界上现代化程度高的【哈桑二世清真寺】以及【穆罕默德五世广场】，之后游览【麦地那老城】。晚餐特别推荐您前往【Rick’s Café里奇咖啡馆】一间重现电影【北非谍影】原味的里奇咖啡馆，衬托出摩洛哥怀旧复古。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 卡萨布兰卡-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091706416604.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-09/201801091706412595.png);"></div></div>                </div>                <p>睡到自然醒，之后前往机场搭乘航班经转机抵达国内<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D9 中国</h5>
+                                <p>航班抵达国内，结束愉快的旅行，回到您温馨的家。<br />
+<br />
+</p>
+                <div class="dinner">早餐敬请自理 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" class="img-responsive" src="../upload/travel/AF834/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>33200元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>58800元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>27200元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>51800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返票含税及燃油附加费；</p><p>全程行程所列境外星级酒店住宿含早餐；</p><p>境外全程地面交通私人专车服务；</p><p>境外全程专业华语导游服务；</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；</p><p>导游服务费、小费、餐补费用；&nbsp;</p><p>旅行社责任险；</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；</p><p>出行期间提供24小时旅游秘书服务，让您安心出行。</p><p><br/></p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="乘着热气球在晨曦中俯瞰阿特拉斯山脉+在马拉喀什跟随大厨学习烹饪当地塔吉锅+L'Amandier Palais Faraj景观餐厅" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t91'">
+		<dt><img alt="尊享机场VIP廊桥通关服务+豪华直升机鸟瞰棕榈岛+入住亚特兰蒂斯奇妙水下套房+品味OSSIANO海鲜餐厅" src="../upload/travel/AF102/0.jpg"></dt>
+		<dd>尊享机场VIP廊桥通关服务+豪华直升机鸟瞰棕榈岛+入住亚特兰蒂斯奇妙水下套房+品味OSSIANO海鲜餐厅</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t96'">
+		<dt><img alt="海豚湾与海豚亲密接触+步入迪拜绿色星球 感知沙漠与绿意盎然的奇妙反差+尊享金卡畅游法拉利主题乐园+走进迪拜乐高乐园 打造专属积木" src="../upload/travel/AF103/0.jpg"></dt>
+		<dd>海豚湾与海豚亲密接触+步入迪拜绿色星球 感知沙漠与绿意盎然的奇妙反差+尊享金卡畅游法拉利主题乐园+走进迪拜乐高乐园 打造专属积木</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t159'">
+		<dt><img alt="直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园" src="../upload/travel/AF917/0.jpg"></dt>
+		<dd>直升机俯瞰维多利亚大瀑布+和当地向导乘着独木舟深入奥卡万戈三角洲+越野车与游船水陆Safari游猎乔贝国家公园</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t30'">
+		<dt><img alt="朝圣西奈山看日出+做客开罗古老红色革命餐厅+乘坐热气球俯视黎明的卢克索古迹" src="../upload/travel/AF724/0.jpg"></dt>
+		<dd>朝圣西奈山看日出+做客开罗古老红色革命餐厅+乘坐热气球俯视黎明的卢克索古迹</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div> -->
+
+<!-- <script src="/Public/home/swiper/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script> -->
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+  </body>
+</html>

@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>加拿大 洛基山天景观光火车270°饱览绝世风光_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" />
+	<meta name="description" content="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery:Rocky Mountaineer始建于1990年，被BBC评为“一生必游的50件事”之一，权威旅游杂志《Travel+..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../upload/travel/NA918/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[加拿大 洛基山天景观光火车270°饱览绝世风光]</h3>
+                <p>露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery</p>
+                <p>25800元/人起 <span style="color:#999;display:inline-block;width:auto;">9天7晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA918/Id1.jpg" alt="Rocky Mountaineer顶级金枫席位全景饱览落基山脉"></div>
+            <div class="content">
+                <div class="title"><span>1</span>Rocky Mountaineer顶级金枫席位全景饱览落基山脉</div>
+                <p>Rocky Mountaineer顶级金枫（GoldLeaf）席位，透过360度穹顶与窗外美景近距离接触，仿佛置身落基山脉之中。跨越崎岖的山谷，穿越如画的丛林，领略超乎想象的美景。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA918/Id2.jpg" alt="露易丝湖全景下午茶 坐拥加拿大最美之窗"></div>
+            <div class="content">
+                <div class="title"><span>2</span>露易丝湖全景下午茶 坐拥加拿大最美之窗</div>
+                <p>落座拥有世界第一窗的费尔蒙露易丝湖酒店下午茶餐厅。窗外露易丝湖360°天然全景，透过高大的拱形玻璃落地窗眺望满山的松柏和壮丽的冰川映入剔透的湖面，仿佛置身于仙境。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA918/Id3.jpg" alt="撑着生态小船划进露易丝湖碧绿仙境"></div>
+            <div class="content">
+                <div class="title"><span>3</span>撑着生态小船划进露易丝湖碧绿仙境</div>
+                <p>撑着生态小船感受被自然美景包围的宁静，或是再往前一些更靠近欣赏露易丝湖母亲维多丽亚冰川的壮观，费尔蒙酒店如城堡般矗立在仙境之中，湖面上的倒影更为这幅画面添上几分诗意。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA918/Id4.jpg" alt="参观最具设计感之一的传教山酒庄"></div>
+            <div class="content">
+                <div class="title"><span>4</span>参观最具设计感之一的传教山酒庄</div>
+                <p>世界上如果有一个暮鼓晨钟的酒庄，那一定是传教山酒庄，高耸的钟楼清脆的钟声是它的的标配。整个建筑的核心是一座12层85英尺高的塔楼，顶端四面的钟由法国著名铸钟作坊铸造的。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前北京上海等地都有直飞温哥华的航班，飞行时间约12h；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Fairmont Château Lake Louise（路易斯湖费尔蒙酒店） 4*<br />
+拥有天下第一窗美景的露易丝湖城堡酒店坐落于风景如画的加拿大班夫国家公园内，享有露易丝湖和维多利亚冰川的壮丽景色，这家酒店是由目前北美洲最主要的顶级饭店集团费尔蒙The Fairmont所拥有。酒店保留了18世纪以来维多利亚式的建筑风格，城堡样式的外观与周围的湖光山色融为一体。<br />
+酒店网评：8.9</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/NA918/2.jpg" alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery">
+	<img src="../upload/travel/NA918/3.jpg" alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 北京-温哥华</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121045422891.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121046336808.jpeg);"></div></div>                </div>                <p>搭乘航班直飞加拿大【温哥华】，抵达后【专属导游】接机，前往【耶鲁镇】【唐人街】和充满欧陆色彩的【煤气镇】地球上第一个蒸气钟是该地的标志，它定时发出美妙的钟声。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D2 温哥华-维多利亚-温哥华</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121048007060.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121048250553.jpeg);"></div></div>                </div>                <p>早上前往温哥华的【吐华迅港】，乘搭【卑诗省渡海轮船】前往【维多利亚】。随后参观【宝翠花园】，接着前往内港，维多利亚内港拥有壮观的建筑及园艺美景,把自然美景和海港景色完美结合在了一起。接着来到【维多利亚大学】，最后参观地球上最长公路起点之里程碑MILE ZERO，下午返回温哥华酒店。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D3 温哥华-甘露市</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121051157771.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121051318362.jpeg);"></div></div>                </div>                <p>今天开启落基山之光奢华穹顶列车之旅，前往甘露市。特别安排【金枫席位】透过360度穹顶与窗外美景近距离接触，仿佛置身落基山脉之中。</p>
+                <div class="dinner">早餐:火车上 午餐：火车上 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D4 甘露市-班夫</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121053127856.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121124399536.jpeg);"></div></div>                </div>                <p>今天穿越加拿大核心地带，饱览巍峨的山川，前往【班夫国家公园】班夫国家公园建于 1885 年，是加拿大历史悠久的国家公园, 也是世界第三个国家公园，被联合国教科 文组织列为世界文化遗产地。这里是落基山脉的门户，拥有极其原始未经破坏的自然生态环境。约下午抵达【班夫国家公园】。</p>
+                <div class="dinner">早餐:火车上 午餐：火车上 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D5 班夫国家公园-路易斯湖</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121055207987.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121055579180.jpeg);"></div></div>                </div>                <p>早餐后前往【强斯顿峡谷】是落基山脉三大峡谷之一，它是由数千年的河水侵蚀而成，所以峡谷内多见溪流和瀑布。之后前往落基山四大名湖之一的【梦莲湖】，以及有落基山脉宝石之称的【露易斯湖】下午前往费尔蒙路易斯湖酒店，【特别为您安排露易丝湖酒店全景下午茶】。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D6 路易斯湖-鲑鱼湾</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121057049686.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121056377778.jpeg);"></div></div>                </div>                <p>路易斯湖距离鲑鱼湾约4小时车程<br />
+早餐后，穿过崇山峻岭之间的【飞鹰坳】， 前往“ 最后一口钉”， 此乃横贯加拿大的太平洋铁路交接点， 纪念打下最后一口钉的地方。之后抵达【鲑鱼湾】，有着“舒士威湖宝石”之称，每年都有很多的鲑鱼在这里聚集，不论是远看还是近观，都能体会到那种生生不息的顽强意志。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D7 鲑鱼湾-基洛纳-温哥华</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121058160174.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121058310237.jpeg);"></div></div>                </div>                <p>鲑鱼湾距离基洛纳约1.5小时车程<br />
+基洛纳距离温哥华约3.5小时车程<br />
+早晨沿横加公路翻越瀑布山脉到达卑斯省水果之乡【基隆那市】。游览【水怪湖Okanagan Lake】，此为印第安人传说中有水怪 Ogopogo出没之地。来到著名的【传教山酒庄】漫步在古老的庄园中，之后驱车前往【温哥华】入住酒店休息。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选酒店 </p>
+				</div>			</li><li>
+				<h5>D8 温哥华-北京</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121042061921.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-12/201809121042112574.jpeg);"></div></div>                </div>                <p>早餐后驱车前往机场。搭乘航班直飞回国，结束愉快的旅行。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D9 北京</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-13/201809130924286023.jpeg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-09-13/201809130924323949.jpeg);"></div></div>                </div>                <p>航班抵达国内，结束愉快的旅行。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" class="img-responsive" src="../upload/travel/NA918/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>34600元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>62000元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>25800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>53200元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返票含税及燃油附加费；&nbsp;<br style="box-sizing: border-box;"/></p><p>Rocky Mountaineer火车金枫席位车票；</p><p>签证费；</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;<br style="box-sizing: border-box;"/></p><p>境外全程地面交通私人专车服务；&nbsp;<br style="box-sizing: border-box;"/></p><p>境外全程专业华语导游服务；&nbsp;<br style="box-sizing: border-box;"/></p><p>行程所列景点首道门票；&nbsp;<br style="box-sizing: border-box;"/></p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;<br style="box-sizing: border-box;"/></p><p>导游及司机服务费、小费、餐补费用； ‧</p><p>旅行社责任险；&nbsp;<br style="box-sizing: border-box;"/></p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;<br style="box-sizing: border-box;"/></p><p>出行期间提供24小时旅游秘书服务，让您安心出行</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p><p>温馨提示：1.火车运行时间4月-10月；</p><p>2.火车金枫席位有限，预订前请咨询旅游顾问最新位置情况；</p><p>3.露易丝湖一般每年11月-6月结冰，如遇结冰划船体验改为滑雪；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="露易丝湖全景下午茶 坐拥加拿大最美之窗+撑着生态小船划进露易丝湖碧绿仙境+拜访全球最具设计感酒庄之一Mission Hill Winery" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <script src="/Public/home/swiper/swiper.jquery.min.js"></script> -->
+<script>
+var is_submit = false;
+
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

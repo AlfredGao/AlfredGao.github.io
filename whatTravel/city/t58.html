@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>美国 驰骋在加州一号公路_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" />
+	<meta name="description" content="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园:旧金山丰饶而秀美，是炙手可热的旅游度假胜地。缤纷城市、迷人沙滩、广袤森林，让您体验到美好假期。" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+    </head>
+    <body>
+        <div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+                <div class="modal-content">
+                    <div class="modal-header" style="border:0;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="i_contact">
+                            <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                            <div class="content">
+                                <form id="topDzForm" method="POST" action="/Index/consult">
+                                <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                                <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                                <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                                </form>
+                                <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+    <div class="top_nav navstyle2">
+        <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+        <div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+    </div>
+    <link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../upload/travel/NA705/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../upload/travel/NA705/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../upload/travel/NA705/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../upload/travel/NA705/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../upload/travel/NA705/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[美国 驰骋在加州一号公路]</h3>
+                <p>拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园</p>
+                <p>38600元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA705/Id1.jpg" alt="畅游迪士尼乐园 尽享童心童趣"></div>
+            <div class="content">
+                <div class="title"><span>1</span>畅游迪士尼乐园 尽享童心童趣</div>
+                <p> 迪斯尼乐园是一座主题游乐公园，主要有主街、冒险乐园、新奥尔良广场、动物王国、拓荒者之地、米奇卡通城、梦幻乐团、未来王国八个主题公园。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA705/Id2.jpg" alt="驰骋在最美加州一号公路"></div>
+            <div class="content">
+                <div class="title"><span>2</span>驰骋在最美加州一号公路</div>
+                <p>沐浴着加州的阳光，吹着美国西岸的海风，听着太平洋拍打沿岸的声音，就像梦境一般美妙，这就是加州1号公路的魅力。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA705/Id3.jpg" alt="拉斯维加斯VIP座观赏O秀表演"></div>
+            <div class="content">
+                <div class="title"><span>3</span>拉斯维加斯VIP座观赏O秀表演</div>
+                <p>拉斯维加斯O Show是太阳马戏团Cirque du Soleil表演的水上剧场。拥有 81 位跨国艺人的坚强阵容，在 150 万加仑 (568 万公升) 的池水中以及池水表面和上方演出。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/NA705/Id4.jpg" alt="探索约塞米蒂国家公园 "></div>
+            <div class="content">
+                <div class="title"><span>4</span>探索约塞米蒂国家公园 </div>
+                <p>约塞米蒂国家公园跨地中海气候与高原山地气候两带，植被类型主要包括亚热带针叶林。1984年被列入联合国教科文组织世界自然遗产名录。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前北京到旧金山去程和返程均有直飞航班。推荐航班从北京到旧金山往返直飞，飞行时间约12小时。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Mandarin Oriental at CityCenter Las Vegas（拉斯维加斯市中心文华东方酒店） 5星<br />
+这家现代化的酒店位于市中心的拉斯维加斯大道（Las Vegas Strip）上，设有一个宽敞的2层Spa，提供5星级的理疗服务、一间现代化的健身房和一间瑜伽室。客房配有一台平板有线电视和一个电热水壶。<br />
+酒店评分：9.2分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/NA705/2.jpg" alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园">
+	<img src="../upload/travel/NA705/3.jpg" alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-旧金山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041026062899.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041026061701.jpg);"></div></div>                </div>                <p>乘坐班机飞往旧金山，入住酒店休息调整。稍歇后前往【温切斯特神秘屋】参观。<br />
+<br />
+</p>
+                <div class="dinner">早餐：敬请自理 午餐：敬请自理 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 旧金山-大苏尔（1号公路）</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041027418287.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041027410318.jpg);"></div></div>                </div>                <p>早餐后启程【1号公路】，只要是风景美丽的地方，1号公路总会多出一块地方，供游客们停车浏览拍照，这样不会让只有两车道的1号公路堵塞，也不会让旅游者们因为错过美丽的风景而遗憾。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 大苏尔</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041028496626.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041028490549.jpg);"></div></div>                </div>                <p>清晨的海滩上，偶尔可以看见蝴蝶自由地飞来飞去，除了鸟的叫声外；夜幕降临的时候，除了偶尔远处射来的昏暗车灯外，陪伴左右的就只有满天的点点繁星了。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 大苏尔-洛杉矶（1号公路）</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041029297202.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041029297727.jpg);"></div></div>                </div>                <p>早餐后，继续行驶在1号公路上，欣赏沿岸风光。体验海滨风光带来的乐趣。之后驾车前往洛杉矶，抵达后【游览市区】。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 洛杉矶</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041030442496.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041030447459.jpg);"></div></div>                </div>                <p>早餐后，游览【星光大道】，【中国戏院】，【柯达戏院】，后游览【好莱坞环球影城】 。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 洛杉矶</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041031298675.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041031291304.jpg);"></div></div>                </div>                <p>早餐后，游览【比佛利山庄】，【天文台】，乘车前往大型【outlets自由购物】，选购精美商品。沿途欣赏美丽的沙漠风光。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 洛杉矶</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041032120310.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041032128629.jpg);"></div></div>                </div>                <p>早餐后前往【迪斯尼乐园】，这里有主街、冒险乐园、新奥尔良广场、动物王国、拓荒者之地、米奇卡通城、梦幻乐团、未来王国八个主题公园。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 洛杉矶</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041032375684.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041032376483.jpg);"></div></div>                </div>                <p>早餐后继续在迪斯尼乐园游玩。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 洛杉矶-圣地亚哥</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041033183445.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041033189893.jpg);"></div></div>                </div>                <p>早餐后，前往【圣地亚哥】，它是个充满活力的都市，也是慵懒恬淡的小城。前往【海洋世界公园】游玩。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D10 圣地亚哥-拉斯维加斯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041035411951.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041035416874.jpg);"></div></div>                </div>                <p>早餐后，去往【拉斯维加斯】，夜晚前往Bellagio酒店观赏是【太阳马戏团O秀】表演*（特别安排VIP座位）。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D11 拉斯维加斯-约塞米蒂</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041037544489.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041037543333.jpg);"></div></div>                </div>                <p>早餐之后前往【约塞米蒂国家公园】以其约塞米蒂山谷闻名于世，约塞米蒂山谷在上一次冰河时期被冰川覆盖，在此体验落基山脉的风光美景。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐 </div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D12 约塞米蒂-旧金山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041038383487.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041038382219.jpg);"></div></div>                </div>                <p>早餐后，驾车返回旧金山。抵达后游览著名的【金门大桥】、【市政大厦】，【艺术宫】，【渔人码头】，【唐人街】，【九曲花街】、【联合广场】等。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：导游推荐</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D13 旧金山-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041038510851.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-04/201801041038513766.png);"></div></div>                </div>                <p>早餐后前往机场，中转飞往成都结束愉快的旅程。<br />
+<br />
+</p>
+                <div class="dinner">早餐：酒店早餐 午餐：导游推荐 晚餐：飞机简餐</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" class="img-responsive" src="../upload/travel/NA705/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>48600元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>72500元/人起</span>
+		</li><li>
+			<h5> 六人出行 经济舱+精选四星酒店</h5>
+			<span>38600元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>62500元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返票含税及燃油附加费；&nbsp;</p><p>签证费用；</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;</p><p>境外租车费，油费及过路费；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用；
+‧</p><p>旅行社责任险；&nbsp;</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;</p><p>出行期间提供24小时旅游秘书服务，让您安心出行</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="拉斯维加斯VIP座观O秀表演+探索约塞米蒂国家公园+畅游迪士尼乐园" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <script src="/Public/home/swiper/swiper.jquery.min.js"></script> -->
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

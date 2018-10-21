@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>西班牙 晨曦中乘坐热气球俯瞰巴塞罗那全景_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" />
+	<meta name="description" content="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡:一个充满热情、富于活力的国家，一个挥洒艺术气息的乐土，素以斗牛、舞蹈、吉它名重天下。 拥有悠久的历史、显贵的王室、浪漫的..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_7.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../upload/travel/EU839/1_8.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[西班牙 晨曦中乘坐热气球俯瞰巴塞罗那全景]</h3>
+                <p>在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡</p>
+                <p>26300元/人起</p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU839/Id1.jpg" alt="在古埃尔公园领略高迪的视觉盛宴"></div>
+            <div class="content">
+                <div class="title"><span>1</span>在古埃尔公园领略高迪的视觉盛宴</div>
+                <p>马赛克拼贴在阳光中闪闪生辉，每一处的马赛克拼图都令人屏气凝神。彩色的蚚蜴其实是控制水匣的活门，讨生活的流浪音乐家在此演奏著小提琴，厅上的屋檐像巨龙的脊骨盘踞。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU839/Id2.jpg" alt="文学之城塞维利亚赏一场热情似火的弗拉明戈"></div>
+            <div class="content">
+                <div class="title"><span>2</span>文学之城塞维利亚赏一场热情似火的弗拉明戈</div>
+                <p>弗拉明戈舞（Flamenco Dance），作为当今世界最富感染力的流行舞种，是吉普赛文化和西班牙的安达卢西亚民间文化的结合。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU839/Id3.jpg" alt="探访悬崖上的古城昆卡"></div>
+            <div class="content">
+                <div class="title"><span>3</span>探访悬崖上的古城昆卡</div>
+                <p>这个城市可以找到大量的历史建筑和遗迹，所有的艺术和作品都说明昆卡它已经历了多个截然不同的时代。其独特的城市位置和保存，使它们获得了世界遗产遗址组织的认可。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU839/Id4.jpg" alt="晨曦中乘坐热气球俯瞰巴塞罗那全景"></div>
+            <div class="content">
+                <div class="title"><span>4</span>晨曦中乘坐热气球俯瞰巴塞罗那全景</div>
+                <p>在空中飘浮的时候，你可以欣赏到比利牛斯山、地中海、蒙特塞拉特岛、蒙塞尼山丘，甚至有时还能看到巴塞罗那本身的全景。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前北京可直飞西班牙巴塞罗那及马德里，飞行时间约13小时。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>El Palace Barcelona 埃尔宫巴塞罗那酒店 5*<br />
+Hotel Palace GL酒店位于扩展区（Eixample District），靠近兰布拉大道（Ramblas）、主购物区以及巴塞罗那的主要旅游景点，提供米其林星级餐厅和玛雅风格的奢华spa。这家酒店于1919年开业，拥有新古典主义风格的外观，提供享有典雅装潢风格的空调客房。每间宽敞的客房均配有卫星电视、书桌和迷你吧。私人浴室提供吹风机、浴袍和拖鞋。<br />
+酒店网评：9.4</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/EU839/2.jpg" alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡">
+	<img src="../upload/travel/EU839/3.jpg" alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-巴塞罗那</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101159362826.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101159368582.jpg);"></div></div>                </div>                <p>搭乘国际航班经转机飞往西班牙第二大城市【巴塞罗那】，抵达后您的【专属导游】接机，入住酒店休息。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 巴塞罗那 </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101201594065.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101201597009.jpg);"></div></div>                </div>                <p>早餐后，前往【巴特约之家】【米拉之家】，感叹“石头屋”的巧妙设计，在【圣家大教堂】瞻拜；下午漫步【古埃尔公园】仿佛在童话王国之中一样。一路下行即可到达巴塞罗那的Grcia区。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 巴塞罗那-格拉纳达</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-03-20/201803201607378094.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101203492659.jpg);"></div></div>                </div>                <p>参考航班：VY2016  巴塞罗那-格拉纳达 2030/2200<br />
+今天需要早起乘坐期待已久的【热气球】在空中飘浮的时候，你可以欣赏到比利牛斯山、地中海、蒙特塞拉特岛、蒙塞尼山丘，甚至有时还能看到巴塞罗那本身的全景。之后回到酒店休息，后前往【毕加索博物馆】看大师的亲笔原稿与收藏；漫步【加泰罗尼亚广场】和车水马龙的【兰布拉大街】。下午搭乘飞机飞往阿拉伯人在伊比利亚半岛上最后一个王国首都【格拉纳达】抵达后导游接机送入酒店休息。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4  格拉纳达 </h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101205289395.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101205284185.jpg);"></div></div>                </div>                <p>早餐后前往游览格兰纳达的象征【阿尔罕布拉宫】，历经千年沧桑的【纳塞瑞斯皇宫】【卡洛斯五世宫殿】给人无限震撼 这里还包含景点【狮子中庭】【桃金娘中庭】【纳拉里埃斯宫】，后漫步【阿尔拜辛区】，是格拉纳达老城区中最古老的伊斯兰街区，1984年与著名的阿尔罕布拉宫一同列为世界遗产。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 格拉纳达-龙达-塞维利亚</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101206417052.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101206413771.jpg);"></div></div>                </div>                <p>全程车程约4小时<br />
+早餐后驱车2小时途径悬崖上的白色小城【龙达】，参观【新桥】【埃尔塔霍峡谷】斗牛场发源地【龙达斗牛场】等，后驱车2小时抵达佛拉明哥发源地，著名的文学之城【塞维利亚】。抵达后您将前往游览【西班牙广场】，晚上前往观看一场热情似火的佛拉明戈舞蹈。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 塞维利亚-科尔多瓦</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101207437788.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101207437123.jpg);"></div></div>                </div>                <p>塞维利亚距离科尔多瓦车程约1小时40分钟<br />
+早餐后前往游览【塞维利亚王宫】【塞维利亚大教堂】【黄金塔】【希拉达塔】登高俯瞰塞维利亚全市风光，之后驱车前往科尔多瓦游览【科尔多瓦大清真寺】【百花巷】【科尔多瓦古罗马桥】夕阳下古罗马桥是科尔多瓦美丽的景色之一。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 科尔多瓦-风车村-托莱多</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101209338467.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101209331462.jpg);"></div></div>                </div>                <p>全程车程约4小时<br />
+早餐后，驱车约2.5小时沿着堂吉诃德之路抵达【孔苏埃格拉风车村】欣赏美丽的田园，拍摄传说中的风车。后抵达有着因胜利而沉寂的中古世纪的古城【托莱多】整个城市就是西班牙历史的见证，这就是托莱多被称为世界文化遗产的魅力所在。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 托莱多-昆卡-马德里</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101211244876.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101211241517.jpg);"></div></div>                </div>                <p>全程车程约3个半小时<br />
+早餐后驱车2小时前往探访悬崖上的古城【昆卡】，抵达后游走于千年古城参观【昆卡悬屋】（以前是皇家庭院，如今已经改为博物馆和餐厅，您可以去品尝非常出名的焖鹿肉）【昆卡大教堂】【昆卡市政厅】【圣帕布洛桥】等等，后站在【Torrede Mangana钟塔】的附近，可以俯瞰整个昆卡城的全貌。之后驱车约1个半小时返回马德里入住酒店休息。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 马德里</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101212174303.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101212176553.jpg);"></div></div>                </div>                <p>早餐后前往游览【马德里王宫】【西班牙广场】【马约尔广场】【太阳门广场】【普拉多博物馆】，是世界四大博物馆之一，也是收藏西班牙绘画作品权威的美术馆。从普拉多博物馆出来沿着普拉多大道往山上向东走去，你可以看到一座非常有生命力的优美园林，这就是马德里的中央公园【丽池公园】，后入住酒店休息。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D10 马德里-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101212397117.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-10/201801101212399892.png);"></div></div>                </div>                <p>搭乘航班返回中国，结束愉快的旅行。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D11 中国</h5>
+                                <p>航班抵达中国，回到您温馨的家。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理 </div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" class="img-responsive" src="../upload/travel/EU839/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>30500元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>53000元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>26300元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>48800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p no-repeat="">国际段往返票含税及燃油附加费；&nbsp;</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>签证费用 ；</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用； ‧</p><p>旅行社责任险；&nbsp;</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;</p><p>出行期间提供24小时旅游秘书服务，让您安心出行 。</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="在古埃尔公园领略高迪的视觉盛宴+文学之城塞维利亚赏一场热情似火的弗拉明戈+探访悬崖上的古城昆卡" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t43'">
+		<dt><img alt="Tablao Cordobés酒馆赏弗拉明戈秀+深入欧洲大陆西点+探访世界遗产辛特拉村" src="../upload/travel/EU106/0.jpg"></dt>
+		<dd>Tablao Cordobés酒馆赏弗拉明戈秀+深入欧洲大陆西点+探访世界遗产辛特拉村</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t40'">
+		<dt><img alt="薰衣草胜地阿维尼翁聆听薰衣草的故事+埃菲尔铁塔享午餐+身处充满高迪自然主义理念的奎尔公园+华丽红磨坊享视听盛宴" src="../upload/travel/EU408/0.jpg"></dt>
+		<dd>薰衣草胜地阿维尼翁聆听薰衣草的故事+埃菲尔铁塔享午餐+身处充满高迪自然主义理念的奎尔公园+华丽红磨坊享视听盛宴</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t112'">
+		<dt><img alt="亲临顶级足球赛事+探访世界文化遗产托莱多古城+观一场热情的弗拉明戈秀+在夕阳的余晖中漫步科尔多瓦古罗马桥" src="../upload/travel/EU812/0.jpg"></dt>
+		<dd>亲临顶级足球赛事+探访世界文化遗产托莱多古城+观一场热情的弗拉明戈秀+在夕阳的余晖中漫步科尔多瓦古罗马桥</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t24'">
+		<dt><img alt="亲临潘普洛纳看群牛狂奔+入住西班牙王子所有城堡+乘小火车参观科多诺酒庄" src="../upload/travel/EU739/0.jpg"></dt>
+		<dd>亲临潘普洛纳看群牛狂奔+入住西班牙王子所有城堡+乘小火车参观科多诺酒庄</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div>
+
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>
