@@ -48,7 +48,7 @@ def getDivImg(url):
         # log4P(INFO, my_img)
         for img in my_img:
             img_link = img.get('style')
-            log4P(INFO, img_link)
+            # log4P(INFO, img_link)
             if img_link is not None:
                 imgName = img_link[img_link.find('(')+1 : img_link.find(')')]
                 dirName = TARGET2 + "/" + imgName.split('/')[3]
@@ -107,8 +107,9 @@ def getImg(url):
     except:
         log4P(ERROR, "Connection Error")
 
-uurlList = ['http://m.100.travel/t129']
-parser(uurl)
-getImg(uurl)
-getDivImg(uurl)
+uurlList = ['http://m.100.travel/t129', 'http://m.100.travel/t35', 'http://m.100.travel/t151', 'http://m.100.travel/t37', 'http://m.100.travel/t150', 'http://m.100.travel/t141', 'http://m.100.travel/t153', 'http://m.100.travel/t149', 'http://m.100.travel/t12', 'http://m.100.travel/t11', 'http://m.100.travel/t136']
+for uurl in uurlList:
+    parser(uurl)
+    getImg(uurl)
+    getDivImg(uurl)
 
