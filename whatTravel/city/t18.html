@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>美国 赏蓝岭公园路上的如画秋景_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " />
+	<meta name="description" content="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 :开车自驾，用地道，安逸，自在的方式畅游美国！一路欣赏美国中部到东部的奇特秋景，体验美国奇美公路！" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<link rel="stylesheet" href="/Public/home/swiper/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " src="../upload/travel/US751/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " src="../upload/travel/US751/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " src="../upload/travel/US751/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[美国 赏蓝岭公园路上的如画秋景]</h3>
+                <p>大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 </p>
+                <p>29800元/人起 <span style="color:#999;display:inline-block;width:auto;">13天12晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li >
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US751/Id1.jpg" alt="新奥尔良零距离聆听爵士乐"></div>
+            <div class="content">
+                <div class="title"><span>1</span>新奥尔良零距离聆听爵士乐</div>
+                <p>入20世纪，随着爵士乐的兴起，大量的艺术家涌入新奥尔良。包括爵士钢琴之王托尼.杰克逊，作家杜鲁门.卡波特，还有写下不朽的《欲望号街车》的剧作家威廉.田纳西等。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US751/Id2.jpg" alt="自驾美国最美蓝岭公路 赏绝美秋景"></div>
+            <div class="content">
+                <div class="title"><span>2</span>自驾美国最美蓝岭公路 赏绝美秋景</div>
+                <p>宁静安详的蓝岭公路经常穿越森林，沿途还有历史悠久的小镇、老磨坊和切罗基国领地。每年秋季大概10月份左右树叶从深绿变成红、黄、绿等颜色，是欣赏秋景的好去处。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US751/Id3.jpg" alt="邂逅大雾山国家公园"></div>
+            <div class="content">
+                <div class="title"><span>3</span>邂逅大雾山国家公园</div>
+                <p>大雾山是美国阿巴拉契亚山脉西部的一段,在北卡罗来纳州西部和田纳西州东部之间,代表了300多万年前地球发展历史上的一个重要时期。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/US751/Id4.jpg" alt="帝国大厦赏纽约璀璨夜景"></div>
+            <div class="content">
+                <div class="title"><span>4</span>帝国大厦赏纽约璀璨夜景</div>
+                <p>1955年，美国土木工程师学会将帝国大厦评价为现代世界七大工程奇迹之一 。纽约地标委员会将其选为纽约市地标，1986年该建筑被认定为美国国家历史地标。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>由北京出发，经旧金山转机抵达新奥尔良，去程飞行时间约17小时，返程直接从纽约直飞北京回国。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Sofitel Lafayette Square Washington DC 华盛顿特区拉法叶广场索菲特酒店 5星<br />
+这家历史悠久的酒店距离华盛顿特区的白宫仅有5分钟步行路程，酒店内设有餐厅和休息室。所有客房均设有带有线频道的平面电视。酒店距离地铁仅有几步之遥。店的每间豪华客房均设有迷你吧。每间空调客房均配备了连接浴室、免费洗浴用品和吹风机。所有客房还均配备了免费无线网络连接。<br />
+酒店评分：9.0分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/US751/2.jpg" alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 ">
+	<img src="../upload/travel/US751/3.jpg" alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 ">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-新奥尔良</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281501215520.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281501214585.jpg);"></div></div>                </div>                <p>搭乘国际航班飞往爵士乐之都--新奥尔良，抵达后入住酒店休息，调整时差。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Hotel Le Marais 3星 </p>
+				</div>			</li><li>
+				<h5>D2 新奥尔良</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281502494081.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281502493188.jpg);"></div></div>                </div>                <p>早餐后前往【杰克逊广场】，【圣路易斯大教堂】，【旧市政厅】，【Presbytère博物馆】之后前往法国区【皇家街 (Royal Street) 】，【波本街(Bourbon】)的爵士乐，杂志街的时尚金牌店。逛累了，可前往【杜蒙德咖啡馆】，晚上欣赏新奥尔良著名的现场音乐表演和各种酒吧。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Hotel Le Marais 3星 </p>
+				</div>			</li><li>
+				<h5>D3 新奥尔良</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281503479669.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281503477677.jpg);"></div></div>                </div>                <p>早餐后游览【杰曼卡泽纳夫威尔斯狂欢节博物馆】，跳上【红色的有轨电车】，沿着运河街路线，朝着【城市公园】的广袤绿色出发。这里坐落着【新奥尔良艺术博物馆】、【植物园】，【庞恰特雷恩湖】，位于海港边的【蓝蟹餐厅（Blue Crab）】，提供各种新鲜的海鲜，无论油炸或烧烤都是神仙美味。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Hotel Le Marais 3星 </p>
+				</div>			</li><li>
+				<h5>D4 新奥尔良-蒙哥马利</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281504509720.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281504504443.jpg);"></div></div>                </div>                <p>新奥尔良距离蒙哥马利车程约4个半小时 <br />
+早餐后驱车前往【蒙哥马利】，下午您将探索19世纪南方邦联【第一白宫】，【民权纪念馆】，或前往【菲茨杰拉德博物馆】，每个人都可以享受南部的美味佳肴，无论是华丽多姿的还是朴实无华，游览蒙哥马利给您带来许多不同的体验。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Hampton Inn & Suites Montgomery-EastChase 3星 </p>
+				</div>			</li><li>
+				<h5>D5 蒙哥马利-亚特兰大</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281505395261.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281505398755.jpg);"></div></div>                </div>                <p>蒙哥马利距离亚特兰大车程约2个半小时 <br />
+早餐后驱车前往“新南方的首府”【亚特兰大】，参观【CNN总部】，【可口可乐总部】，之后前往游览【马丁路德金历史遗址公园】，《飘》的著作者【玛格丽特米切尔故居】等等。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Le Meridien Atlanta Perimeter 4星 </p>
+				</div>			</li><li>
+				<h5>D6 亚特兰大-大烟山国家公园</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281507065901.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281507060708.jpg);"></div></div>                </div>                <p>亚特兰大距离大烟山国家公园车程约5小时 <br />
+早餐后一路上驱车前往烟云弥漫的【大烟山国家公园】，抵达后您可以在茵茵绿地上漫步，还可以边远的地区远足。野营、垂钓、郊游、骑马或者仅仅是极目远眺美丽的风光都是很好的休闲方式。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Tudor Inn Gatlinburg B&B 4星 </p>
+				</div>			</li><li>
+				<h5>D7 大烟山国家公园-蓝岭公路</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281512534842.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281512539581.jpg);"></div></div>                </div>                <p>美国著名的【蓝岭公路】是自弗吉尼亚州北部的香纳多国家公园至田纳西州东北角的【大烟山国家公园】由长达755公里（469英里），而高潮之处就是沿着香纳多国家公园天际线大道修筑的几十个观景平台，它们都选择了景观奇特、视野开阔之处，让您仿佛面对巨大的山水画卷，令人心旷神怡。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Comfort Inn & Suites Blue Ridge 3星 </p>
+				</div>			</li><li>
+				<h5>D8 蓝岭公路沿线</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281509230745.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281509234681.jpg);"></div></div>                </div>                <p>今天继续驾车行驶在风景如画的【蓝岭公路上】，蜿蜒的山路就像一幅慢慢展开的画卷，路旁的植被的颜色不会有一丝重样的。另外，山里特别安静，打开窗户，就能听到落叶被车轮碾碎的声音。所以，哪怕只是在这里单纯的开车都是一种享受。<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Hotel Roanoke & Conference Center 4星 </p>
+				</div>			</li><li>
+				<h5>D9 蓝岭公路-华盛顿</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281513536276.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281513543905.jpg);"></div></div>                </div>                <p>今天继续驾车行驶在风景如画的蓝岭公路上，之后抵达【华盛顿】。下午，在【历史博物馆】中了解这个超级大国的历史和文化。傍晚时分，登上【国会山】，参观【国会大厦】，一览全城景色，静看落日。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Sofitel Lafayette Square Washington DC 4星 </p>
+				</div>			</li><li>
+				<h5>D10 华盛顿</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281515351068.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281515353609.jpg);"></div></div>                </div>                <p>早上游览【华盛顿纪念碑】，登上塔顶，俯视这个城市的美丽景色。【二战纪念碑】，【杰弗逊纪念堂】，【林肯纪念堂】中高大的林肯总统致敬。最后向【白宫】进发。傍晚，去著名的【肯尼迪中心】，看一场演出，漫步于中心的【屋顶露台】，观赏波托马克河及华盛顿的风光。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Sofitel Lafayette Square Washington DC 4星 </p>
+				</div>			</li><li>
+				<h5>D11 华盛顿-纽约</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281516564636.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281516567614.jpg);"></div></div>                </div>                <p>华盛顿距离纽约车程约4小时 早餐后前往曼哈顿，乘【自由女神号】游轮，参观【自由女神像】，【眺望曼哈顿】。然后回到曼哈顿参观【华尔街】，【第五大道】，【联合国大厦】，【时代广场】。旁晚登上【帝国大厦】，欣赏纽约夜景。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Blakely New York Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D12 纽约</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281518299019.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281518290529.jpg);"></div></div>                </div>                <p>早餐后，您可前往游览参观【自然博物馆】和【911纪念馆】，【大都会艺术博物馆】，【唐人街】等等。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Blakely New York Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D13 纽约-北京</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281518423049.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2017-12-28/201712281518426159.png);"></div></div>                </div>                <p>搭乘国际航班返回国内，结束美好的旅程。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " class="img-responsive" src="../upload/travel/US751/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>42600元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选四星酒店</h5>
+			<span>67200元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>29800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>50400元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返机票含税及燃油附加费；</p><p>签证费用；&nbsp;</p><p>全程行程所列境外星级酒店住宿含；</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>司导服务费、小费、餐补费用；&nbsp;</p><p>旅行社责任险；</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；</p><p>出行期间提供24小时旅游秘书服务，让您安心出行；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；<br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="大雾山国家公园+聆听密西西比河边的乡村爵士+帝国大厦赏纽约璀璨夜景 " src="/Public/home/images/contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<script>
+var is_submit = false;
+
+$(function(){
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

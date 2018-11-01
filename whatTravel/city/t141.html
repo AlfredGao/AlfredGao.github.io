@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>云南 入住松赞精品山居寻访香格里拉_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" />
+	<meta name="description" content="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致:试想，在面朝卡瓦博格的房间醒来，房间内炉火熊熊；或者在露台静修片刻，远眺白塔和藏房；我们沿着山脊走，沿着河谷走，走过田野..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<link rel="stylesheet" href="/Public/home/swiper/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_7.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="../upload/travel/CH908/1_8.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[云南 入住松赞精品山居寻访香格里拉]</h3>
+                <p>跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致</p>
+                <p>15000元/人起 <span style="color:#999;display:inline-block;width:auto;">6天5晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li >
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/CH908/Id1.jpg" alt="徒步尼丁原始森林"></div>
+            <div class="content">
+                <div class="title"><span>1</span>徒步尼丁原始森林</div>
+                <p>尼丁意为“心坎上的村落”环绕原始森林，也是茶马古道的旧路， 漫步其间不仅感受自然亦是回朔历史</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/CH908/Id2.jpg" alt="跟随非遗传人参与制作尼西黑陶"></div>
+            <div class="content">
+                <div class="title"><span>2</span>跟随非遗传人参与制作尼西黑陶</div>
+                <p>民间的制陶工艺已世代相传2千多年，尼西黑陶享誉滇西北及全藏区，在中国黑陶艺术中独具一格。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/CH908/Id3.jpg" alt="松赞梅里酒店看日照金山的绝美景致"></div>
+            <div class="content">
+                <div class="title"><span>3</span>松赞梅里酒店看日照金山的绝美景致</div>
+                <p>梅里雪山在藏区称“卡瓦格博雪山”，当地的藏族人民为它命名，赋予它神性，又与它世世代代保持着血肉联系。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/CH908/Id4.jpg" alt="木碗之乡奔子栏亲手绘制传统木碗"></div>
+            <div class="content">
+                <div class="title"><span>4</span>木碗之乡奔子栏亲手绘制传统木碗</div>
+                <p>德钦奔子栏地处茶马古道要冲，这里的木碗生产历史悠久，驰名整个藏区，古有木碗故乡的美称，其中又以奔子栏益西藏文化产业有限公司所产的木碗最具代表性。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前大多乘客选择从全国各地飞往昆明，经昆明转机飞往香格里拉迪庆机场，昆明飞往迪庆机场约1小时；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>德钦松赞梅里酒店 5*<br />
+选择了面对梅里雪山仅有五户人家的谷几农村。原址是一座毁于十七世纪的藏传佛教寺院。至今遗迹得到保留，毗邻梅里山居。无论身处书吧、露台、或房间，您都可以屏息凝视，日出时的晨光将每一座雪峰染成金色。抑或漫天星空或皎洁月光将雪峰映衬得圣洁无比。<br />
+松赞梅里曾入选“世界上最好的101酒店”，并被CNN评为“中国九家风景奇佳的酒店”之一。<br />
+酒店网评：9.6</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/CH908/2.jpg" alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致">
+	<img src="../upload/travel/CH908/3.jpg" alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 出发地-香格里拉-奔子栏</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-16/201804161203137711.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-16/201804161203135506.png);"></div></div>                </div>                <p>香格里拉距离奔子栏约1.5小时车程<br />
+飞机抵达【香格里拉】，接机后出发前往【尼西】。品尝舌尖上的中国之【尼西土鸡】（仅限上午抵达的航班），之后前往【奔子栏】，在奔子栏山居酒店享用晚餐。<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：酒店晚餐</div>				<div class="room">
+					<p>住宿:松赞奔子栏 豪华房 （海拔1900米） </p>
+				</div>			</li><li>
+				<h5>D2 奔子栏</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-16/201804161213101837.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-16/201804161213103359.png);"></div></div>                </div>                <p>早餐后前往【尼丁原始森林徒步】（约3小时），尼丁意为“心坎上的村落”环绕原始森林，也是茶马古道的旧路， 漫步其间不仅感受自然亦是回朔历史；之后返回酒店休息，前往幸福村【跟随非遗传承人体验传统木碗绘制】，晚上您可在酒店露台欣赏奔子栏星空。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：山中野餐 晚餐：酒店晚餐</div>				<div class="room">
+					<p>住宿:松赞奔子栏 豪华房 （海拔1900米） </p>
+				</div>			</li><li>
+				<h5>D3 奔子栏-梅里雪山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231043270248.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231043276024.png);"></div></div>                </div>                <p>-奔子栏距离梅里雪山约3小时车程<br />
+早餐后前往【梅里雪山】途径【东竹林寺】为康藏十三林寺院，院内佛像精美保留完整，内更有香巴拉时轮金刚立体坛城值得一观。下午来到保留一妻多夫制的【各几农藏村】，</p>
+                <div class="dinner">早餐:酒店早餐 午餐：酒店午餐 晚餐：酒店晚餐</div>				<div class="room">
+					<p>住宿:松赞梅里 豪华房（3600米） </p>
+				</div>			</li><li>
+				<h5>D4 梅里雪山</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231044195862.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231044195880.png);"></div></div>                </div>                <p>早晨前往欣赏【日照金山】的圣景；享用早餐后前往【白马雪山自然保护区】徒步，白马雪山为冰川造山运动造就的特殊U型山谷，全程约4-6小时，下午返回酒店休息，可【远眺梅里】，观梅里的风云变化。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：酒店午餐 晚餐：酒店晚餐</div>				<div class="room">
+					<p>住宿:松赞梅里 豪华房（3600米） </p>
+				</div>			</li><li>
+				<h5>D5 梅里-奔子栏-香格里拉</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231045220940.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231045221074.png);"></div></div>                </div>                <p>早餐后前往奔子栏，在奔子栏酒店享用午餐，之后前往【尼西汤堆村】漫步藏家村寨之后，跟随非遗传人参与学习制作非物质文化遗产【尼西黑陶】，之后途径【纳帕海】，前往松赞香格里拉，在酒店享用晚餐。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：酒店午餐 晚餐：酒店晚餐</div>				<div class="room">
+					<p>住宿:松赞绿谷 豪华房（3300米） </p>
+				</div>			</li><li>
+				<h5>D6 香格里拉-出发地</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231037228824.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-04-23/201804231037224750.png);"></div></div>                </div>                <p>早餐后前往香格里拉机场送机，返回您温馨的家。</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" class="img-responsive" src="../upload/travel/CH908/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+松赞系列酒店</h5>
+			<span>15000元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+松赞系列酒店</h5>
+			<span>16800元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+松赞系列酒店</h5>
+			<span>15000元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+松赞系列酒店</h5>
+			<span>16800元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国内段往返票含税及燃油附加费；</p><p>酒店专车配备专车司机；</p><p>行程中所列的活动和门票；</p><p>松赞精品山居酒店住宿（两人一间）；</p><p>行程中所列餐食；</p><p>在松赞精品山居酒店享用软饮，当地啤酒，下午茶等；</p><p>松赞专属驻店旅行管家服务；</p><p>旅行社责任险以及安联境外个人旅游保险；</p><p>定制服务费，24小时旅游秘书及合同保障；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="跟随非遗传人参与制作尼西黑陶+徒步尼丁原始森林+木碗之乡奔子栏亲手绘制传统木碗+松赞梅里酒店看日照金山景致" src="/Public/home/images/contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t142'">
+		<dt><img alt="在达摩祖师洞转经道上俯瞰两江分水岭+在当地农家制作原生态豆浆和豆腐+各几农臧村家中印制当地祈福经幡" src="../upload/travel/CH909/0.jpg"></dt>
+		<dd>在达摩祖师洞转经道上俯瞰两江分水岭+在当地农家制作原生态豆浆和豆腐+各几农臧村家中印制当地祈福经幡</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t115'">
+		<dt><img alt="群峰环抱中享贡嘎神山温泉+在美丽稻城聆听一堂藏语课程+驰骋在塔公草原品纯手工牦牛酸奶" src="../upload/travel/CN101/0.jpg"></dt>
+		<dd>群峰环抱中享贡嘎神山温泉+在美丽稻城聆听一堂藏语课程+驰骋在塔公草原品纯手工牦牛酸奶</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t33'">
+		<dt><img alt="入住拉萨瑞吉酒店+造访森林的海洋鲁朗林海+亲临圣湖羊卓雍措湖+探索神秘藏医药文化发源地南伊沟" src="../upload/travel/AE721/0.jpg"></dt>
+		<dd>入住拉萨瑞吉酒店+造访森林的海洋鲁朗林海+亲临圣湖羊卓雍措湖+探索神秘藏医药文化发源地南伊沟</dd>
+	</dl><dl id="rlist4" onclick="location.href='/t74'">
+		<dt><img alt="在桃乐丝酒庄体验酿造者的乐趣+深入欧洲大陆西点罗卡角+领略高迪建筑群的魅力+赏夕阳日落爱情海景致" src="../upload/travel/EU505/0.jpg"></dt>
+		<dd>在桃乐丝酒庄体验酿造者的乐趣+深入欧洲大陆西点罗卡角+领略高迪建筑群的魅力+赏夕阳日落爱情海景致</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div>
+
+<script>
+var is_submit = false;
+
+$(function(){
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

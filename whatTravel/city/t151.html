@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>越南 造访左手大海右手沙漠的美奈_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" />
+	<meta name="description" content="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河:芽庄拥有越南很好的海滩，绵延数公里，恬静的大海载着晚归的渔船，远处是黛青色的山，悠闲的生活莫过于此；胡志明市充满了浓郁的..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../upload/travel/AS916/1_6.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[越南 造访左手大海右手沙漠的美奈]</h3>
+                <p>浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河</p>
+                <p>8800元/人起 <span style="color:#999;display:inline-block;width:auto;">7天6晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li >
+			<p>Spring</p>
+			<span>春</span>
+		</li><li >
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AS916/Id1.jpg" alt="浸泡在芽庄最具代表的泥浆浴"></div>
+            <div class="content">
+                <div class="title"><span>1</span>浸泡在芽庄最具代表的泥浆浴</div>
+                <p>泥浴是指将含有矿物质、有机物、微量元素和某些放射性物质的泥类，经过加温后，敷于身体，或在泥浆里浸泡以达到健身祛病的养生保健法。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AS916/Id2.jpg" alt="环游芽庄四岛"></div>
+            <div class="content">
+                <div class="title"><span>2</span>环游芽庄四岛</div>
+                <p>四岛游是认识芽庄的好办法，优美的岛国风光、幽默船老大和丰富的娱乐节目，来这里感受越南式幸福吧。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AS916/Id3.jpg" alt="造访左手大海右手沙漠的美奈"></div>
+            <div class="content">
+                <div class="title"><span>3</span>造访左手大海右手沙漠的美奈</div>
+                <p>美奈（Mui Ne）是位于越南东南部平顺省美奈半岛上的一个渔村小镇，美奈有一项奇特的景象，左手大海，右手沙漠，眼前的景色让人心胸开阔。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/AS916/Id4.jpg" alt="乘当地木船游湄公河"></div>
+            <div class="content">
+                <div class="title"><span>4</span>乘当地木船游湄公河</div>
+                <p>登上当地人划的小船，在岛中的小水渠上曲折穿行，两岸都是茂盛的天然水椰林，您可以在船上摆好姿势，让划船的给您拍一张热带风光十足的美照。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>目前广州等地开通了直飞芽庄以及胡志明市的航班，飞行时间约2-3小时；</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Mia Resort Nha Trang（芽庄米娅度假酒店）5*<br />
+海滩距离住宿有2分钟步行路程。 五星级的Mia Resort Nha Trang度假酒店提供周六免费海滩瑜伽课程、酒店附近的小车接送服务、室外游泳池以及舒缓的按摩理疗服务。客人还可以参加烹饪课程、浮潜之旅、一日游以及海滩上的瑜伽课程。 <br />
+瑜伽课程于每周日7:30至9:00间提供。<br />
+酒店网评：9.3</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/AS916/2.jpg" alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河">
+	<img src="../upload/travel/AS916/3.jpg" alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 广州-芽庄</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805170936499456.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805170936493260.png);"></div></div>                </div>                <p>今日搭乘国际航班飞往越南芽庄，抵达后专人接机前往酒店，抵达后在酒店内休息。</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 芽庄</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171023262584.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171023267280.png);"></div></div>                </div>                <p>早餐后【乘船出海参观芽庄四岛】。四岛游是认识芽庄的好办法，优美的岛国风光、幽默船老大和丰富的娱乐节目，来这里感受越南式幸福吧。船在浅水区域停下来，大家纷纷跳下海里浮潜和游泳，之后在船上享用丰盛的午餐，中间横排座位的椅背放下来，就连成了一个超大餐桌。</p>
+                <div class="dinner">早餐:酒店用餐 午餐：船上午餐 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 芽庄</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171022220692.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171022220199.png);"></div></div>                </div>                <p>酒店早餐后，我们前往参观【芽庄教堂】【婆那加占婆塔】午餐后，下午我们可以前往芽庄特色的矿泥浴【I-RESORT热矿泥浴】，泥浴是指将含有矿物质、有机物、微量元素和某些放射性物质的泥类，经过加温后，敷于身体，或在泥浆里浸泡以达到健身祛病的养生保健法。</p>
+                <div class="dinner">早餐:酒店用餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 芽庄-美奈</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171017473556.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171017472620.png);"></div></div>                </div>                <p>芽庄距离美奈约4小时车程<br />
+早餐后驱车前往【美奈】美奈有一项奇特的景象，左手大海，右手沙漠，眼前的景色让人心胸开阔。前往【白沙丘】在这里你可以感受沙漠的深处有淡水湖泊，湖泊旁长满了高大幽深的热带丛林植被，沙丘包裹着碧湖绿树，湖上飘着朵朵荷花。感受风吹荷浪翻涌，岸边丛林树梢沙沙作响，沙粒流动无痕。 </p>
+                <div class="dinner">早餐:酒店用餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 美奈-胡志明</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171020597393.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171020591897.png);"></div></div>                </div>                <p>美奈距离胡志明约4小时车程<br />
+睡到自然醒，充分享受酒店设施，驱车前往胡志明，来到胡志明必到之处【统一宫】，【红教堂】，【邮局】，红教堂是西贡著名的地标建筑，位于西贡市中心，是热闹和繁华之处， 中央邮局 就在其左侧，十分便利。</p>
+                <div class="dinner">早餐:酒店用餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 胡志明</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171024320087.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805171024329694.png);"></div></div>                </div>                <p>来到胡志明不可错过的就是【美拖】了，越南导演陈英雄的作品《青木瓜之味》和法国作家杜拉斯的《情人》在此拍摄。今日我们将参加一日游，接您抵达美拖后换乘游船，游览湄公河支流前江，观赏龙岛、麒麟岛、龟岛、凤岛风光以及了解水上渔民的生活。</p>
+                <div class="dinner">早餐:酒店用餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 胡志明-广州</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805170945267395.png);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-05-17/201805170945267845.png);"></div></div>                </div>                <p>早餐后搭乘航班搭离开越南，结束愉快的旅行。</p>
+                <div class="dinner">早餐:酒店用餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温暖新的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" class="img-responsive" src="../upload/travel/AS916/4.jpg"></div>
+		<div class="video_wp">
+			<video id="example_video_1" class="vjs-fluid video-js vjs-default-skin" controls preload="auto" width="100%" height="300" poster="../upload/travel/AS916/poster.jpg" data-setup="{}">
+			<source src="../upload/travel/AS916/video.mp4" type='video/mp4' />
+			<track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+			<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+			</video>
+		</div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>12300元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>18500元/人起</span>
+		</li><li>
+			<h5>六人出行 经济舱+精选四星酒店</h5>
+			<span>8800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>15000元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返机票含税及燃油附加费；</p><p>目的地国家签证费；</p><p>全程行程所列境住宿含早餐；</p><p>境外全程地面交通私人专车服务；</p><p>境外全程专业华语导游服务；</p><p>全程私人专车地面交通接送服务；</p><p>行程所列景点首道门票；</p><p>导游及司机服务费、小费；</p><p>旅行社责任险；&nbsp;</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;</p><p>出行期间提供24小时旅游秘书服务，让您安心出行；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；</p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="浸泡在芽庄特色的泥浆浴+环游芽庄四岛+乘当地木船游湄公河" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+<script>
+var is_submit = false;
+
+$(function(){	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>日本北海道 漫步在富良野薰衣草田_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " />
+	<meta name="description" content="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 :春观夜樱、夏看碧海、秋见红叶、冬踏落雪。日本在她潮流的外表下，依然保持着传统的模样。北海道一生中要去四次，因为每个季节都..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="..../uploads/travel/JP756/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="..../uploads/travel/JP756/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="..../uploads/travel/JP756/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="..../uploads/travel/JP756/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="..../uploads/travel/JP756/1_5.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[日本北海道 漫步在富良野薰衣草田]</h3>
+                <p>造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 </p>
+                <p>16700元/人起 <span style="color:#999;display:inline-block;width:auto;">7天6晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="..../uploads/travel/JP756/Id1.jpg" alt="探访富良野薰衣草田"></div>
+            <div class="content">
+                <div class="title"><span>1</span>探访富良野薰衣草田</div>
+                <p>散落在北海道，一个挥之不去的薰衣草情节，一场花田如梦的夏日之约。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="..../uploads/travel/JP756/Id2.jpg" alt="乘缆车俯瞰函馆百万夜景"></div>
+            <div class="content">
+                <div class="title"><span>2</span>乘缆车俯瞰函馆百万夜景</div>
+                <p>夜间，在沙颈岬中间，细长的市街上闪耀的街灯和漆黑的海形成对比，钓墨斗鱼的渔船上点燃的油灯编织成美丽的夜景。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="..../uploads/travel/JP756/Id3.jpg" alt="白色恋人公园享浪漫情怀"></div>
+            <div class="content">
+                <div class="title"><span>3</span>白色恋人公园享浪漫情怀</div>
+                <p>白色恋人公园不仅可以参观工厂、看到流水线上巧克力制作的全过程，更能亲自动手制作白色恋人巧克力饼干。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="..../uploads/travel/JP756/Id4.jpg" alt="造访登别伊达时代村 再现江户时代风情"></div>
+            <div class="content">
+                <div class="title"><span>4</span>造访登别伊达时代村 再现江户时代风情</div>
+                <p>在这里你可以穿越到数百年前，徜徉在仿古建筑的街道，与当时的忍者、花魁一同看花花世界。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>上海、北京、天津等地每天都有多个航班直飞札幌，飞行时间仅需3-4小时左右。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Asahikawa Grand Hotel（旭川大酒店） 4星<br />
+Asahikawa Grand Hotel酒店布置典雅的客房配有平面卫星电视。客人可在浴池中享受浸泡浴或品尝新鲜绿茶。酒店距离JR旭川火车站有13分钟步行路程，提供现代化的空调客房、带1个热水浴池和桑拿浴室的Spa Plateau、1间带美丽景色且位于17楼的餐厅以及覆盖各处的免费无线网络连接。<br />
+酒店评分：8.2分</p>
+	<h4>参考酒店</h4>
+	<img src="..../uploads/travel/JP756/2.jpg" alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 ">
+	<img src="..../uploads/travel/JP756/3.jpg" alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 ">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国-札幌</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271429506618.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271429502706.jpg);"></div></div>                </div>                <p>搭乘航班前往【札幌】，抵达后驱车前往【旭川动物园】，看看这里悠闲生活的北极熊、企鹅、海豹等动物等。晚上入住旭川。<br />
+<br />
+</p>
+                <div class="dinner">早餐:敬请自理 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Asahikawa Grand Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D2 旭川-美瑛-富良野-登别</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271430244372.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271430244625.jpg);"></div></div>                </div>                <p>旭川距离登别车程约4个半小时 <br />
+酒店享用美味的早餐后，驱车前往【拼图之路】，置身【四季彩丘农庄】薰衣草的花海中。后前往【富良野富田农场】，【小矮人木屋】，【Soh‘s BAR】、【森之时计咖啡屋】，晚上前往登别入住酒店。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Noboribetsu Grand Hotel 4星 </p>
+				</div>			</li><li>
+				<h5>D3 登别-洞爷湖</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271431366269.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271431363596.jpg);"></div></div>                </div>                <p>酒店早餐后，驱车前往游【登别地狱谷】【登别熊牧场】，【登别伊达时代村】再现江户时代风情的主题乐园。后驱车前往【洞爷湖】展望台一览洞爷湖全景，晚上入住洞爷湖温泉酒店，享泡汤之乐。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:The Windsor Hotel Toya Resort & Spa 5星 </p>
+				</div>			</li><li>
+				<h5>D4 洞爷湖-函馆</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271432157661.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271432156732.jpg);"></div></div>                </div>                <p>洞爷湖距离函馆车程约2个小时40分钟 <br />
+酒店享用美味早餐后，您将【乘坐观光船】30分钟踏上洞爷湖湖心岛。之后返回前往游览日本年轻的火山【昭和新山】，下午驱车前往【大沼国定公园】。傍晚时分抵达【函馆山】，【搭乘缆车上山顶】展望台俯瞰世界三大夜景之一的函馆夜景 。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Loisir Hotel Hakodate 4星 </p>
+				</div>			</li><li>
+				<h5>D5 函馆-札幌</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271435039855.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271435034289.jpg);"></div></div>                </div>                <p>函馆距离札幌车程约4小时 <br />
+早餐后前往逛函馆热闹的集贸市场【函馆朝市】，有大大小小200多家的店铺和400多家水产店，稍晚驱车前往札幌，抵达后游览【时计台】【旧道厅】以及北海道的商业街【狸小路】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Sapporo Grand Hotel 5星 </p>
+				</div>			</li><li>
+				<h5>D6 札幌-小樽-札幌</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271436261745.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271436262915.jpg);"></div></div>                </div>                <p>早餐后前往游览【北海道神宫】【白色恋人公园】，之后前往著名电影《情人》拍摄地-小樽，体验【浪漫游八音盒】【欧风蒸汽钟】【北一哨子馆】【小樽运河】【银之中咖啡馆】等，稍晚返回札幌入住酒店休息。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:Sapporo Grand Hotel 5星 </p>
+				</div>			</li><li>
+				<h5>D7 札幌-中国</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271436440138.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(..../uploads/pictures/2017-12-27/201712271436449890.png);"></div></div>                </div>                <p>早餐后酒店收拾好行李，前往机场搭乘航班离开，结束愉快的旅程，返回温馨的家！<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:您温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " class="img-responsive" src="..../uploads/travel/JP756/4.jpg"></div>
+		<div class="video_wp">
+			<video id="example_video_1" class="vjs-fluid video-js vjs-default-skin" controls preload="auto" width="100%" height="300" poster="..../uploads/travel/JP756/poster.jpg" data-setup="{}">
+			<source src="..../uploads/travel/JP756/video.mp4" type='video/mp4' />
+			<track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+			<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+			<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+			</video>
+		</div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>27500元/人起</span>
+		</li><li>
+			<h5> 二人出行 商务舱+精选五星酒店</h5>
+			<span>31500元/人起</span>
+		</li><li>
+			<h5> 六人出行 经济舱+精选四星酒店</h5>
+			<span>16700元/人起</span>
+		</li><li>
+			<h5> 六人出行 商务舱+精选五星酒店</h5>
+			<span>20700元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>往返机票含税及燃油附加费；</p><p>签证费用；&nbsp;</p><p>全程4-5星级酒店住宿含早餐；&nbsp;</p><p>境外全程地面私人专车服务（含油费，停车费，过路费，长途空返费，每天服务10小时）；&nbsp;</p><p>境外全程专业华语导游服务(含导游及司机住宿，餐补，小费，部分门票）；&nbsp;</p><p>特色体验；</p><p>行程所列景点首道门票；&nbsp;</p><p>旅行社责任险以及安联境外个人旅游保险 ；&nbsp;</p><p>线路设计费；</p><p>24小时旅游秘书服务费；</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p>午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p>其他个人消费；<br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="造访登别伊达时代村 再现江户时代风情+乘缆车俯瞰函馆百万夜景+步入浪漫白色恋人公园 " src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+<script>
+var is_submit = false;
+
+$(function(){
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="/Public/home/images/footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

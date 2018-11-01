@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>荷兰 法国 瑞士 意大利 饕餮一场经典的欧洲人文盛宴_目的地-佰悦会定制旅游</title>
+	<meta name="keywords" content="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" />
+	<meta name="description" content="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜:世界文化遗产之一依山傍海的“五渔村”，平凡而特别；意大利北部著名的旅游度假胜地-科莫湖地区，意大利豪华、昂贵的别墅就建在..." />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+
+<style>
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:35px;
+}
+
+.travel_baojia .price_list{
+	padding: 10px;
+	border: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp{
+	margin-bottom: 10px;
+	margin-top: 0;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content h4{
+	text-align: center;
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 1px solid #000;
+}
+
+.travel_baojia .feiyong_wp .content{
+	padding: 10px;
+	color: #666;
+}
+
+.travel_baojia .feiyong_wp .content .title{
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.travel_liangdian{
+    background: #fff;
+}
+
+.ld_item{
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 15px;
+    margin-top: 15px;
+}
+
+.ld_item .inner{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+}
+
+.ld_item .inner .img{
+    text-align: center;
+    padding: 5px;
+}
+
+.ld_item .inner .img img{
+    width: 100%;
+}
+
+.ld_item .inner .content{
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.ld_item .inner .content .title{
+    font-size: 16px;
+    color: #000;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ld_item .inner .content .title span{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    background: #d6ad65;
+    color: #fff;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.ld_item .inner .content p{
+    text-align: left;
+    margin: 0;
+    padding: 8px 0;
+    color: #999;
+    line-height: 20px;
+    overflow: hidden;
+    border-top: 1px solid #ddd;
+}
+
+.picwp{
+    overflow: hidden;
+}
+
+.picwp .item{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.picwp .item:nth-child(odd){
+    padding-right: 5px;
+}
+
+.picwp .item:nth-child(even){
+    padding-left: 5px;
+}
+
+.picwp .item .img{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dinner{
+    line-height: 20px;
+    margin-bottom: 10px;
+    background: url(../icon-dinner.png) no-repeat left center;
+    background-size: auto 18px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room{
+    margin-bottom: 10px;
+    background: url(../icon-bed.png) no-repeat left center;
+    background-size: auto 24px;
+    color: #666;
+    padding-left: 40px;
+}
+
+.room p{
+    margin: 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.banner .travel_top{
+    position: static;
+}
+
+.banner .travel_top .travel_top_title{
+    padding: 0;
+}
+
+.banner .travel_top .travel_top_title h3{
+    color: #333;
+    margin-top: 15px;
+}
+
+.banner .travel_top .travel_top_title p{
+    padding: 0;
+}
+</style>
+
+<div class="banner" style="padding-bottom:0;margin-top:56px;">
+	<div class="swiper-container swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" src="../upload/travel/EU406/1_1.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" src="../upload/travel/EU406/1_2.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" src="../upload/travel/EU406/1_3.jpg" alt="" width="100%" style="min-height:200px;"></div><div class="swiper-slide"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" src="../upload/travel/EU406/1_4.jpg" alt="" width="100%" style="min-height:200px;"></div>		</div>
+	</div>
+	<div class="travel_top_desc">
+		<span class="text_t"></span>
+		<div class="travel_top">
+            <div class="travel_top_title">
+                <h3>[荷兰 法国 瑞士 意大利 饕餮一场经典的欧洲人文盛宴]</h3>
+                <p>桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜</p>
+                <p>32800元/人起 <span style="color:#999;display:inline-block;width:auto;">13天11晚</span></p>
+            </div>
+        </div>
+		<span class="text_b"></span>
+	</div>
+</div>
+
+<div class="travel_season">
+	<h4>最佳旅行季节</h4>
+	<ul>
+		<li class="active">
+			<p>Spring</p>
+			<span>春</span>
+		</li><li class="active">
+			<p>Summer</p>
+			<span>夏</span>
+		</li><li class="active">
+			<p>Autumn</p>
+			<span>秋</span>
+		</li><li class="active">
+			<p>Winter</p>
+			<span>冬</span>
+		</li>	</ul>
+</div>
+
+<div class="travel_liangdian">
+	<h4>亮点介绍</h4>
+        <div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU406/Id1.jpg" alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊"></div>
+            <div class="content">
+                <div class="title"><span>1</span>桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊</div>
+                <p>桑斯安斯风车村是一座秀美的古老村庄。这里很好地保存了人们居住和生活的传统风貌，风车、木鞋、奶酪等荷兰民俗集中在这里展现。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU406/Id2.jpg" alt="搭乘专用火车上阿尔卑斯山少女峰"></div>
+            <div class="content">
+                <div class="title"><span>2</span>搭乘专用火车上阿尔卑斯山少女峰</div>
+                <p>前往少女峰最好的交通方式莫过于搭乘齿轮火车了,这条少女峰登山铁路修建于1896年至1912年间,是20世纪人类的一大创举。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU406/Id3.jpg" alt="乘着复古马车品味欧洲堡王香波堡"></div>
+            <div class="content">
+                <div class="title"><span>3</span>乘着复古马车品味欧洲堡王香波堡</div>
+                <p>香波堡是卢瓦尔河谷城堡群中最大最宏伟的城堡，乘着复古马车，听着车夫为您娓娓道来关于香波堡的那些美丽故事。</p>            </div>
+        </div>
+    </div><div class="ld_item">
+        <div class="inner">
+            <div class="img"><img class="img-responsive" src="../upload/travel/EU406/Id4.jpg" alt="红磨坊领略巴黎之夜"></div>
+            <div class="content">
+                <div class="title"><span>4</span>红磨坊领略巴黎之夜</div>
+                <p>法国红磨坊有着悠久的历史，早在1899年红磨坊酒吧便在巴黎蒙马特（Montmartre） 地区开业，不到半年，盛誉响遍整个欧洲。</p>            </div>
+        </div>
+    </div></div>
+
+<div class="travel_flight">
+	<h4>航班信息</h4>
+	<p>北京，上海广州均有直飞航班往返阿姆斯特丹，飞行时间约12小时。</p>
+</div>
+
+<div class="travel_hotel">
+	<h4>酒店信息</h4>
+	<p>Victoria Jungfrau Grand Hotel & Spa 维多利亚少女峰温泉大酒店 5星<br />
+The Victoria Jungfrau Grand Hotel & Spa酒店享有因特拉肯（Interlaken）优越而风景如画的地点，位于永远被白雪覆盖的少女峰（Jungfrau）山脚下2个美丽的湖泊之间。<br />
+酒店评分：8.8分</p>
+	<h4>参考酒店</h4>
+	<img src="../upload/travel/EU406/2.jpg" alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜">
+	<img src="../upload/travel/EU406/3.jpg" alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜">
+</div>
+
+<div class="travel_trip">
+	<h4>每日行程</h4>
+	<div class="content">
+		<ul>
+			<li>
+				<h5>D1 中国– 阿姆斯特丹</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021651543633.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021651541820.jpg);"></div></div>                </div>                <p>中国机场出发，直飞到达阿姆斯特丹。接机前往酒店休息，调整时差。<br />
+<br />
+</p>
+                <div class="dinner">早餐:飞机简餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D2 阿姆斯特丹</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021653317197.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021653314793.jpg);"></div></div>                </div>                <p>酒店享用西式早餐后前往荷兰郊区的【塞斯安斯风车村】，观赏在田野空旷中临风微动、充满中世纪特色的风车，体验荷兰传统的【木鞋制作工厂】和【奶酪作坊】。午餐后，乘游船欣赏水下运河城市【阿姆斯特丹】的迷人风光。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D3 阿姆斯特丹-巴黎</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021654527509.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021654520900.jpg);"></div></div>                </div>                <p>酒店早餐后，乘车前往【巴黎市区游览( 约5小时）】。下午【登顶艾菲尔铁塔】，参观【凯旋门】、【香榭丽舍大道】、【协和广场】。晚餐后建议欣赏【巴黎红磨坊歌舞表演】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D4 巴黎</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021655291010.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021655298913.jpg);"></div></div>                </div>                <p>早餐后，参观法国国家艺术宝库【卢浮宫】，午餐后前往【凡尔塞宫】。晚上前往巴黎著名的【名店街】自由尽情的购物。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D5 巴黎 - 布卢瓦 - 第戎</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021657028309.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021657026645.jpg);"></div></div>                </div>                <p>酒店早餐后，驱车前往【香波城堡 (约2小时)】，是卢瓦尔河谷所有城堡中宏伟的一个，已经有500多年的历史。乘着【复古马车】品味欧洲堡王香波堡，下午驱车前往【第戎 (约2小时)】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐： 敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D6 第戎 - 因特拉肯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021659114043.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021659119285.jpeg);"></div></div>                </div>                <p>酒店早餐后，乘车前往【因特拉肯 (约3个半小时)】，搭乘【齿轨火车】登山，前往【少女峰】，站在号称“欧洲屋脊”的少女峰上，可以观赏到阿尔卑斯山全景。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐： 敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D7 因特拉肯 - 琉森 - 科莫湖</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021700500859.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021700510522.jpg);"></div></div>                </div>                <p>酒店早餐后，前往【琉森 (约1小时)】，游览【琉森湖】，【湖上的教堂桥】，【“垂死的狮子”石雕】。午餐后，前往意大利米兰附近的【科莫湖 (约2个半小时)】，意大利北部阿尔卑斯山山区著名湖泊之一。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐： 敬请自理 晚餐： 敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D8 科莫湖 - 米兰</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021701504782.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021701504117.jpg);"></div></div>                </div>                <p>早餐后，前往时尚之都【米兰 (约1个半小时)】。游览意大利境内壮丽的哥德式教堂【米兰大教堂】、【艾曼纽二世回廊】、【史卡拉歌剧院】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D9 米兰 - 威尼斯</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021702383305.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021702389072.jpg);"></div></div>                </div>                <p>早餐后，乘车前往水上城市【威尼斯 (约2个半小时)】。游览【圣马可大教堂】，【圣马可广场】，因桥上死囚的叹息声而得名【叹息桥】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D10 威尼斯 - 佛罗伦萨 - 五渔村</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021703234139.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021703231507.jpg);"></div></div>                </div>                <p>早餐后，驱车前往【佛罗伦萨 (约2个半小时)】，参观【圣母教堂】、【乔托钟楼】、游览【市政厅广场】。午餐后驱车前往【五渔村地区 (约1个半小时)】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D11 五渔村 - 比萨 - 罗马</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021704205710.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021704202617.jpg);"></div></div>                </div>                <p>酒店早餐后，前往【比萨城内 (约1个小时)】，参观著名的【比萨斜塔】，之后驱车前往意大利首都罗马 (约3个半小时)，参观罗马著名的【斗兽场】、【君士坦丁凯旋门】、顺访【古罗马废墟】，参观【梵蒂冈】，【圣彼得大教堂】和【圣彼得广场】。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：敬请自理 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:佰悦精选当地酒店 </p>
+				</div>			</li><li>
+				<h5>D12 罗马-阿姆斯特丹</h5>
+                <div class="picwp">
+                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021704553916.jpg);"></div></div>                    <div class="item"><div class="img" style="background-image:url(../upload/pictures/2018-01-02/201801021704558681.png);"></div></div>                </div>                <p>早餐后，搭乘飞机经转阿姆斯特丹。<br />
+<br />
+</p>
+                <div class="dinner">早餐:酒店早餐 午餐：飞机简餐 晚餐：飞机简餐</div>				<div class="room">
+					<p>住宿:飞机上 </p>
+				</div>			</li><li>
+				<h5>D13 阿姆斯特丹-中国</h5>
+                                <p>飞往国内，结束温馨的旅程！<br />
+<br />
+</p>
+                <div class="dinner">早餐:飞机简餐 午餐：飞机简餐 晚餐：敬请自理</div>				<div class="room">
+					<p>住宿:温馨的家 </p>
+				</div>			</li>		</ul>
+		<div class="trip_map"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" class="img-responsive" src="../upload/travel/EU406/4.jpg"></div>
+	</div>
+</div>
+
+<div class="travel_baojia">
+	<h4>旅行费用</h4>
+	<ul class="price_list">
+		<li>
+			<h5>二人出行 经济舱+精选四星酒店</h5>
+			<span>43500元/人起</span>
+		</li><li>
+			<h5>二人出行 商务舱+精选五星酒店</h5>
+			<span>67900元/人起</span>
+		</li><li>
+			<h5> 六人出行 经济舱+精选四星酒店</h5>
+			<span>32800元/人起</span>
+		</li><li>
+			<h5>六人出行 商务舱+精选五星酒店</h5>
+			<span>57700元/人起</span>
+		</li>	</ul>
+	
+	<div class="feiyong_wp">
+		<div class="content">
+			<div class="title">费用包含</div>
+			<p>国际段往返票含税及燃油附加费；&nbsp;</p><p>目的地国家签证费；&nbsp;</p><p>全程行程所列境外星级酒店住宿含早餐；&nbsp;</p><p>境外全程地面交通私人专车服务；&nbsp;</p><p>境外全程专业华语导游服务；&nbsp;</p><p>行程所列景点首道门票；&nbsp;</p><p>行程所列公共交通费用（如适用，火车、轮船等）；&nbsp;</p><p>导游及司机服务费、小费、餐补费用；
+‧&nbsp;</p><p>旅行社责任险；&nbsp;</p><p>境外个人旅游保险 (仅覆盖行程期间及目的地国家，保险公司拥有最终解释权及理赔权)；&nbsp;</p><p>出行期间提供24小时旅游秘书服务，让您安心出行</p>		</div>
+		<div class="content">
+			<div class="title">费用不包含</div>
+			<p style="white-space: normal;">午餐和晚餐（因定制出行人数较少，午晚餐自理更加方便灵活，可选择让当地导游推荐餐厅；特殊餐厅如米其林我们可以提前安排预定；人数较多可全程含餐费用另计）；</p><p style="white-space: normal;">其他个人消费；</p><p><br/></p>		</div>
+	</div>
+</div>
+
+<div class="i_contact" style="padding:0 15px;background-color:#c4d6d6;">
+	<div class="title"><img alt="桑斯安斯风车村观传统的木鞋制作工厂和奶酪作坊+搭乘齿轨火车抵达少女峰+乘着复古马车品味欧洲堡王香波堡+红磨坊领略巴黎之夜" src="../contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Travel/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+<script src="../js/swiper.jquery.min.js"></script>
+<script>
+var is_submit = false;
+
+$(function(){
+	var mySwiper = new Swiper ('.swiper-container1', {
+		loop: true,
+		autoplay: 3000
+	});
+	
+	var mySwiper2 = new Swiper ('.swiper-container2', {
+		loop: true,
+		autoplay: 3000,
+		pagination: '.swiper-p2',
+	});
+	
+	$('.more_btn').click(function(){
+		if($(this).hasClass('show'))
+		{
+			$('#rlist3').hide();
+			$('#rlist4').hide();
+			$(this).removeClass('show');
+		}
+		else
+		{
+			$('#rlist3').show();
+			$('#rlist4').show();
+			$(this).addClass('show');
+		}
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>
