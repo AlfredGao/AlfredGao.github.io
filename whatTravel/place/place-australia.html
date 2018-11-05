@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>【目的地定制旅行】目的地旅行产品_国外目的地定制_目的地旅行主题_热门定制目的地-沃特定制旅游</title>
+	<meta name="keywords" content="目的地定制旅行,目的地旅行产品_国外目的地定制_目的地旅行主题_热门定制目的地" />
+	<meta name="description" content="沃特会定制旅游专注海外高端定制旅游,为您提供目的地定制旅行、目的地旅行产品、国外目的地定制、目的地旅行主题、热门定制目的地推荐等私人定制旅游服务。咨询：400-995-1115" />
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../pictures/contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="city/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../pictures/logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="../css/swiper.min.css">
+<style>
+.detail_btn{
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    background: #d6ad65;
+    color: #fff;
+    border-radius: 10px;
+    display: inline-block;
+}
+</style>
+
+<!-- <div class="container travel_wp">
+	<div class="tablist">
+		<a href="javascript:;" class="hotbtn">热门目的地 <span></span></a>
+		<a href="javascript:;" class="themebtn">推荐主题 <span></span></a>
+	</div>
+	<ul class="hotlist shadow">
+		<li ><a href="/place-england">英国</a></li><li ><a href="/place-france">法国</a></li><li ><a href="/place-usa">美国</a></li><li ><a href="/place-taiwan">台湾</a></li><li ><a href="/place-singapore">新加坡</a></li><li ><a href="/place-maldives">马尔代夫</a></li><li ><a href="/place-russia">俄罗斯</a></li><li ><a href="/place-spain">西班牙</a></li><li ><a href="/place-swiss">瑞士</a></li><li ><a href="/place-newzealand">新西兰</a></li><li ><a href="/place-thailand">泰国</a></li><li ><a href="/place-australia">澳大利亚</a></li><li ><a href="/place-southafrica">南非</a></li><li ><a href="/place-greece">希腊</a></li><li ><a href="/place-italy">意大利</a></li><li ><a href="/place-dubai">迪拜</a></li><li ><a href="/place-japan">日本</a></li>	</ul>
+	<ul class="themelist shadow"> -->
+		<!-- <li data-theme="unique">佰悦独家</li><li data-theme="c">当地文化</li><li data-theme="child">亲子出游</li><li data-theme="shopping">休闲购物</li><li data-theme="f">节日庆典</li><li data-theme="drive">海外自驾</li><li data-theme="nature">自然风光</li><li data-theme="honeymoon">蜜月之旅</li><li data-theme="island">热带海岛</li><li data-theme="sport">体育赛事</li>	</ul> -->
+	<ul id="travel_list">
+        <li class="shadow">
+            <div class="thumb"><a href="../city/t35.html"><img alt="入住悉尼四季酒店享海港景观+直升机观览世界奇观十二门徒+悉尼塔旋转餐厅享城市绚丽景观+造访西海岸福克斯冰川 " src="../upload/travel/AU723/0.jpg"></a></div>
+            <div class="content">
+                <div class="title flex">
+                    <div class="hd">
+                        <img src="../upload/country/auflag.jpg" width="30" height="20">
+                    </div>
+                    <div class="bd" style="padding:0;">
+                        <b style="font-size:16px;">澳大利亚 新西兰 不同的南半球新大陆</b>
+                    </div>
+                </div>
+                <div class="detail flex">
+                    <div class="bd" style="padding:0;">入住悉尼四季酒店享海港景观+直升机观览世界奇观十二门徒+悉尼塔旋转餐厅享城市绚丽景观+造访西海岸福克斯冰川 </div>
+                </div>
+                <div class="bottom flex" style="margin-top:5px;">
+                    <div class="bd" style="padding:0;">
+                        35700元起 <span style="color:#999;">14天11晚</span>
+                    </div>
+                    <div class="ft">
+                        <a class="detail_btn" href="../city/t35.html">详情 ></a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        </ul>
+</div>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../pictures/footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:"/index.php/Index/phone_click.html"});
+        });
+    
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>【定制旅游案例】私人定制旅游案例_定制旅行案例_高端定制旅游案例_欧洲定制旅游案例_美国定制旅游案例-沃特旅行</title>
+	<meta name="keywords" content="定制旅游案例,私人定制旅游案例,定制旅行案例,高端定制旅游案例,欧洲定制旅游案例,美国定制旅游案例,日本定制旅游案例,澳大利亚定制旅游案例,迪拜定制旅游,新西兰定制旅游" />
+	<meta name="description" content="沃特定制旅游专注海外高端定制旅游,定制旅游案例栏目为您展示私人定制旅游案例、定制旅行案例、高端定制旅游案例、欧洲定制旅游案例、美国定制旅游案例、日本定制旅游案例、澳大利亚定制旅游案例等。咨询：400-995-1115" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+
+	
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="pictures/contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="city/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="pictures/logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="css/swiper.min.css">
+<style>
+.topbanner{
+    width: 100%;
+	height: 0;
+    padding-bottom: 61.8%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hotel_wrap .top{
+	position: relative;
+}
+
+.hotel_wrap .top .title{
+	top: 50%;
+	margin-top: -35px;
+}
+</style>
+
+<div class="hotel_wrap">
+	<div class="top">
+		<div class="topbanner" style="background-image:url(pictures/banner_case.jpg)"></div>
+		<div class="title">我们携手为您<br>提供最优质满意的服务</div>
+	</div>
+</div>
+
+<div class="i_feedback" style="background:#fff;">
+	<div class="feedback-list">
+        <div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-11-04/cover.jpg)">
+                    <p>旧金山 台女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>谢谢沃特旅行，给妈妈的长途旅行增添了无限温馨...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：9&nbsp;&nbsp;&nbsp;人数：3</p>
+            <a href="case/c1.html" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-11-03/cover.jpg)">
+                    <p>纽约 殷女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>这次NYC之旅，更让我珍惜父母在身边...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：7&nbsp;&nbsp;&nbsp;人数：5</p>
+            <a href="case/c2.html" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-11-02/cover.jpg)">
+                    <p>加州硅谷 李先生</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>宇宙中心的科技之旅，孩子兴奋十足...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：9&nbsp;&nbsp;&nbsp;人数：2</p>
+            <a href="case/c3.html" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-11-01/cover.jpg)">
+                    <p>中国 云女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>海航头等舱配上成都氤氲湿润的天...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：13&nbsp;&nbsp;&nbsp;人数：2</p>
+            <a href="case/c4.html" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-10-31/cover.jpg)">
+                    <p>洛杉矶 魏女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>天使之城的华尔道夫，真真切切...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：9&nbsp;&nbsp;&nbsp;人数：4</p>
+            <a href="case/c5.html" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(upload/feedback/2018-10-30/cover.jpg)">
+                    <p>洛杉矶 琅先生</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="pictures/douhao1.png" width="15"></div>
+                    <p>LA downtown的洲际，70层俯瞰天使...</p>
+                    <div class="text_b"><img src="pictures/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：15&nbsp;&nbsp;&nbsp;人数：2</p>
+            <a href="case/c6.html" class="detail_btn">详情></a>
+        <!-- </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(/Uploads/feedback/2016-12-12/201612121133107123.jpg)">
+                    <p>日本 张女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="/Public/web/images/douhao1.png" width="15"></div>
+                    <p>这次旅行，首先，小朋友们都玩得特别开心就...</p>
+                    <div class="text_b"><img src="/Public/web/images/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：8&nbsp;&nbsp;&nbsp;人数：7</p>
+            <a href="/c4" class="detail_btn">详情></a>
+        </div><div class='item'>
+            <div class="top">
+                <div class="title" style="background-image:url(/Uploads/feedback/2016-12-12/201612121136279684.jpg)">
+                    <p>肯尼亚 肖女士</p>
+                </div>
+                <div class="content">
+                    <div class="text_t"><img src="/Public/web/images/douhao1.png" width="15"></div>
+                    <p>之前在看动物世界节的目中，就一直想着有一...</p>
+                    <div class="text_b"><img src="/Public/web/images/douhao2.png" width="15"></div>
+                </div>
+            </div>
+            <p style="margin:10px 0;color:#333;text-align:center;">天数：8&nbsp;&nbsp;&nbsp;人数：2</p>
+            <a href="/c1" class="detail_btn">详情></a>
+        </div>        <div class="clear"></div> -->
+    </div>
+</div>
+
+<script>
+$(function(){
+	$('.case_list li').click(function(){
+		var url = $(this).data('url');
+		if(url)
+		{
+			location.href = url;
+		}
+	});
+});
+</script>
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="pictures/footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+  </body>
+</html>

@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>【定制旅游案例】私人定制旅游案例_定制旅行案例_高端定制旅游案例_欧洲定制旅游案例_美国定制旅游案例-沃特旅行</title>
+        <meta name="keywords" content="定制旅游案例,私人定制旅游案例,定制旅行案例,高端定制旅游案例,欧洲定制旅游案例,美国定制旅游案例,日本定制旅游案例,澳大利亚定制旅游案例,迪拜定制旅游,新西兰定制旅游" />
+        <meta name="description" content="沃特定制旅游专注海外高端定制旅游,定制旅游案例栏目为您展示私人定制旅游案例、定制旅行案例、高端定制旅游案例、欧洲定制旅游案例、美国定制旅游案例、日本定制旅游案例、澳大利亚定制旅游案例等。咨询：400-995-1115" />
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/iconFont.css">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="applicable-device" content="mobile">
+
+	  <!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	  <![endif]-->
+	
+      <script src="../js/jquery.min.js"></script>
+      <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+      <script src="../js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="../pictures/contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+    
+	<div id="menu_wp"></div>
+	<div id="menulist">
+		<div class="title">沃特旅行</div>
+		<ul>
+			<li ><a href="http://wortertravel.com/">首页</a></li>
+			<li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+			<li class="active" id="nav_mudidi">
+				<a href="javascript:;">甄选行程<span class="iconfont icon-zuozuo-copy-copy1"></span></a>
+			</li>
+			<div id="nav2">
+				<ul class="nav2">
+					<li><a href="/place">全部</a></li>
+					<li><a href="/place-europe">欧洲</a></li><li><a href="/place-america">美洲</a></li><li><a href="/place-northasia">日韩/港澳台</a></li><li><a href="/place-austrlia">澳洲/新西兰</a></li><li><a href="/place-southasia">东南亚/海岛</a></li><li><a href="/place-africa">中东/非洲</a></li><li><a href="/place-china">中国</a></li>				</ul>
+			</div>
+			<li ><a href="city/trip">深度体验</a></li>
+			<li ><a href="/flight">特惠商务舱</a></li>
+			<li ><a href="/hotel">折扣酒店</a></li>
+			<li ><a href="/case">客户反馈</a></li>
+			<li ><a href="/article">旅行灵感</a></li>
+			<li ><a href="/about">关于我们</a></li>
+			<li ><a href="/search">搜索</a></li>
+		</ul>
+	</div>
+	
+	<div class="top_nav navstyle2">
+		<div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+		<div class="logo"><a href="http://wortertravel.com/"><img alt="【沃特旅行】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="../pictures/logo.png" height="40"></a></div>
+	</div>
+<link rel="stylesheet" href="css/swiper.min.css">
+
+<style>
+.swiper-container{
+	height:100%;
+}
+.swiper-pagination-bullet{
+	width:10px;
+	height:10px;
+	opacity:0.5;
+}
+.swiper-pagination-bullet-active{
+    background:#fff;
+	opacity:1;
+}
+.vjs-default-skin .vjs-big-play-button{
+	left:50%;
+	top:50%;
+	margin-left:-2em;
+	margin-top:-1.3em;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom:10px;
+}
+
+.hotel_wrap .top_desc .viewbtn2 {
+    display: block;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 15px auto;
+    color: #000;
+}
+.hotel_wrap .top_desc .viewbtn2 img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>
+
+<div class="hotel_wrap">
+	<div class="top">
+		<img src="../upload/feedback/2018-11-01/cover.jpg" alt="台女士">
+	</div>
+	<div class="top_desc">
+		<span class="text_t"></span>
+		<div style="padding:10px;">此次是台女士带妈妈和儿子旅行，可谓是“身肩重任”，为的是能让妈妈和自己在相隔万里，真正感受非洲草原的豪情豁达，真实的看一次动物迁徙。行程中，我们特别安排安博塞利仰望乞力马扎罗山，去博格利亚看美丽的火烈鸟。为了更大几率的看各种动物，特别在马赛马拉国家公园住宿3晚，可以多次乘越野车追寻动物，和坐热气球俯瞰整个非洲大草原。</div>
+		<span class="text_b"></span>
+                <a href="" target="_blank" class="viewbtn2"><img src="../pictures/viewbtn.png"></a>	</div>
+</div>
+
+<div class="feedback_wx_pic">
+	<div class="title">微信晒图</div>
+		<div class="pic_wp"><img alt="王女士" data-index="0" class="wxpic img-responsive" src="../upload/feedback/2018-11-01/201811011021069960.jpg"></div></div>
+
+<div class="feedback_content">
+	<div class="title">客户评价</div>
+	<div class="content">
+		<div class="left">
+			<h5>总评分：10</h5>
+			<p>线路设计：非常满意</p>
+			<p>导游服务：满意</p>
+			<p>酒店服务：满意</p>
+			<p>客服服务：非常满意</p>
+			<p>再次定制：会</p>
+		</div>
+		<div class="right">
+			<h5>客户评价：</h5>
+			<p>谢谢美丽的朋友，给我们推荐这么好的定制旅行社，第一次合作就亲密无间。出行前，特意陪我们接种疫苗，细致准备动物手册出行须知，连入境卡模板、拖鞋、接送机专车和当地电话卡、机舱座位，都帮我们安排妥帖。返程时还送了非洲鼓和好喝的红茶。总之，是非常完美的一次旅行体验了。</p>
+		</div>
+	</div>
+</div>
+
+<div class="i_contact">
+	<div class="title"><img src="../pictures/contact_title.png" class="img-responsive"></div>
+	<div class="content">
+		<form id="msgForm" method="POST" action="/Case/consult">
+		<input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+		<input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机">
+		<input type="text" name="msg_area" id="msg_area" placeholder="目的地">
+		<textarea name="msg_notice" id="msg_notice" rows="3" placeholder="备注"></textarea>
+		</form>
+		<a href="javascript:;" class="submit_btn">请顾问联系我</a>
+	</div>
+</div>
+
+<!-- <div class="travel_recommend">
+	<h4>推荐行程</h4>
+	<dl id="rlist1" onclick="location.href='/t9'">
+		<dt><img src="/Uploads/travel/AF758/0.jpg" alt="入住英国女王曾下榻的树顶酒店+乘热气球赏马赛马拉+纳库鲁湖观火烈鸟+桑给巴尔岛传统木船出海"></dt>
+		<dd>入住英国女王曾下榻的树顶酒店+乘热气球赏马赛马拉+纳库鲁湖观火烈鸟+桑给巴尔岛传统木船出海</dd>
+	</dl><dl id="rlist2" onclick="location.href='/t48'">
+		<dt><img src="/Uploads/travel/AF602/0.jpg" alt="入住位于零度赤道线的肯尼亚山狩猎俱乐部+马赛部落和马赛人一决高下+乘热气球俯瞰大草原"></dt>
+		<dd>入住位于零度赤道线的肯尼亚山狩猎俱乐部+马赛部落和马赛人一决高下+乘热气球俯瞰大草原</dd>
+	</dl><dl id="rlist3" onclick="location.href='/t90'">
+		<dt><img src="/Uploads/travel/AF403/0.jpg" alt="入住Delaire Graff庄园 守望浓荫无际的葡萄酒庄+克鲁格国家公跟随向导徒步游猎+乘游轮环游海豹岛"></dt>
+		<dd>入住Delaire Graff庄园 守望浓荫无际的葡萄酒庄+克鲁格国家公跟随向导徒步游猎+乘游轮环游海豹岛</dd>
+	</dl>	<a href="javascript:;" class="more_btn">显示更多 <span></span></a>
+</div> -->
+
+<!-- <div class="wxpic_mask">
+	<div class="swiper-container swiper-c1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img alt="王女士" src="/upload/feedback/2018-11-04/201811041021069960.jpg" alt="" width="100%" height="100%"></div>			<div class="swiper-slide"><img alt="王女士" src="/Uploads/feedback/2018-09-19/201809191021060422.jpg" alt="" width="100%" height="100%"></div>					</div>
+		<div class="swiper-pagination swiper-p1"></div>
+	</div>
+</div> -->
+<script>
+var is_submit = false;
+
+$(function(){
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#msg_name').val());
+		var mobile = $.trim($('#msg_mobile').val());
+		var area = $.trim($('#msg_area').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<!-- <div id="footer" class="bgwhite">
+		<p>新浪微博：@佰悦会</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p>
+	</div> -->
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="../pictures/footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+  </body>
+</html>

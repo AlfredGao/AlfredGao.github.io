@@ -2220,12 +2220,12 @@ a:hover { text-decoration:none; }
 }
 
 .hotel_wrap .top_desc .text_t{
-	background:url(../../web/images/douhao1.png) left center no-repeat;
+	background:url(../pictures/douhao1.png) left center no-repeat;
 	background-size:auto 100%;
 }
 
 .hotel_wrap .top_desc .text_b{
-	background:url(../../web/images/douhao2.png) right center no-repeat;
+	background:url(../pictures/douhao2.png) right center no-repeat;
 	background-size:auto 100%;
 }
 
@@ -2468,7 +2468,7 @@ a:hover { text-decoration:none; }
 }
 
 .feedback-list{
-    padding: 10px;
+    padding: 5px;
     padding-right: 0;
     background: #fff;
 }
@@ -2484,10 +2484,10 @@ a:hover { text-decoration:none; }
 .feedback-list .item .top{
     width: 100%;
     box-sizing: border-box;
-    background: url(../images/feedback-bg.png) no-repeat;
+    background: url(../pictures/feedback-bg.png) no-repeat;
     background-size: 100% 100%;
     padding-right: 8px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
 }
 
 .feedback-list .item .top .title{
