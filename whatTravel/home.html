@@ -1325,14 +1325,28 @@ $(function(){
 	</div>
 	<div id="footer_float">
 		<a href="tel:000000000000"><img src="pictures/footer_float_btn.png" class="img-responsive"></a>
-	</div>	  
+    </div>
+    <div id="sidebar">
+        <div id="wx_cs"></div>
+        <div id="wx_cs_pic" class="popup"><img src="pictures/sidebar_cs_pic.png"><span class="closebtn"></span></div>
+        <img id="goto_top" src="pictures/sidebar_gotop.png">
+    </div>	  
 	<script>
         // TODO
 	$(function(){
         $('#footer_float').click(function(){
             $.ajax({url:""});
         });
-    
+        $('#goto_top').click(function () {
+            $("html").animate({scrollTop: 0});
+        });
+        $('.closebtn').click(function() {
+            $('.popup').hide();
+        });
+        $('#wx_cs').click(function(){
+            $('.popup').hide();
+            $('#wx_cs_pic').toggle();
+        });
 		$('#menu_btn').click(function(){
 			if($(this).hasClass('active'))
 			{

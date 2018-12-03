@@ -284,7 +284,7 @@ a:hover { text-decoration:none; }
 #footer_float{
 	position:fixed;
 	z-index:11;
-	right:15px;
+	left:10px;
 	bottom:15px;
 	width:50px;
 	height:50px;
@@ -2220,12 +2220,12 @@ a:hover { text-decoration:none; }
 }
 
 .hotel_wrap .top_desc .text_t{
-	background:url(../pictures/douhao1.png) left center no-repeat;
+	background:url(../../web/images/douhao1.png) left center no-repeat;
 	background-size:auto 100%;
 }
 
 .hotel_wrap .top_desc .text_b{
-	background:url(../pictures/douhao2.png) right center no-repeat;
+	background:url(../../web/images/douhao2.png) right center no-repeat;
 	background-size:auto 100%;
 }
 
@@ -2468,7 +2468,7 @@ a:hover { text-decoration:none; }
 }
 
 .feedback-list{
-    padding: 5px;
+    padding: 10px;
     padding-right: 0;
     background: #fff;
 }
@@ -2484,10 +2484,10 @@ a:hover { text-decoration:none; }
 .feedback-list .item .top{
     width: 100%;
     box-sizing: border-box;
-    background: url(../pictures/feedback-bg.png) no-repeat;
+    background: url(../images/feedback-bg.png) no-repeat;
     background-size: 100% 100%;
     padding-right: 8px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }
 
 .feedback-list .item .top .title{
@@ -2528,5 +2528,97 @@ a:hover { text-decoration:none; }
 	justify-content: center;
 	align-items: center;
 }
+
+#sidebar{
+	position:fixed;
+	cursor:pointer;
+	right:0px;
+	bottom:170px;
+	width:32px;
+	height:auto;
+	z-index:99;
+}
+
+#sidebar #wx_cs {
+    width: 32px;
+    height: 62px;
+    background: url(../pictures/sidebar_cs.png) no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 1px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+#sidebar img{
+	display:block;
+	width:100%;
+	height:auto;
+}
+
+
+#sidebar #wx_cs_pic{
+	position:absolute;
+	top:0;
+	right:35px;
+	width:190px;
+}
+
+#sidebar .closebtn{
+	display:block;
+	width:12px;
+	height:12px;
+	cursor:pointer;
+	background:url(../pictures/clearbtn.png) no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	top:7px;
+	right:5px;
+}
+
+/*
+#sidebar #wx_scan{
+	margin-bottom:1px;
+}
+
+#sidebar #wx_qrcode{
+	display:none;
+	position:absolute;
+	top:0;
+	right:45px;
+	width:80px;
+}
+ */
+/* 
+#sidebar #wx_share{
+	width:32px;
+	height:50px;
+	background:url(../images/sidebar_share.png) no-repeat;
+	background-size:100% 100%;
+	margin-bottom:1px;
+	text-align:center;
+	color:#fff;
+	font-size:12px;
+	line-height:12px;
+} */
+
+/* #sidebar #wx_share_pic{
+	display:none;
+	position:absolute;
+	top:0;
+	right:35px;
+	width:190px;
+	z-index:1;
+}
+
+#sidebar #wx_share_pic #travel_qrcode{
+	width:90px;
+	height:90px;
+	position:absolute;
+	left:46px;
+	bottom:58px;
+	z-index:2;
+} */
 
 
