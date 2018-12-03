@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>「沃特旅行」用心定制每一次属于您的旅行</title>
+	<meta name="keywords" content="定制旅游,高端旅游,私人定制旅游,定制旅行,鸿鹄逸游,旅游定制,私人订制旅游,无二之旅,美国旅游,澳大利亚旅游,日本旅游,欧洲旅游,迪拜旅游,新西兰旅游" />
+	<meta name="description" content="「省心」一价全包,真正管家服务;「专业」42个国家实地考察;「物有所值」私藏更多独特体验! <任意城市出发> 我们竭尽全力,让旅行简单而美好." />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/iconFont.css">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="mobile">
+    
+    
+
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/home.js"></script>
+  </head>
+  <body>
+	<div class="modal fade commonModal" id="zixunModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document" style="-webkit-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);transform:translate(0,-50%);position:absolute;width:auto;margin:0 auto;left:0;right:0;top:50%;padding:0 10px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border:0;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="i_contact">
+                        <div class="title" style="width:100%;padding-bottom:10px;"><img alt="定制旅游,私人定制旅游" src="pictures/contact_title2.png" class="img-responsive"></div>
+                        <div class="content">
+                            <form id="topDzForm" method="POST" action="/Index/consult">
+                            <input type="text" name="msg_name" id="msg_name" placeholder="阁下姓名">
+                            <input type="text" name="msg_mobile" id="msg_mobile" placeholder="手机/微信">
+                            <textarea name="msg_notice" id="msg_notice" rows="3" placeholder="目的地及备注"></textarea>
+                            </form>
+                            <a href="javascript:;" class="dz_submit">请顾问联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    var is_dz_submit = false;
+    $(function(){
+        $('.dz_submit').click(function(){
+            if(is_dz_submit)
+            {
+                return false;
+            }
+            
+            is_dz_submit = true;
+            var that = this;
+            $(that).text('正在提交...');
+            
+            $.ajax({
+                url:"/index.php/Index/ajax_consult.html",
+                type:"post",
+                dataType:'json',
+                async:true,
+                data:$('#topDzForm').serialize(),
+                success:function(result) {
+                    is_dz_submit = false;
+                    var data = result.datas;
+                    if(data == '1')
+                    {
+                        alert('提交成功');
+                        $('#topDzForm')[0].reset();
+                        $('#zixunModal').modal('hide');
+                    }
+                    else
+                    {
+                        alert(data.error);
+                    }
+                    
+                    $(that).text('请顾问联系我');
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown) {
+                    is_dz_submit = false;
+                    alert('提交失败，请稍后重试！');
+                    $(that).text('请顾问联系我');
+                }
+            });
+        });
+    });
+    </script>
+  	<div id="menu_wp"></div>
+      <div id="menulist">
+          <div class="title">沃特旅行</div>
+          <ul>
+              <li class="active"><a href="">首页</a></li>
+              <li ><a href="javascript:;" onclick="$('#zixunModal').modal()">私人定制</a></li>
+              <li  id="nav_mudidi">
+                  <a href="javascript:;">甄选行程<span class="iconFont icon-zuozuo-copy-copy1"></span></a>
+              </li>
+              <div id="nav2">
+                  <ul class="nav2">
+                      <li><a href="place.html">全部</a></li>
+                      <li><a href="/place/place-europe.html">欧洲</a></li><li><a href="/place/place-america.html">美洲</a></li><li><a href="/place/place-northasia.html">日韩/港澳台</a></li><li><a href="/place/place-austrlia.html">澳洲/新西兰</a></li><li><a href="/place/place-southasia.html">东南亚/海岛</a></li><li><a href="/place/place-africa.html">中东/非洲</a></li><li><a href="/place/place-china.html">中国</a></li>				</ul>
+              </div>
+              <!-- <li ><a href="/trip">深度体验</a></li> -->
+              <li ><a href="flight.html">特惠商务舱</a></li>
+              <li ><a href="/hotel">折扣酒店</a></li>
+              <li ><a href="case.html">客户案例</a></li>
+              <!-- <li ><a href="/article">旅行灵感</a></li> -->
+              <!-- <li ><a href="/search">搜索</a></li> -->
+          </ul>
+      </div>
+      
+      <div class="top_nav ">
+          <div class="search_btn zx_btn" onclick="$('#zixunModal').modal()"><span>咨询</span></div>
+          <div class="logo"><a href="https://alfredgao.github.io/whatTravel/home.html"><img alt="【沃特定制旅游】高端旅游_私人定制旅游_私人定制旅行_旅游定制" src="pictures/logo.png" height="40"></a></div>
+      </div>
+      <div id="menu_btn" ><span class="header_more">更多</span></div>
+  <script src="js/jquery.lazyload.js"></script>
+  
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+<style>
+.topbanner{
+    width: 100%;
+	height: 0;
+    padding-bottom: 61.8%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hotel_wrap .top{
+	position: relative;
+}
+
+.hotel_wrap .top .title{
+	top: 50%;
+	margin-top: -15px;
+}
+</style>
+
+<div class="hotel_wrap">
+	<div class="top">
+		<div class="topbanner" style="background-image:url(pictures/banner_hotel.jpg)"></div>
+		<div class="title">[全球奢华酒店预订］</div>
+	</div>
+	<div class="bottom">
+		<h3>沃特高级酒店专属优待</h3>
+		<p>以“Best Available Rate当前最佳价”预订全球豪华知名酒店，并为顾客提供免费早餐、升级房型、提前入住与推迟退房、消费额度等多项专属优待。</p>
+		<span>*每间酒店的具体优待内容各不相同，请于预订前与我们核实，并以酒店确认为准。</span>
+		<ul>
+			<li>迪拜帆船酒店 Burj Al Arab</li>
+			<li>苏梅岛W度假酒店 W Retreat Koh Samui</li>
+			<li>范思哲豪华度假酒店 Palazzo Versace</li>
+			<li>佛罗伦萨四季酒店 Four Seasons Hotel Firenze</li>
+			<li>阿姆斯特丹华尔道夫酒店 Waldorf Astoria Amsterdam</li>
+			<li>文华东方酒店 Mandarin Oriental Tokyo</li>
+			<li>大阪希尔顿酒店 Hilton Osaka Hotel</li>
+		</ul>
+	</div>
+</div>
+
+<!-- <div class="hotel_contact">
+	<form id="msgForm" method="POST" action="/Hotel/consult">
+	<input type="hidden" name="theme" id="theme">
+	<div class="title">
+		<h5>Contact</h5>
+		<h3>酒店咨询</h3>
+		<span>400-995-1115</span>
+	</div>
+	<div class="content">
+		<div class="inp_wp">
+			<input type="text" name="username" id="username" placeholder="阁下姓名">
+			<input type="text" name="mobile" id="mobile" placeholder="手机/微信">
+			<input type="text" name="mudidi" id="mudidi" placeholder="目的地">
+		</div>
+		<div class="left line"></div>
+		<div class="right line"></div>
+		<div class="theme_title">主题偏好</div>
+		<ul>
+			<li data-theme="顶级品牌"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>顶级品牌</li>
+			<li data-theme="海景/沙滩"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>海景/沙滩</li>
+			<li data-theme="古堡/庄园"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>古堡/庄园</li>
+			<li data-theme="别墅套房"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>别墅套房</li>
+			<li data-theme="城市之心"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>城市之心</li>
+			<li data-theme="文化/艺术"><span class="iconfont icon-duoxuankuangweixuanzhong"></span>文化/艺术</li>
+		</ul>
+		<div class="inp_wp">
+			<textarea rows="3" name="notice" id="notice" placeholder="备注"></textarea>
+		</div>
+		<a href="javascript:;" class="submit_btn">让酒店顾问联系我</a>
+	</div>
+	</form>
+</div> -->
+
+<script>
+var is_submit = false;
+
+$(function(){
+	$('.hotel_contact li').click(function(){
+		$(this).toggleClass('active');
+	});
+	
+	$('.submit_btn').click(function(){
+		if(is_submit)
+		{
+			return false;
+		}
+		
+		var name = $.trim($('#username').val());
+		var mobile = $.trim($('#mobile').val());
+		var area = $.trim($('#mudidi').val());
+		var notice = $.trim($('#notice').val());
+		
+		if(name == '')
+		{
+			alert('请输入阁下姓名');
+			return false;
+		}
+		
+		if(mobile == '')
+		{
+			alert('请输入您的手机号');
+			return false;
+		}
+		
+		if(area == '')
+		{
+			alert('请输入目的地');
+			return false;
+		}
+		
+		var theme_str = '';
+		$('.hotel_contact li.active').each(function(n,v){
+			theme_str += $(this).data('theme') + ',';
+		});
+		$('#theme').val(theme_str);
+		
+		is_submit = true;
+		$('#msgForm').submit();
+	});
+});
+</script>
+
+	<div id="footer" class="bgwhite">
+		<!-- <p>新浪微博：@沃特旅行</p>
+		<p>微信公众号：佰悦会私人旅行游志</p>
+		<p>商家合作：info@100.travel (028)8596-4996</p>
+		<p>Copyright © 2012-2018 All Rights Reserved</p>
+		<p>备案/许可证编号：蜀ICP备12027707号</p> -->
+    </div>
+    <div id="sidebar">
+            <div id="wx_cs"></div>
+            <div id="wx_cs_pic" class="popup"><img src="pictures/sidebar_cs_pic.png"><span class="closebtn"></span></div>
+            <img id="goto_top" src="pictures/sidebar_gotop.png">
+        </div>	  
+	<div id="footer_float">
+		<a href="tel:4009951115"><img src="pictures/footer_float_btn.png" class="img-responsive"></a>
+	</div>	  
+	<script>
+	$(function(){
+        $('#footer_float').click(function(){
+            $.ajax({url:""});
+        });
+        $('#footer_float').click(function(){
+            $.ajax({url:""});
+        });
+        $('#goto_top').click(function () {
+            $("html").animate({scrollTop: 0});
+        });
+        $('.closebtn').click(function() {
+            $('.popup').hide();
+        });
+        $('#wx_cs').click(function(){
+            $('.popup').hide();
+            $('#wx_cs_pic').toggle();
+        });
+		$('#menu_btn').click(function(){
+			if($(this).hasClass('active'))
+			{
+				$('#menu_wp').hide();
+				$('#menulist').removeClass('open');
+				$(this).removeClass('active');
+			}
+			else
+			{
+				$('#menu_wp').show();
+				$('#menulist').addClass('open');
+				$(this).addClass('active');
+			}
+		});
+		$('#menu_wp').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		$('#menulist').click(function(){
+			$('#menu_wp').hide();
+			$('#menulist').removeClass('open');
+			$('#menu_btn').removeClass('active');
+		});
+		
+		$('#nav_mudidi').click(function(){
+			event.stopImmediatePropagation();
+			$(this).toggleClass('submenu');
+			$("#nav2").toggleClass('submenu');
+		});
+	});
+	</script>
+	
+	<!-- <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?8d4c46ca2b65fbd4b75f01b1ab090b88";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-98093956-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script> -->
+  </body>
+</html>
